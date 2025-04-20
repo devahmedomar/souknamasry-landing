@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;600;700&display=swap');
+
+  .about-landing {
+    font-family: 'El Messiri', sans-serif;
+    background-color:rgba(166, 228, 176, 0.178);
+    background: url("/assets/images/image.png") center center / cover no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 60px 0;
+  }
+  
+  .section-heading h3 , .align-items-center h2{
+    color: #8f3016;
+  }
+  
+  .section-heading p,
+  .feature-item {
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: right;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.233);
+  }
+  
+  .about-landing h2 {
+    font-size: 2.5rem;
+  }
+  
+  .feature-item {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .feature-item i {
+    font-size: 1.6rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-item i:hover {
+    transform: scale(1.3);
+  }
+  
+  .btn {
+    transition: all 0.3s ease-in-out;
+    border-radius: 50px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: 1px solid #8f3016 ;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+    background-color: #8f3016;
+    color: #ffffff;
+  }
+  
+  /* Bounce Animation */
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .bounce {
+    animation: bounce 3s infinite ease-in-out;
+  }
+  
+  /* Media Queries for small screens */
+  @media (max-width: 991px) {
+    .about-landing h2,
+    .section-heading p,
+    .feature-item {
+      text-align: center !important;
+      justify-content: center !important;
+    }
+
+    /*  padding/margins for smaller screens */
+    .about-landing {
+      padding: 40px 0;
+    }
+  }
+  
