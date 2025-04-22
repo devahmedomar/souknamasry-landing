@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;600;700&display=swap');
+* {
+  font-family: 'El Messiri', sans-serif;
+}
+#blogs {
+  direction: rtl;
+}
+.blog-card {
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+.blog-card:hover {
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+:host ::ng-deep .blog-card h4 {
+  font-size: 1.4rem;
+  color: #8f3016 !important;
+}
+.btn {
+  border: 1px solid #8f3016;
+  color: #000;
+  transition: all 0.5s ease;
+}
+.btn:hover {
+  background-color: #8f3016;
+  color: #fff;
+}

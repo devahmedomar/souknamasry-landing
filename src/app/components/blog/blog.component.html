@@ -1,1 +1,27 @@
-<p>blog works!</p>
+<section id="blogs" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">المقالات</h2>
+      <div class="row justify-content-center">
+  
+        <div class="col-md-6 col-lg-4 mb-4" *ngFor="let blog of blogs">
+          <p-card class=" blog-card shadow rounded-4 overflow-hidden d-flex h-100 border-0">
+            <ng-template pTemplate="header">
+                <img [src]="blog.image" alt="{{ blog.title }}" class="w-100 rounded-top-4" style="height: 230px; object-fit: cover;">
+              </ng-template>
+              
+  
+            <div class="d-flex flex-column p-3">
+              <h4 class="mb-3 fw-bold ">{{ blog.title }}</h4>
+              <p class="text-muted">{{ blog.excerpt }}</p>
+              <div class="mt-auto text-end">
+                <a  class="btn px-4 rounded-pill">
+                  اقرأ المزيد
+                </a>
+              </div>
+            </div>
+          </p-card>
+        </div>
+      </div>
+    </div>
+  </section>
+  
