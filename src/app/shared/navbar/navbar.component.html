@@ -1,35 +1,39 @@
-<nav class="navbar navbar-expand-lg  my-navbar">
+<nav class="navbar navbar-expand-lg my-navbar">
   <div class="container d-flex justify-content-between align-items-center">
     <a class="navbar-brand" routerLink="/home">
-      <img src="/assets/images/logo after.jpg" alt="souknamasry logo" />
+      <img src="/assets/images/anotherlogo.jpg" alt="souknamasry logo" />
       <span class="logo-word">Souknamasry</span>
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="menu-bar pi pi-bars"></span>
     </button>
-    <div class="collapse navbar-collapse my-section" id="navbarSupportedContent">
-      <ul class="navbar-nav  mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link mx-3" routerLink="/home" aria-current="page">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mx-3" [routerLink]="['/']" fragment="about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mx-3" [routerLink]="['/']" fragment="services">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mx-3" [routerLink]="['/']" fragment="team">Team</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mx-3" [routerLink]="['/']" fragment="blog">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mx-3" routerLink="/contact">Contact Us</a>
-        </li>
 
+    <div class="collapse navbar-collapse my-section" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link mx-3" routerLink="/home" fragment="hero" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-3" [routerLink]="['/']" fragment="about" appFragmentActive="about"
+            activeClass="actives">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-3" [routerLink]="['/']" fragment="services" appFragmentActive="services"
+            activeClass="actives">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-3" [routerLink]="['/']" fragment="team" appFragmentActive="team"
+            activeClass="actives">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-3" [routerLink]="['/']" fragment="blog" appFragmentActive="blog"
+            activeClass="actives">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-3" routerLinkActive="actives" routerLink="/contact">Contact Us</a>
+        </li>
       </ul>
     </div>
   </div>
