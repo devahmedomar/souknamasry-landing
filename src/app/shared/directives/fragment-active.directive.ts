@@ -31,8 +31,25 @@ export class FragmentActiveDirective implements OnInit, OnDestroy {
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
         const currentFragment = this.router.url.split('#')[1];
-        if (currentFragment === this.fragment) {
+
+        // Handle initial empty fragment (e.g. just '/')
+        const isRootAndNoFragment = this.router.url === '/' && this.fragment === 'hero';
+
+        const isActive = currentFragment === this.fragment || isRootAndNoFragment;
+
+        if (isActive) {
           this.renderer.addClass(this.el.nativeElement, this.activeClass);
+
+          setTimeout(() => {
+            const element = document.getElementById(this.fragment);
+            if (element) {
+              const scrollToY =
+                element.getBoundingClientRect().top +
+                window.pageYOffset -
+                140; // Adjust for fixed navbar
+              window.scrollTo({ top: scrollToY, behavior: 'smooth' });
+            }
+          }, 50);
         } else {
           this.renderer.removeClass(this.el.nativeElement, this.activeClass);
         }
