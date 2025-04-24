@@ -1,47 +1,55 @@
-<section class="about-landing py-5 mb-20">
-    <div class="container">
-  
-      <!-- Section Title -->
-      <div class="section-heading text-center mb-5" data-aos="fade-down" data-aos-duration="1000">
-        <h3 class="fw-bold display-6 gradient-text d-inline-block px-3 py-2 rounded-3 ">
-          اكتشف تجربة إدارة متجرك <span class="emoji">🚀</span>
-        </h3>
-        <p class="lead text-muted mt-2 text-center">
-          .أدوات ذكية <span class="emoji">✨</span> وواجهة احترافية تسهّل عليك كل شيء من أول منتج لحد الطلب
+<div class="about-section py-5">
+  <div class="container py-4">
+
+    <!-- Section Title -->
+    <div class="container-fluid d-flex justify-content-center align-items-center mb-5">
+      <h2 data-aos="zoom-in-up" data-aos-delay="0" data-aos-duration="1000">
+        <span class="glitch-text">Why</span> Soukna Masry?
+      </h2>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row mb-4 text-container">
+      <!-- Text -->
+      <div class="col-md-6 text-start d-flex flex-column">
+        <p data-aos="fade-up" data-aos-delay="0" data-aos-duration="900">
+          <strong class="main-text">Soukna Masry</strong> {{ description }}
+        </p>
+        <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
+          AT <strong class="main-text">Soukna Masry</strong> {{ subDescription }}
+          <span class="highlighted-phrase mt-2" data-aos="fade-right" data-aos-delay="900" data-aos-duration="1500">{{ highlightedLine }}</span>
         </p>
       </div>
-  
-      <div class="row align-items-center">
-        <!-- Image -->
-        <div class="col-lg-6 mb-4 mb-lg-0 text-center bounce" data-aos="fade-left" data-aos-duration="1200">
-          <object type="image/svg+xml" data="assets/images/in-the-office-animate(1).svg" class="img-fluid" width="100%" title="جاري التحميل.."></object>
-        </div>
 
-        <!-- Features -->
-        <div class="col-lg-6 text-lg-end text-right">
-          <h2 class="display-4 fw-bold mb-5" data-aos="fade-up" data-aos-duration="1000">
-            منصة ذكية لإدارة متجرك 
-          </h2>
-          <ul class="list-unstyled">
-            <li class="feature-item" data-aos="fade-up" data-aos-delay="100">
-              .واجهة سلسة وسريعة لعرض منتجاتك بكل احترافية
-              <i class="pi pi-bolt text-warning"></i>
-            </li>
-            <li class="feature-item" data-aos="fade-up" data-aos-delay="300">
-              .تحكم كامل في كل تفاصيل متجرك من أي مكان
-              <i class="pi pi-cloud-upload text-info"></i>
-            </li>
-            <li class="feature-item" data-aos="fade-up" data-aos-delay="500">
-             . أنشئ حضورك الرقمي وابدأ البيع في دقائق
-              <i class="pi pi-star text-success"></i>
-            </li>
-          </ul>
-  
-          <!-- Bootstrap Button -->
-          <a href="#" class="btn  mt-5 rounded-pill px-5">
-            جرّب المنصة الآن
-          </a>
+      <!-- Image -->
+      <div class="col-md-6" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1500">
+        <img [src]="aboutimg" alt="Soukna Masry" class="img-fluid rounded mt-2">
+      </div>
+    </div>
+
+    <!-- Features Title -->
+    <h2 class="text-center mb-5 mt-5" data-aos="zoom-in-up" data-aos-delay="900" data-aos-duration="1500">
+      {{ features_title }}
+    </h2>
+
+    <!-- Features Section -->
+    <div class="row g-4  mt-3">
+      <div
+        class="col-md-4 d-flex align-items-stretch"
+        *ngFor="let feature of features; let i = index"
+        [attr.data-aos]="'fade-up'"
+        [attr.data-aos-delay]="i * 200"
+        data-aos-duration="1000">
+        <div class="card feature-card position-relative border-0 shadow-sm p-4 ps-4 h-100">
+          <span class="left-border rounded-top-start"></span>
+          <div class="icon-box mb-3 ms-2">
+            <i class="pi" [ngClass]="feature.icon"></i>
+          </div>
+          <h5 class="card-title">{{ feature.title }}</h5>
+          <p class="card-text">{{ feature.description }}</p>
         </div>
       </div>
     </div>
-  </section>
+    
+  </div>
+</div>
