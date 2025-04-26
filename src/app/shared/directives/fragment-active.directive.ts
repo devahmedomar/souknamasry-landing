@@ -5,10 +5,13 @@ import {
   OnInit,
   Renderer2,
   OnDestroy,
+  Inject,
+  PLATFORM_ID,
 } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
+import { isPlatformBrowser } from '@angular/common';
 
 @Directive({
   selector: '[appFragmentActive]',
@@ -23,7 +26,8 @@ export class FragmentActiveDirective implements OnInit, OnDestroy {
   constructor(
     private el: ElementRef,
     private router: Router,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit(): void {
@@ -32,24 +36,27 @@ export class FragmentActiveDirective implements OnInit, OnDestroy {
       .subscribe(() => {
         const currentFragment = this.router.url.split('#')[1];
 
-        // Handle initial empty fragment (e.g. just '/')
-        const isRootAndNoFragment = this.router.url === '/' && this.fragment === 'hero';
+        const isRootAndNoFragment =
+          this.router.url === '/' && this.fragment === 'hero';
 
-        const isActive = currentFragment === this.fragment || isRootAndNoFragment;
+        const isActive =
+          currentFragment === this.fragment || isRootAndNoFragment;
 
         if (isActive) {
           this.renderer.addClass(this.el.nativeElement, this.activeClass);
 
-          setTimeout(() => {
-            const element = document.getElementById(this.fragment);
-            if (element) {
-              const scrollToY =
-                element.getBoundingClientRect().top +
-                window.pageYOffset -
-                140; // Adjust for fixed navbar
-              window.scrollTo({ top: scrollToY, behavior: 'smooth' });
-            }
-          }, 50);
+          if (isPlatformBrowser(this.platformId)) {
+            setTimeout(() => {
+              const element = document.getElementById(this.fragment);
+              if (element) {
+                const scrollToY =
+                  element.getBoundingClientRect().top +
+                  window.pageYOffset -
+                  140;
+                window.scrollTo({ top: scrollToY, behavior: 'smooth' });
+              }
+            }, 50);
+          }
         } else {
           this.renderer.removeClass(this.el.nativeElement, this.activeClass);
         }
