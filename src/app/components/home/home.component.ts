@@ -51,10 +51,12 @@ export class HomeComponent {
 
 
   private scrollToFragment() {
-    if (this.currentFragment) {
-      const element = document.getElementById(this.currentFragment);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+    if (this.isBrowser) {
+      if (this.currentFragment) {
+        const element = document.getElementById(this.currentFragment);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     }
   }
