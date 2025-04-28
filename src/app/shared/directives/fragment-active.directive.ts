@@ -27,7 +27,7 @@ export class FragmentActiveDirective implements OnInit, OnDestroy {
     private el: ElementRef,
     private router: Router,
     private renderer: Renderer2,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: any
   ) {}
 
   ngOnInit(): void {
