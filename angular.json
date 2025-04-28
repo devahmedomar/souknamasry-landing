@@ -37,7 +37,7 @@
                 "node_modules/primeflex/primeflex.css"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"و
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "node_modules/aos/dist/aos.js"
 
             ],
