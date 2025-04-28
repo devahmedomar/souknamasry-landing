@@ -26,7 +26,11 @@
   height: 100%;    
   object-fit: cover;
 }
-
+.about-section .row {
+  display: flex;
+  align-items: stretch; 
+  flex-wrap: wrap;      
+}
 .row h2 {
   font-size: 30px;
   font-weight: 600;
@@ -127,7 +131,7 @@
   }
 
   .main-text {
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 
@@ -145,9 +149,13 @@
     font-size: 22px;
   }
 
-  .about-section img {
-    max-height: 300px;
-  }
+  
+.about-section img {
+  max-height: 600px;
+  width: 100%;
+  height: 100%;    
+  object-fit: cover;
+}
 
   .feature-card h5 {
     font-size: 17px;

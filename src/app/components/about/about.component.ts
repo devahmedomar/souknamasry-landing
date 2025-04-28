@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, ViewChild, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
+import { isPlatformBrowser } from '@angular/common';
 import AOS from 'aos';
 
 @Component({
@@ -9,10 +10,21 @@ import AOS from 'aos';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent {
-  ngOnInit() {
-    AOS.init();
+export class AboutComponent implements AfterViewInit {
+  // Injects the PLATFORM_ID token to determine whether the code is running on the browser or server
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+ngAfterViewInit(): void {
+    // Initialize AOS (Animate On Scroll) library only if running in the browser 
+    // to prevent issues during server-side rendering
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init({
+        duration: 1200,
+        once: true
+      });
+    }
   }
+ 
   
   title = 'Why Soukna Masry';
   description = ` is a digital platform made for small and medium-sized shops across Egypt. We’re here to support every local brand with big dreams but limited resources.
