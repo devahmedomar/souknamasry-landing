@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, ViewChild, ViewEncapsulation } from '@angular/core';
-import { CommonModule } from '@angular/common'; 
 import { isPlatformBrowser } from '@angular/common';
+import { CommonModule } from '@angular/common'; 
 import AOS from 'aos';
 
 @Component({
@@ -10,7 +10,7 @@ import AOS from 'aos';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent implements AfterViewInit {
+export class AboutComponent {
   // Injects the PLATFORM_ID token to determine whether the code is running on the browser or server
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
@@ -20,9 +20,12 @@ ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       AOS.init({
         duration: 1200,
-        once: true
+        once: false
       });
     }
+  }
+  trackByIndex(index: number, item: any): number {
+    return index;
   }
  
   

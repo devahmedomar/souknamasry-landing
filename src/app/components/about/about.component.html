@@ -2,28 +2,28 @@
   <div class="container py-4">
 
     <!-- Section Title -->
-    <div class="container-fluid d-flex justify-content-center align-items-center mb-5">
+    <div class=" d-flex justify-content-center align-items-center mb-5 ">
       <h2 data-aos="zoom-in-up" data-aos-delay="0" data-aos-duration="1000">
         <span class="glitch-text">Why</span> Soukna Masry?
       </h2>
     </div>
 
     <!-- Content Row -->
-    <div class="row mb-4 text-container">
+    <div class="row mb-4 text-container  ">
       <!-- Text -->
-      <div class="col-md-6 text-start d-flex flex-column">
+      <div class="col-md-5 d-flex flex-column text-justify">
         <p data-aos="fade-up" data-aos-delay="0" data-aos-duration="900">
           <strong class="main-text">Soukna Masry</strong> {{ description }}
         </p>
         <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
           AT <strong class="main-text">Soukna Masry</strong> {{ subDescription }}
-          <span class="highlighted-phrase mt-2" data-aos="fade-right" data-aos-delay="900" data-aos-duration="1500">{{ highlightedLine }}</span>
+          <span class="highlighted-phrase mt-1" data-aos="fade-right" data-aos-delay="900" data-aos-duration="1500">{{ highlightedLine }}</span>
         </p>
       </div>
 
       <!-- Image -->
       <div class="col-md-6" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1500">
-        <img [src]="aboutimg" alt="Soukna Masry" class="img-fluid rounded mt-2">
+        <img [src]="aboutimg" alt="Soukna Masry" class="img-fluid rounded mt-2" loading="lazy">
       </div>
     </div>
 
@@ -33,10 +33,10 @@
     </h2>
 
     <!-- Features Section -->
-    <div class="row g-4  mt-3">
+    <div class="row g-4 mt-3">
       <div
         class="col-md-4 d-flex align-items-stretch"
-        *ngFor="let feature of features; let i = index"
+        *ngFor="let feature of features; let i = index; trackBy: trackByIndex"
         [attr.data-aos]="'fade-up'"
         [attr.data-aos-delay]="i * 200"
         data-aos-duration="1000">
