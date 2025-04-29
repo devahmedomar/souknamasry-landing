@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -11,26 +12,33 @@ import { CardModule } from 'primeng/card';
 })
 export class BlogComponent {
   
-  blogs = [
-    {
-      id: 1,
-      title: 'ليه لازم تبدأ تبيع أونلاين؟',
-      image: 'assets/images/shop.png',
-      excerpt: 'لو عندك محل فعلي وبتبيع فيه كويس، فده ممتاز! بس تفتكر كام واحد من برّا منطقتك يعرفك؟ البيع أونلاين مش بس بيوسع دايرة عملاءك، ده كمان بيساعدك تزود أرباحك وتبني اسم أقوى...'
-    },
-    
-    {
-      id: 2,
-      title: 'تحسين عرض المنتجات لزيادة المبيعات',
-      image: 'assets/images/product2.jpg',
-      excerpt: ' في عالم التجارة الإلكترونية، طريقة عرض المنتج بتفرق كتير في قرار الشراء. أصحاب المحلات اللي بيستخدموا  المنصات الرقمية محتاجين يهتموا جدًا ...'
-    },
-    {
-      id: 3,
-      title: 'طرق توصيل المنتجات بأمان وكفاءة ',
-      image: 'assets/images/product3.jpg',
-      excerpt:'التوصيل هو جزء أساسي من تجربة الشراء أونلاين. وأي تأخير أو ضرر في المنتج أثناء التوصيل ممكن يؤثر بشكل سلبي على سمعة المحل. عشان كده، اختيار الطريقة ...'
-    }
-  ];
+  constructor(private router: Router) {}
+
+navigate() {
+  this.router.navigate(['/blog-details']);
+}
+
+Heading='Your Guide to Success in Sales and Markting';
+cards = [
+  {
+    image: 'assets/images/card1.png',
+    icon: 'pi pi-shopping-cart',
+    title: 'Why E-commerce is the Future for Small Businesses in Egypt',
+    description: 'In today’s fast-paced world, online presence is no longer a luxury — it’s a must...'
+  },
+  {
+    image: 'assets/images/card2.png',
+    icon: 'pi pi-shopping-bag',
+    title: '5 Reasons to Shop Local Online and Support Egyptian Brands',
+    description: 'Online shopping doesn’t have to mean buying from huge international brands...'
+  },
+  {
+    image: 'assets/images/card3.png',
+    icon: 'pi pi-chart-line',
+    title: 'How Soukna Masry Helps Egyptian Shops Sell Smarter — Not Harder',
+    description: 'Running a small shop is hard work. You have to manage inventory, customers...'
+  }
+];
+
 
 }

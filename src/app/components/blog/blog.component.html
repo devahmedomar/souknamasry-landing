@@ -1,27 +1,32 @@
-<section id="blogs" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-5">المقالات</h2>
-      <div class="row justify-content-center">
-  
-        <div class="col-md-6 col-lg-4 mb-4" *ngFor="let blog of blogs">
-          <p-card class=" blog-card shadow rounded-4 overflow-hidden d-flex h-100 border-0">
-            <ng-template pTemplate="header">
-                <img [src]="blog.image" alt="{{ blog.title }}" class="w-100 rounded-top-4" style="height: 230px; object-fit: cover;">
-              </ng-template>
-              
-  
-            <div class="d-flex flex-column p-3">
-              <h4 class="mb-3 fw-bold ">{{ blog.title }}</h4>
-              <p class="text-muted">{{ blog.excerpt }}</p>
-              <div class="mt-auto text-end">
-                <a  class="btn px-4 rounded-pill">
-                  اقرأ المزيد
-                </a>
-              </div>
+<section id="blogs" class="blogs py-5">
+  <div class="container p-5">
+    <div class="heading-1 text-center mb-5">
+      <h1> {{Heading}} <i class="pi pi-book"></i></h1>
+    </div>
+    <div class="row g-4">
+      <!-- Blog card -->
+      <div class="col-12 col-md-6 col-lg-4 " *ngFor="let blog of cards">
+        <div class="blog-item h-100 d-flex flex-column overflow-hidden text-center">
+          
+          <!-- img -->
+          <div class="blog-img-wrapper rounded" style="height: 250px; overflow: hidden;">
+            <img [src]="blog.image" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Blog">
+          </div>
+          
+          <!-- content -->
+          <div class="blog-content bg-white rounded p-4 flex-grow-1 d-flex flex-column justify-content-between">
+            <div class="blog-icon position-absolute top-0 start-50 translate-middle bg-orange text-white d-flex align-items-center justify-content-center rounded-circle">
+              <i [class]="blog.icon"></i>
             </div>
-          </p-card>
+            <div class="blog-text d-flex flex-column h-100">
+              <h5 class="mt-3">{{ blog.title }}</h5>
+              <p class="text-muted">{{ blog.description }}</p>
+              <div class="btn1" (click)="navigate()">Read more</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>
