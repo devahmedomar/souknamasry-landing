@@ -16,10 +16,15 @@
   position: fixed;
   padding: 0;
 }
-.my-navbar img {
+/* .my-navbar .na {
   margin-right: 10px;
   background-color: transparent;
-}
+  transform: translateX(30px);
+  -webkit-transform: translateX(30px);
+  -moz-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  -o-transform: translateX(30px);
+} */
 .my-navbar .logo-word {
   font-size: 2rem;
   color: #402c26;
@@ -76,10 +81,15 @@
   display: flex;
   align-items: center;
   padding: 0;
+
 }
-.my-section ul {
-  margin-right: -30px;
-}
+/* .my-section ul {
+  transform: translateX(-50px);
+  -webkit-transform: translateX(-50px);
+  -moz-transform: translateX(-50px);
+  -ms-transform: translateX(-50px);
+  -o-transform: translateX(-50px);
+} */
 .my-section .nav-link {
   cursor: pointer;
   color: black;
@@ -162,12 +172,12 @@
     padding-bottom: 10px;
   }
   .navbar-toggler {
-    transform: translate(20px, -1px);
-    -webkit-transform: translate(20px, -1px);
-    -moz-transform: translate(20px, -1px);
-    -ms-transform: translate(20px, -1px);
-    -o-transform: translate(20px, -1px);
-  }
+    transform: translate(20px, -2px);
+    -webkit-transform: translate(20px, -2px);
+    -moz-transform: translate(20px, -2px);
+    -ms-transform: translate(20px, -2px);
+    -o-transform: translate(20px, -2px);
+}
   /* .navbar-brand .logo-word {
     margin-left: 0px;
     padding-left: 0;
@@ -208,12 +218,12 @@
   .my-navbar img {
     margin-left: 0px;
     max-width: 150px;
-    transform: translateY(-1px);
-    -webkit-transform: translateY(-1px);
-    -moz-transform: translateY(-1px);
-    -ms-transform: translateY(-1px);
-    -o-transform: translateY(-1px);
-  }
+    transform: translateX(120px);
+    -webkit-transform: translateX(120px);
+    -moz-transform: translateX(120px);
+    -ms-transform: translateX(120px);
+    -o-transform: translateX(120px);
+}
   .my-navbar .logo-word {
     transform: translateY(6px);
     -webkit-transform: translateY(6px);
@@ -228,6 +238,6 @@
     font-weight: 700;
   }
   .my-section ul {
-    margin-right: -20px;
+    margin-right: 120px;
   }
 }
