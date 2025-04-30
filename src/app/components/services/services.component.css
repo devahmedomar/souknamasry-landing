@@ -24,13 +24,14 @@
     bottom: 0;
     left: 0;
     padding: 15px;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
     color: white;
     transition: 0.3s ease;
   }
   
   .card-title {
     margin: 0;
+    font-size: 22px;
   }
   
   .card-description {
