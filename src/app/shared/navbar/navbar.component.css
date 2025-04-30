@@ -123,9 +123,9 @@
 }
 
 @media (min-width: 320px) {
-  .my-navbar {
-    padding: 14px 0;
-  }
+  /* .my-navbar {
+    padding: 10px 0;
+  } */
   .navbar-nav {
     display: flex;
     justify-content: space-between;
@@ -155,7 +155,7 @@
   .my-navbar img {
     margin-left: -8px;
 
-    max-width: 150px;
+    max-width: 140px;
   }
 }
 @media (min-width: 768px) {
@@ -198,7 +198,7 @@
 }
 @media (min-width: 992px) {
   .my-navbar {
-    padding-block: 10px;
+    padding-block: 5px;
   }
 
   .navbar-expand-lg .navbar-nav {
