@@ -1,5 +1,5 @@
 <div class="about-section py-5">
-  <div class="container py-4">
+  <div class="container  custom-width">
 
     <!-- Section Title -->
     <div class=" d-flex justify-content-center align-items-center mb-5 ">
@@ -15,20 +15,21 @@
         <p data-aos="fade-up" data-aos-delay="0" data-aos-duration="900">
           <strong class="main-text">Soukna Masry</strong> {{ description }}
         </p>
+
         <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
           AT <strong class="main-text">Soukna Masry</strong> {{ subDescription }}
-          <span class="highlighted-phrase mt-1" data-aos="fade-right" data-aos-delay="900" data-aos-duration="1500">{{ highlightedLine }}</span>
+          <span class="highlighted-phrase" data-aos="fade-right" data-aos-delay="900" data-aos-duration="1500">{{ highlightedLine }}</span>
         </p>
       </div>
-
+  
       <!-- Image -->
       <div class="col-md-6" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1500">
         <img [src]="aboutimg" alt="Soukna Masry" class="img-fluid rounded mt-2" loading="lazy">
       </div>
     </div>
-
+    
     <!-- Features Title -->
-    <h2 class="text-center mb-5 mt-5" data-aos="zoom-in-up" data-aos-delay="900" data-aos-duration="1500">
+    <h2 class=" feature-title mb-5 mt-5" data-aos="zoom-in-up" data-aos-delay="900" data-aos-duration="1500">
       {{ features_title }}
     </h2>
 
@@ -50,6 +51,5 @@
         </div>
       </div>
     </div>
-    
   </div>
 </div>

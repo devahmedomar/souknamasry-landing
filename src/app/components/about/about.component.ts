@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-
+import * as AOS from 'aos';
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [],  
+  imports: [CommonModule],  
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
@@ -11,11 +12,14 @@ export class AboutComponent {
   ngOnInit() {
     AOS.init();
   }
+  trackByIndex(index: number, item: any): number {
+    return index;
+  }
   
   title = 'Why Soukna Masry';
   description = ` is a digital platform made for small and medium-sized shops across Egypt. We’re here to support every local brand with big dreams but limited resources.
 We give shop owners a personalized store page, an easy-to-use dashboard to track sales and visits, and the support they need to grow — from product promotion to real insights And for shoppers, we offer a smart, simple way to discover and buy authentic Egyptian products while supporting passionate local entrepreneurs.`;
-  aboutimg = `assets/images/about.jpg`;
+  aboutimg = `assets/images/about.png`;
   subDescription = ` , we bring people together,`;
   highlightedLine = `one product, one story, one dream at a time.`;
   features_title = `Features that make your experience smarter and easier`;
