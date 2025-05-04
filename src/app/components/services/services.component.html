@@ -1,22 +1,26 @@
-<div class="services p-4">
-    <div class="container ">
-      <div class="container mt-4 text-center mb-5">
-        <h2 class="featured-title" data-aos="zoom-in-up">
-          Featured Services
-          <i class="pi pi-star"></i>
-        </h2>
-      </div>
-  
-      <div class="row">
-        <div class="col-md-4 mb-4 align-items-stretch p-3" *ngFor="let service of services" [attr.data-aos]="'fade-up'" [attr.data-aos-duration]="'1000'" [attr.data-aos-delay]="(services.indexOf(service) * 200)">
-          <div class="card custom-card h-100">
-            <img [src]="service.image" class="card-img" alt="loading..">
-            <div class="card-overlay">
-              <h5 class="card-title">{{ service.title }}</h5>
-              <p class="card-description">{{ service.description }}</p>
-            </div>
+<div class="services ">
+  <div class="container">
+    <div class="text-center mt-4 mb-5">
+      <h2 class="featured-title" data-aos="zoom-in-up">
+        Featured Services
+        <i class="pi pi-star"></i>
+      </h2>
+    </div>
+
+    <div class="row">
+      <div class="card-container"
+           *ngFor="let service of services"
+           [attr.data-aos]="'fade-up'"
+           [attr.data-aos-duration]="'1000'"
+           [attr.data-aos-delay]="(services.indexOf(service) * 200)">
+        <div class="card custom-card h-100">
+          <img [src]="service.image" class="card-img" alt="loading..">
+          <div class="card-overlay">
+            <h5 class="card-title">{{ service.title }}</h5>
+            <p class="card-description">{{ service.description }}</p>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

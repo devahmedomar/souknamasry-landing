@@ -1,31 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
 .services {
   background-color: rgb(231, 231, 231);
   font-family: 'Roboto', sans-serif;
 }
+
 .container {
-  max-width: calc(100% - 312px); 
-} 
+  max-width: 100%;
+  padding: 15px 5%;
+  margin: 0 auto;
+}
+
 .row {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   flex-wrap: wrap;
 }
+
+.card-container {
+  width: 30%;
+  padding: 8px;
+}
+
 .custom-card {
   position: relative;
   overflow: hidden;
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  width: 270px;
-  height: 350px;
-}
-.col-md-4 {
-  width: 30.33%;
+  width: 100%;         
+  height: 300px;       
 }
 
 .card-img {
   width: 100%;
-  height: 450px; 
+  height: 320px;        
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -38,40 +49,42 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 15px;
-  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  padding: 12px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
   color: white;
   transition: 0.3s ease;
 }
 
 .card-title {
   margin: 0;
-  font-size: 20px; 
+  font-size: 18px;
 }
 
 .card-description {
   opacity: 0;
   transition: opacity 0.3s ease;
-  margin-top: 5px;
-  font-size: 0.95rem;
+  margin-top: 4px;
+  font-size: 0.85rem;
 }
 
 .custom-card:hover .card-description {
   opacity: 1;
 }
+
 .featured-title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: #fff;
   text-align: center;
   display: inline-block;
-  padding: 12px 30px;
+  padding: 10px 25px;
   background: linear-gradient(135deg, #e78e1a, #feb47b);
   border-radius: 30px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
   transform: scale(1);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   letter-spacing: 0.5px;
+  margin: 0 auto;
 }
 
 .featured-title:hover {
@@ -89,73 +102,109 @@
 .featured-title:hover i {
   transform: rotate(360deg);
 }
-@media (min-width: 1200px) {
-  .col-md-4 {
-    width: 30%;
+
+/* tablets */
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .container {
+    padding: 0 40px;
+  }
+  
+  .card-container {
+    width: 45%;
+    padding: 15px;
   }
 
   .custom-card {
     width: 100%;
-    height: 350px;
+    height: 330px;
+    margin: 0 auto;
+  }
+
+  .card-img {
+    height: 400px;
+  }
+
+  .featured-title {
+    font-size: 1.3rem;
+    padding: 10px 25px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* from 992 to 1199 */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .card-container {
+    width: 32%;
+    padding: 12px;
+  }
+
+  .custom-card {
+    width: 100%;
+  }
+}
+
+/* phones */
+@media (max-width: 767.98px) {
+  .container {
+    width: 90%;
+  }
+
+  .card-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .custom-card {
+    width: 100%;
+    height: 320px;
+  }
+
+  .card-img {
+    height: 320px;
+  }
+
+  .featured-title {
+    font-size: 1.1rem;
+    padding: 8px 20px;
+  }
+
+  .card-title {
+    font-size: 17px;
+  }
+
+  .card-description {
+    font-size: 0.85rem;
+  }
+}
+
+/* small phones */
+@media (max-width: 479.98px) {
+  .custom-card {
+    height: 300px;
+    width: 100%;
   }
 
   .card-img {
     height: 300px;
   }
 
-  .container {
-    padding-left: 80px;
-    padding-right: 80px;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 1199px) and (min-width: 992px) {
-  .col-md-4 {
-    width: 45%;
-  }
-
-  .custom-card {
-    width: 100%;
-    height: 330px;
-  }
-
-  .card-img {
-    height: 280px;
-  }
-
-  .container {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-}
-
-@media (max-width: 991px) {
-  .col-md-4 {
-    width: 100%;
-  }
-
-  .custom-card {
-    width: 100%;
-    height: 370px;
-  }
-
-  .card-img {
-    height: 330px;
-  }
-
   .featured-title {
-    font-size: 1.4rem;
-    padding: 12px 30px;
-    text-align: center;
-  }
-
-  .featured-title i {
     font-size: 1rem;
+    padding: 6px 16px;
   }
 
-  .container {
-    padding-left: 20px;
-    padding-right: 20px;
+  .card-title {
+    font-size: 16px;
   }
-} 
+
+  .card-description {
+    font-size: 0.8rem;
+  }
+}
