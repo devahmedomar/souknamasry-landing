@@ -27,11 +27,6 @@
     }  
 }
 
-.breadcrumnd{
-    list-style: none;
-    text-decoration: none;
-}
-
 ::ng-deep .p-breadcrumb{
     background-color: transparent;
     width: 200px;
@@ -40,7 +35,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 40px;
-    padding: 20px 20px 10px 20px;
+    padding: 20px 10px 10px 10px;
     border: #402c26 2px solid;
     animation: goForward 1.1s 1 ease-in;
 }
@@ -58,18 +53,20 @@
 }
 ::ng-deep .p-breadcrumb .p-breadcrumb-list{
     padding-left: 0;
+    list-style: none;
 }
 
-::ng-deep .p-breadcrumb .p-menuitem-link{
+::ng-deep .p-breadcrumb .p-menuitem-link .p-menuitem-text{
     text-decoration: none;
     color: white;
     font-weight: 500;
-    
 }
-
+::ng-deep .p-breadcrumb .p-menuitem-link{
+    text-decoration: none;
+}
 ::ng-deep .p-menuitem-separator {
     color: white;
-  }
+}
 
 ::ng-deep .p-breadcrumb .p-breadcrumb-list li:first-child .p-menuitem-text:hover{
     color: #402c26;
