@@ -1,6 +1,17 @@
 /* Styling for the main text container */
+.hero-container{
+  max-width: 1090px;
+}
+.hero-section {
+  margin-top: 80px;
+  min-height: calc(100vh - 80px); 
+  display: flex;
+  align-items: center;
+  padding: 2rem 1rem;
+}
 .hero-text{
     font-family: "Manrope", sans-serif;
+    margin-top: 100px;
     /* Styling for the title */
     span{
         font-weight: 700;
@@ -136,6 +147,9 @@ span .filled-text {
 .responsive-svg{
   width: 500px;
   height: 500px;
+  padding-bottom: 50px;
+  padding-right: 70px;
+  transform: scale(1.12);
 }
 /* Hiding all elements with class 'animable' inside the SVG if the SVG is not animated */
 svg#freepik_stories-in-no-time:not(.animated) .animable {
@@ -226,11 +240,16 @@ svg#freepik_stories-in-no-time.animated
   }
 }
 
-/* Large screens (Desktops and bigger) */
 @media (max-width: 1200px) {
+  .hero-container{
+    max-width: 730px;
+  }
+  .hero-text{
+    margin-top: 80px;
+  }
   .hero-text span {
-    font-size: 40px;
-    line-height: 50px;
+    font-size: 36px;
+    line-height: 50px;  
   }
   .hero-text h5 {
     font-size: 22px;
@@ -242,10 +261,12 @@ svg#freepik_stories-in-no-time.animated
   .responsive-svg{
     width: 400px;
     height: 400px;
+    padding-right: 130px;
+    padding-bottom: 35px;
+    transform: scale(1.3);
   }
 }
 
-/* Medium screens (Tablets) */
 @media (max-width: 992px) {
   .hero-text span {
     font-size: 40px;
@@ -269,8 +290,10 @@ svg#freepik_stories-in-no-time.animated
   }
 }
 
-/* Small screens (Small tablets) */
 @media (max-width: 768px) {
+  .hero-container{
+    max-width: 700px;
+  }
   .hero-text span {
     font-size: 32px;
     line-height: 40px!important;
@@ -286,9 +309,15 @@ svg#freepik_stories-in-no-time.animated
   .fullscreen-overlay {
     padding: 20px;
   }
+  .responsive-svg{
+    width: 400px;
+    height: 400px;
+    padding-right: 0px;
+    padding-bottom: 35px;
+    transform: scale(1);
+  }
 }
 
-/* Small screens (large phones) */
 @media (max-width: 576px) {
   .hero-text {
     margin-top: 30px;
@@ -322,9 +351,9 @@ svg#freepik_stories-in-no-time.animated
   .responsive-svg{
     width: 300px;
     height: 300px;
+    display: flex;
   }
 }
-/* Extra small screens (large phones) */
 @media (max-width: 376px) {
   .hero-text {
     display: flex;
@@ -358,4 +387,5 @@ svg#freepik_stories-in-no-time.animated
     width: 250px;
     height: 250px;
   }
-}
+} 
+
