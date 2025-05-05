@@ -27,10 +27,10 @@ ngAfterViewInit(): void {
       });
     }
   }
-
-  navigate(id: number) {
-    this.router.navigate(['/blog-details' , id]);
+  navigate(id: number | string) {
+    this.router.navigate(['/blog-details', id]);
   }
+  
   
 Heading='Your Guide to Success in Sales and Markting';
 cards = [
