@@ -1,7 +1,6 @@
-import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, ViewChild, ViewEncapsulation } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common'
+import { AfterViewInit, Component,  Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, CommonModule } from '@angular/common'
 import AOS from 'aos';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-services',
@@ -16,11 +15,12 @@ export class ServicesComponent implements AfterViewInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      AOS.init({
-        once: false
+      setTimeout(() => {
+        AOS.init({ once: false });
       });
     }
   }
+  
   services = [
     {
       title: 'A Personalized Shop Page',

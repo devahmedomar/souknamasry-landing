@@ -1,0 +1,102 @@
+section {
+  background-color: #402c26;
+  padding-block: 60px;
+}
+section h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-block: 50px;
+}
+.custom-carousel .team-card {
+  padding: 1rem;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.team-card .image-wrapper {
+  position: relative;
+  width: 350px;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.team-card img {
+  width: 350px;
+  height: 370px;
+  object-fit: cover;
+  display: block;
+}
+
+.team-card .overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, #e3ff04 0%, transparent 60%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  left: -100%;
+}
+.team-card:hover .overlay {
+  opacity: 1;
+  left: 0;
+}
+.team-card .social-icons {
+  display: flex;
+  gap: 1rem;
+  transform: translate(-40px, 45px);
+  -webkit-transform: translate(-40px, 45px);
+  -moz-transform: translate(-40px, 45px);
+  -ms-transform: translate(-40px, 45px);
+  -o-transform: translate(-40px, 45px);
+}
+
+.team-card .social-icons i {
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  border: 1px solid #fff;
+}
+
+.team-card .social-icons i:hover {
+  background: #e3ff04;
+  color: #000;
+  border: none;
+}
+
+.team-card .role {
+  color: #aaa;
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  text-align: start;
+  transform: translateX(10px);
+}
+
+.team-card .name {
+  color: #fff;
+  margin: 0.2rem 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: start;
+  transform: translateX(10px);
+}

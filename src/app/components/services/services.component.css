@@ -4,12 +4,13 @@
 
 .services {
   background-color: rgb(231, 231, 231);
-  font-family: 'Roboto', sans-serif;
+  font-family: Arial, sans-serif;
+
 }
 
 .container {
   max-width: 100%;
-  padding: 15px 5%;
+  padding: 20px 5%;
   margin: 0 auto;
 }
 
@@ -106,7 +107,7 @@
 /* tablets */
 @media (max-width: 991.98px) and (min-width: 768px) {
   .container {
-    padding: 0 40px;
+    padding: 15px 40px;
   }
   
   .card-container {
