@@ -29,7 +29,7 @@ export class HomeComponent {
   constructor(
     private activateRoute: ActivatedRoute,
     private router: Router,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: any
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
@@ -37,7 +37,7 @@ export class HomeComponent {
   ngOnInit(): void {
     if (this.isBrowser) {
       this.router.events
-        .pipe(filter(event => event instanceof NavigationEnd))
+        .pipe(filter((event) => event instanceof NavigationEnd))
         .subscribe(() => {
           const fragment = this.activateRoute.snapshot.fragment;
           if (fragment) {
@@ -49,9 +49,8 @@ export class HomeComponent {
     }
   }
 
-
   private scrollToFragment() {
-    if (this.isBrowser) {
+    if (isPlatformBrowser(this.platformId)) {
       if (this.currentFragment) {
         const element = document.getElementById(this.currentFragment);
         if (element) {
