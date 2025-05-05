@@ -2,9 +2,11 @@
     margin: 0 64px;
 }
 .blog-details{
-margin: 4rem 0
+  margin: 4rem 0;
 }
-
+.blog-heading,.blog-content{
+  color:#402c26;
+}
 .blog-image img{
     max-width: 100%;
     width: 1000px;
