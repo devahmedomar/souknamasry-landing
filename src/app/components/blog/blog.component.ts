@@ -35,18 +35,22 @@ ngAfterViewInit(): void {
 Heading='Your Guide to Success in Sales and Markting';
 cards = [
   {
+    id: '1' ,
     image: 'assets/images/card1.png',
     icon: 'pi pi-shopping-cart',
     title: 'Why E-commerce is the Future for Small Businesses in Egypt',
     description: 'In today’s fast-paced world, online presence is no longer a luxury — it’s a must...'
   },
   {
+    id: '2' ,
+
     image: 'assets/images/card2.png',
     icon: 'pi pi-shopping-bag',
     title: '5 Reasons to Shop Local Online and Support Egyptian Brands',
     description: 'Online shopping doesn’t have to mean buying from huge international brands...'
   },
   {
+    id: '3' ,
     image: 'assets/images/card3.png',
     icon: 'pi pi-chart-line',
     title: 'How Soukna Masry Helps Egyptian Shops Sell Smarter — Not Harder',
