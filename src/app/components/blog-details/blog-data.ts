@@ -1,6 +1,6 @@
 export const blogsData = [
     {
-      id: 0,
+      id: 1,
       title: 'Why E-commerce is a Game-Changer for Small Shops in Egypt',
       image: 'assets/images/blog1.jpg',
       content: [
@@ -28,7 +28,7 @@ export const blogsData = [
       ]
     },
     {
-      id: 1,
+      id: 2,
       title: '5 Reasons to Shop Local Online and Support Egyptian Brands',
       image: 'assets/images/blog2.jpg',
       content: [
@@ -55,7 +55,7 @@ export const blogsData = [
       ]
     },
     {
-      id: 2,
+      id: 3,
       title: 'How Soukna Masry Helps Egyptian Shop Owners Sell Smarter',
       image: 'assets/images/blog3.jpg',
       content: [
