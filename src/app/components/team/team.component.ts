@@ -1,17 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Inject,
+  PLATFORM_ID,
+  OnInit,
+  AfterViewInit,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { DataViewModule } from 'primeng/dataview';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { CarouselModule } from 'primeng/carousel';
+
 @Component({
   selector: 'app-team',
+  templateUrl: './team.component.html',
+  styleUrls: ['./team.component.scss'],
   standalone: true,
   imports: [DataViewModule, ButtonModule, TagModule, CarouselModule],
-  templateUrl: './team.component.html',
-  styleUrl: './team.component.css',
   host: { ngSkipHydration: 'true' },
 })
-export class TeamComponent implements OnInit {
+export class TeamComponent implements OnInit, AfterViewInit {
+  isBrowser!: boolean;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: any) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
+
   teamMembers = [
     {
       image: '/assets/team3.png',
@@ -28,11 +42,7 @@ export class TeamComponent implements OnInit {
       role: 'Web developer',
       name: 'Marvin McKinney',
     },
-    {
-      image: '/assets/team3.png',
-      role: 'CEO',
-      name: 'Jacob Jones',
-    },
+    { image: '/assets/team3.png', role: 'CEO', name: 'Jacob Jones' },
     {
       image: '/assets/team3.png',
       role: 'Back End developer',
@@ -43,28 +53,44 @@ export class TeamComponent implements OnInit {
       role: 'Software Engineer',
       name: 'Jacob Jon',
     },
-    
   ];
 
   responsiveOptions: any[] = [];
-  circular: boolean = false;
+
   ngOnInit(): void {
+    if (this.isBrowser) {
+      import('aos').then((AOS) => {
+        AOS.init();
+        AOS.refresh();
+      });
+    }
     this.responsiveOptions = [
       {
         breakpoint: '992px',
         numVisible: 3,
-        numScroll: 1,
+        numScroll: 3,
       },
       {
         breakpoint: '768px',
         numVisible: 2,
-        numScroll: 1,
+        numScroll: 2,
       },
       {
-        breakpoint: '576px',
+        breakpoint: '320px',
         numVisible: 1,
         numScroll: 1,
       },
     ];
+  }
+
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+        const cards = document.querySelectorAll('.team-card');
+        import('vanilla-tilt').then((VanillaTilt) => {
+          VanillaTilt.default.init(cards as any);
+        });
+      }, 100);
+    }
   }
 }
