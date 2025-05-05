@@ -1,4 +1,4 @@
-import { Component, input, OnInit, signal } from '@angular/core';
+import { Component, computed, input, OnInit, signal } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 @Component({
@@ -8,14 +8,10 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
   templateUrl: './breadcrumb.component.html',
   styleUrl: './breadcrumb.component.css'
 })
-export class BreadcrumbComponent implements OnInit {
+export class BreadcrumbComponent {
   breadcrumbHeading= input<string>('');
-  items= signal<MenuItem[]>([]);
-  
-  ngOnInit() {
-      this.items.set([
-          { label: 'Home', routerLink: '/'},
-          { label: this.breadcrumbHeading()},
-      ]);
-  }
+  items = computed<MenuItem[]>(() => [
+    { label: 'Home', routerLink: '/' },
+    { label: this.breadcrumbHeading() },
+  ]);
 }
