@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card';
 import { Router } from '@angular/router';
- import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, ViewChild, ViewEncapsulation } from '@angular/core';
+ import { AfterViewInit, Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild, ViewEncapsulation } from '@angular/core';
  import { isPlatformBrowser } from '@angular/common';
 import AOS from 'aos';
 
@@ -28,10 +28,10 @@ ngAfterViewInit(): void {
     }
   }
 
-navigate() {
-  this.router.navigate(['/blog-details']);
-}
-
+  navigate(id: number) {
+    this.router.navigate(['/blog-details' , id]);
+  }
+  
 Heading='Your Guide to Success in Sales and Markting';
 cards = [
   {
