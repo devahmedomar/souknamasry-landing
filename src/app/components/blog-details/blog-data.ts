@@ -1,4 +1,8 @@
-export const blogsData = [
+import { Blog } from "./blog-details.component";
+
+// blogsData array stores multiple blog objects with structured data.
+export const blogsData:Blog[] = [
+    // First blog entry
     {
       id: 1,
       title: 'Why E-commerce is a Game-Changer for Small Shops in Egypt',
@@ -27,6 +31,7 @@ export const blogsData = [
         }
       ]
     },
+    // Second blog entry
     {
       id: 2,
       title: '5 Reasons to Shop Local Online and Support Egyptian Brands',
@@ -54,6 +59,7 @@ export const blogsData = [
         }
       ]
     },
+    // Third blog entry
     {
       id: 3,
       title: 'How Soukna Masry Helps Egyptian Shop Owners Sell Smarter',
@@ -80,4 +86,4 @@ export const blogsData = [
         }
       ]
     }
-  ];
+];
