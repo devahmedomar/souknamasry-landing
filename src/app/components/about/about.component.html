@@ -1,0 +1,55 @@
+<div class="about-section py-5">
+  <div class="container  custom-width">
+
+    <!-- Section Title -->
+    <div class=" d-flex justify-content-center align-items-center mb-5 ">
+      <h2 data-aos="zoom-in-up" data-aos-delay="0" data-aos-duration="1000">
+        <span class="glitch-text">Why</span> Soukna Masry?
+      </h2>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row mb-4 text-container  ">
+      <!-- Text -->
+      <div class="col-md-5 d-flex flex-column ">
+        <p data-aos="fade-up" data-aos-delay="0" data-aos-duration="900">
+          <strong class="main-text">Soukna Masry</strong> {{ description }}
+        </p>
+
+        <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
+          AT <strong class="main-text">Soukna Masry</strong> {{ subDescription }}
+          <span class="highlighted-phrase" data-aos="fade-right" data-aos-delay="900" data-aos-duration="1500">{{ highlightedLine }}</span>
+        </p>
+      </div>
+  
+      <!-- Image -->
+      <div class="col-md-6" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1500">
+        <img [src]="aboutimg" alt="Soukna Masry" class="img-fluid rounded mt-2" loading="lazy">
+      </div>
+    </div>
+    
+    <!-- Features Title -->
+    <h2 class=" feature-title mb-5 mt-5" data-aos="zoom-in-up" data-aos-delay="900" data-aos-duration="1500">
+      {{ features_title }}
+    </h2>
+
+    <!-- Features Section -->
+    <div class="row g-4 mt-3">
+      <div
+        class="col-md-4 d-flex align-items-stretch"
+        *ngFor="let feature of features; let i = index; trackBy: trackByIndex"
+        [attr.data-aos]="'fade-up'"
+        [attr.data-aos-delay]="i * 200"
+        data-aos-duration="1000">
+        <div class="card feature-card border-0 shadow-sm p-4 ps-4 h-100">
+          <span class="left-border rounded-top-start"></span>
+          <div class="icon-box mb-3 ms-2">
+            <i class="pi" [ngClass]="feature.icon"></i>
+          </div>
+          <h5 class="card-title">{{ feature.title }}</h5>
+          <p class="card-text">{{ feature.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

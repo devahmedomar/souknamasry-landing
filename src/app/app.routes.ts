@@ -16,9 +16,9 @@ export const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'blog-details',
-    component: BlogDetailsComponent,
+    path: 'blog-details/:id' , component: BlogDetailsComponent
   },
+
   {
     path: 'contact',
     component: ContactComponent,
