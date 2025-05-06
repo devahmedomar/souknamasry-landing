@@ -1,1 +1,15 @@
-<p>breadcrumb works!</p>
+<section id="breadcrumnd-banner">
+    <div class="container">
+        <div class="row justify-content-center">
+                <div class="breadcrumnd-content text-center">
+                    <h1>
+                        {{breadcrumbHeading()}}
+                    </h1>
+
+                    <div class="d-flex justify-content-center">
+                        <p-breadcrumb [model]="items()"  />
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>

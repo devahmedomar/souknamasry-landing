@@ -1,6 +1,6 @@
+import { AfterViewInit, Component,  Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, CommonModule } from '@angular/common'
 import AOS from 'aos';
-import { CommonModule } from '@angular/common';
-import { Component,OnInit,  NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-services',
@@ -9,10 +9,18 @@ import { Component,OnInit,  NgModule } from '@angular/core';
   templateUrl: './services.component.html',
   styleUrl: './services.component.css'
 })
-export class ServicesComponent {
-  ngOnInit() {
-    AOS.init();
+
+export class ServicesComponent implements AfterViewInit {
+  // Injects the PLATFORM_ID token to determine whether the code is running on the browser or server
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+        AOS.init({ once: false });
+      });
+    }
   }
+  
   services = [
     {
       title: 'A Personalized Shop Page',
