@@ -1,5 +1,7 @@
 .container{
-    margin: 0 64px;
+  margin: 0 auto;
+  padding: 0 64px;
+  box-sizing: border-box;
 }
 .blog-details{
   margin: 4rem 0;
@@ -9,7 +11,7 @@
 }
 .blog-image img{
     max-width: 100%;
-    width: 1000px;
+    width: 80%;
     height: auto;
     max-height: 500px;
     margin-bottom: 2rem;
@@ -20,17 +22,28 @@
 /* Small mobile screens */
 @media (max-width: 576px) {
     .container {
-      margin: 0 16px; 
+      padding: 0 16px; 
+      width:100%;
     }
   
     .blog-details {
       margin: 2rem 0; 
     }
   
-    .blog-image img {
+    .blog-image{
       width: 100%; 
-      height: auto; 
-      max-height: 300px; 
+    }
+    .blog-heading{
+      font-size: 18px;
+      padding-left: 2rem;
+      width: 90%;
+    }
+    .blog-content{
+      width: 90%;
+      padding-left: 2rem;
+      font-size: 12px;
+      text-justify: inter-word;
+      text-align: justify;
     }
   }
   
