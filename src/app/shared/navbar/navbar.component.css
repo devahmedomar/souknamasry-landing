@@ -136,6 +136,7 @@
     -moz-transform: translate(4px, -2px);
     -ms-transform: translate(4px, -2px);
     -o-transform: translate(4px, -2px);
+    padding-right: 16px;
 }
   .my-navbar img {
     margin-left: -8px;
