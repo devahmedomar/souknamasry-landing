@@ -1,50 +1,81 @@
+/* =============================
+   Base Font for Component
+============================= */
 :host {
   font-family: 'Montserrat', sans-serif;
 }
 
+/* =============================
+   About Section Styles
+============================= */
 .about-section {
   background-color: #4e342e;
   color: #ffffff;
   padding: 5rem 3rem;
 }
 
+/* =============================
+   Container Width and Centering
+============================= */
 .custom-width {
-  max-width: 940px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  width: 100%;
+  margin: auto;
   text-align: center;
+  align-items: center;
 }
 
+/* =============================
+   Text and Image Layout
+============================= */
 .about-section .text-container {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 2rem;
-  font-size: 15px;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  font-size: 19px;
   line-height: 1.8;
-  text-align: left;
+  text-align: justify;
 }
 
+/* =============================
+   Highlighted Main Text Style
+============================= */
+.main-text {
+  color: #e99619;
+  font-size: 23px;
+}
+
+/* =============================
+   Flex Settings for Columns
+============================= */
 .about-section .text-container .col-md-5,
 .about-section .text-container .col-md-6 {
   flex: 1;
 }
 
+/* =============================
+   About Image Style
+============================= */
 .about-section .text-container img {
-  width: 100%;
-  max-width: 400px;
+  width: 520px;
   height: auto;
   border-radius: 0.25rem;
 }
 
+/* =============================
+   Highlighted Phrase Style
+============================= */
 .highlighted-phrase {
   color: #e99619;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 500;
   font-style: italic;
   display: inline-block;
 }
 
+/* =============================
+   Glitch Effect Text Styling
+============================= */
 .glitch-text {
   position: relative;
   font-size: 2rem;
@@ -72,6 +103,9 @@
   animation-delay: 0.2s;
 }
 
+/* =============================
+   Glitch Animation Keyframes
+============================= */
 @keyframes glitch {
   0%   { transform: skew(-5deg); }
   20%  { transform: skew(5deg); }
@@ -81,19 +115,25 @@
   100% { transform: skew(5deg); }
 }
 
-/*  title */
+/* =============================
+   Center Section Title
+============================= */
 .d-flex.justify-content-center h2 {
   text-align: center;
 }
 
-
+/* =============================
+   Features Section Title
+============================= */
 .feature-title {
   font-size: 2rem;
   margin: 4rem 0 2rem;
   text-align: center;
 }
 
-/* Cards row: three columns */
+/* =============================
+   Features Grid Layout
+============================= */
 .row.g-4 {
   display: flex;
   flex-wrap: wrap;
@@ -102,9 +142,12 @@
 
 .row.g-4 .col-md-4 {
   flex: 0 0 calc(33.333% - 1rem);
-  max-width: calc(33.333% - 1rem);
+  max-width: calc(31% - 1rem);
 }
 
+/* =============================
+   Feature Card Styling
+============================= */
 .feature-card {
   background: #f5eadb;
   padding: 1.5rem;
@@ -115,10 +158,17 @@
   align-items: start;
 }
 
+/* =============================
+   Hover Effect on Feature Card
+============================= */
 .feature-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
+
+/* =============================
+   Left Border on Hover
+============================= */
 .left-border {
   position: absolute;
   top: 0;
@@ -134,6 +184,9 @@
   height: 80px;
 }
 
+/* =============================
+   Icon Box Inside Card
+============================= */
 .icon-box {
   width: 60px;
   height: 60px;
@@ -149,6 +202,9 @@
   color: #e99619;
 }
 
+/* =============================
+   Feature Card Text Styling
+============================= */
 .card-title {
   color: #604239;
   font-weight: 600;
@@ -159,98 +215,121 @@
   font-weight: 500;
 }
 
-/* Media Queries*/
-
-/* Medium devices (tablets, < 992px) */
-@media (max-width: 991.98px) {
-  .about-section {
-    padding: 4rem 2rem;
+/* =============================
+   Responsive - Mobile (≤800px)
+============================= */
+@media (max-width: 800px) {
+  .custom-width {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
   }
 
-  .about-section .text-container {
+  .text-container {
     flex-direction: column;
     text-align: center;
   }
 
-  .about-section .text-container .col-md-5,
-  .about-section .text-container .col-md-6 {
+  .text-container .col-md-5,
+  .text-container .col-md-6 {
     width: 100%;
     max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
   }
 
-  .about-section .text-container img {
-    margin: 2rem auto;
+  .row.g-4 {
+    flex-direction: column !important;
+    gap: 1.5rem;              
+  }
+
+  .row.g-4 .col-md-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 1.5rem;
+  }
+
+  .text-container img {
+    display: block;
+    margin: 1rem auto;
+    width: 80%;                
+    height: auto;
+  }
+
+  .feature-card {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+/* =============================
+   Responsive - Medium Screens (801px–1300px)
+============================= */
+@media (min-width: 801px) and (max-width: 1300px) {
+  .custom-width {
+    max-width: 88%;
+    margin: 0 auto;
+  }
+
+  .text-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-container .col-md-5,
+  .text-container .col-md-6 {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .row.g-4 {
+    gap: 1.5rem !important;
+  }
+
+  .row.g-4 .col-md-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .text-container img {
+    display: block;
+    margin: 1rem auto;
+    width: 80%;                
+    height: auto;
+  }
+
+  .feature-card {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+/* =============================
+   Responsive - Narrow Range (750px–800px)
+============================= */
+@media (min-width: 750px) and (max-width: 800px) {
+  .custom-width {
     width: 80%;
   }
 
-  .row.g-4 {
-    flex-direction: column;
-  }
-
   .row.g-4 .col-md-4 {
-    flex: 0 0 100%;
-    max-width: 100%;
-    margin-bottom: 1.5rem;
-  }
-}
-/* Medium screens: between 800px and 1000px */
-@media (min-width: 800px) and (max-width: 1000px) {
-  .row.g-4 {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-  }
-
-  .row.g-4 .col-md-4 {
-    flex: 0 0 calc(33.333% - 1rem);
-    max-width: calc(33.333% - 1rem);
-  }
-}
-
-@media (min-width: 600px) and (max-width: 799.98px) {
-  .row.g-4 {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .row.g-4 .col-md-4 {
-    width: 90%;
-    width: 90%;
-    margin-bottom: 1.5rem;
+    max-width: none !important;
+    width: 100% !important;
   }
 
   .feature-card {
-    height: 300px;
-    width: 500px; 
-    overflow: hidden; 
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    justify-content: space-between;
+    width: 100% !important;
+    margin: 0 auto;
   }
 }
 
-/* Small devices (phones, < 576px) */
-@media (max-width: 575.98px) {
-  .about-section {
-    padding: 3rem 1rem;
-  }
-  .container {
-    padding: 10px;
-  }
-
-  .main-text,
-  .highlighted-phrase,
-  .card-title {
-    font-size: 1.1rem;
-  }
-
-  .row.g-4 {
-    gap: 1rem;
-  }
-
-  .feature-card {
-    padding: 1rem;
+/* =============================
+   Responsive - Large Screens (≥1302px)
+============================= */
+@media (min-width: 1302px)  {
+  .custom-width {
+    max-width: 90%;
   }
 }

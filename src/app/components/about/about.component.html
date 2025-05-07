@@ -1,6 +1,6 @@
 <div class="about-section py-5">
-  <div class="container  custom-width">
-
+  <div class="container ">
+<div class="custom-width">
     <!-- Section Title -->
     <div class=" d-flex justify-content-center align-items-center mb-5 ">
       <h2 data-aos="zoom-in-up" data-aos-delay="0" data-aos-duration="1000">
@@ -11,7 +11,7 @@
     <!-- Content Row -->
     <div class="row mb-4 text-container  ">
       <!-- Text -->
-      <div class="col-md-5 d-flex flex-column ">
+      <div class="col-md-5 d-flex flex-column  ">
         <p data-aos="fade-up" data-aos-delay="0" data-aos-duration="900">
           <strong class="main-text">Soukna Masry</strong> {{ description }}
         </p>
@@ -46,10 +46,11 @@
           <div class="icon-box mb-3 ms-2">
             <i class="pi" [ngClass]="feature.icon"></i>
           </div>
-          <h5 class="card-title">{{ feature.title }}</h5>
+          <h5 class="card-title pb-3">{{ feature.title }}</h5>
           <p class="card-text">{{ feature.description }}</p>
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>

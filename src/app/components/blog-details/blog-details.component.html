@@ -1,1 +1,44 @@
-<app-breadcrumb breadcrumbHeading="Blog Details"/>
+<section>
+    <!-- Breadcrumb component displaying the current page heading -->
+    <app-breadcrumb breadcrumbHeading="Blog details" />
+
+    <div class="container">
+      <!-- Render blog details only if the blog exists, otherwise show NotFound -->
+      <div class="blog-details" *ngIf="blog; else notFound">
+
+        <!-- Blog image -->
+        <div class="blog-image d-flex justify-content-center">
+          <img [src]="blog.image" [alt]="blog.title" data-aos="zoom-in"/>
+        </div>
+
+        <!-- Blog title -->
+        <h3 class="blog-heading" data-aos="fade-left">{{ blog.title }}</h3>
+        
+        <!-- Blog content blocks rendered dynamically -->
+        <div class="blog-content">
+          <ng-container *ngFor="let block of blog.content">
+
+            <!-- Heading and paragraph of blogs -->
+            <p *ngIf="block.type === 'paragraph'" [innerHTML]="block.html" data-aos="fade-left"></p>
+  
+            <!-- Blog 2 list content -->
+            <ul *ngIf="block.type === 'list' && block.listType === 'ul'" data-aos="fade-left">
+              <li *ngFor="let item of block.items" [innerHTML]="item.html"></li>
+            </ul>
+  
+            <!-- Blog 1 and Blog 3 list content -->
+            <ol *ngIf="block.type === 'list' && block.listType === 'ol'" data-aos="fade-left">
+              <li *ngFor="let item of block.items" [innerHTML]="item.html"></li>
+            </ol>
+
+          </ng-container>
+        </div>
+      </div>
+          
+      <!-- If no blog is found, display NotFound -->
+      <ng-template #notFound>
+        <app-notfound class="d-flex justify-content-center p-5" data-aos="zoom-in"></app-notfound>
+      </ng-template>
+
+    </div>
+  </section>
