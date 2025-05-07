@@ -19,7 +19,7 @@ export class HeroComponent implements AfterViewInit{
   ngAfterViewInit(): void {
     // Adding an animation class to the SVG element
     setTimeout(() => {
-      if (this.svgRef) {
+      if (this.svgRef?.nativeElement) {
         this.svgRef.nativeElement.classList.add('animated');
       }
     }, 1000);
@@ -41,7 +41,7 @@ export class HeroComponent implements AfterViewInit{
   
   // Function to pause the video and hide the dialog
   pauseVideo() {
-    if (this.videoPlayer) {
+    if (this.videoPlayer?.nativeElement) {
       this.videoPlayer.nativeElement.pause();
     }
     this.showVideoPopup = false;
