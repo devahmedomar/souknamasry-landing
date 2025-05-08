@@ -187,8 +187,11 @@
 
 /* small phones */
 @media (max-width: 479.98px) {
+  .container {
+    max-width: 540px;
+  }
   .custom-card {
-    height: 300px;
+    /* height: 300px; */
     width: 100%;
   }
 

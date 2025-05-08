@@ -215,10 +215,9 @@
   font-weight: 500;
 }
 
-/* =============================
-   Responsive - Mobile (≤800px)
-============================= */
+
 @media (max-width: 800px) {
+  
   .custom-width {
     max-width: 900px;
     margin: 0 auto;
@@ -262,9 +261,7 @@
   }
 }
 
-/* =============================
-   Responsive - Medium Screens (801px–1300px)
-============================= */
+
 @media (min-width: 801px) and (max-width: 1300px) {
   .custom-width {
     max-width: 88%;
@@ -306,12 +303,13 @@
   }
 }
 
-/* =============================
-   Responsive - Narrow Range (750px–800px)
-============================= */
+
 @media (min-width: 750px) and (max-width: 800px) {
+  .container {
+    max-width: 700px;
+  }
   .custom-width {
-    width: 80%;
+    width: 100%;
   }
 
   .row.g-4 .col-md-4 {
@@ -325,9 +323,6 @@
   }
 }
 
-/* =============================
-   Responsive - Large Screens (≥1302px)
-============================= */
 @media (min-width: 1302px)  {
   .custom-width {
     max-width: 90%;
