@@ -6,13 +6,13 @@
       <div class="row g-4">
         <!-- Blog card -->
         <div
-          class="col-lg-4 col-md-6"
+          class="cardscontainer"
           *ngFor="let card of cards; let i = index"
           data-aos="fade-up"
           [attr.data-aos-delay]="i * 200"
           data-aos-duration="1000"
         >
-          <div class="blog-item h-100 d-flex flex-column overflow-hidden text-center">
+          <div class="blog-item h-100 d-flex flex-column overflow-hidden text-center cards">
             <!-- img -->
             <div
               class="blog-img-wrapper rounded"
