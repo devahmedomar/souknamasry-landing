@@ -92,9 +92,9 @@
   }
   
 
-  @media (max-width: 576px) {
+  @media (min-width: 576px) and (max-width: 767px) {
     .container {
-      max-width: 530px;
+      max-width: 500px;
     }
     
   }

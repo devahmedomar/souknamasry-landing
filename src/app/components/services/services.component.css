@@ -9,8 +9,8 @@
 }
 
 .container {
-  max-width: 100%;
-  padding: 20px 5%;
+  max-width: 86%;
+  padding: 30px 5% 40px;
   margin: 0 auto;
 }
 
@@ -104,108 +104,74 @@
   transform: rotate(360deg);
 }
 
-/* tablets */
-@media (max-width: 991.98px) and (min-width: 768px) {
+
+@media (max-width: 576px) {
   .container {
-    padding: 15px 40px;
+    max-width: 500px;
   }
-  
   .card-container {
-    width: 45%;
-    padding: 15px;
+    width: 100%;
   }
 
   .custom-card {
-    width: 100%;
-    height: 330px;
-    margin: 0 auto;
+    height: 250px;
+   
   }
 
   .card-img {
-    height: 400px;
-  }
-
-  .featured-title {
-    font-size: 1.3rem;
-    padding: 10px 25px;
-  }
-
-  .card-title {
-    font-size: 18px;
-  }
-
-  .card-description {
-    font-size: 0.9rem;
+    height: 270px;
   }
 }
 
-/* from 992 to 1199 */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  .card-container {
-    width: 32%;
-    padding: 12px;
-  }
-
-  .custom-card {
-    width: 100%;
-  }
-}
-
-/* phones */
-@media (max-width: 767.98px) {
+@media (min-width: 577px) and (max-width: 767px) {
   .container {
-    width: 90%;
+    max-width: 550px;
   }
-
   .card-container {
     width: 100%;
-    padding: 10px;
   }
 
   .custom-card {
-    width: 100%;
-    height: 320px;
+    height: 270px;
   }
 
   .card-img {
-    height: 320px;
-  }
-
-  .featured-title {
-    font-size: 1.1rem;
-    padding: 8px 20px;
-  }
-
-  .card-title {
-    font-size: 17px;
-  }
-
-  .card-description {
-    font-size: 0.85rem;
+    height: 290px;
   }
 }
 
-/* small phones */
-@media (max-width: 479.98px) {
-  .custom-card {
-    height: 300px;
+@media (min-width: 768px) and (max-width: 992px) {
+  .container {
+    max-width: 710px;
+  }
+  .card-container {
     width: 100%;
+  }
+
+  .custom-card {
+    height: 280px;
   }
 
   .card-img {
     height: 300px;
   }
+}
 
-  .featured-title {
-    font-size: 1rem;
-    padding: 6px 16px;
+@media (min-width: 993px) and (max-width: 1200px) {
+  .container {
+    max-width: 910px;
+
   }
-
-  .card-title {
-    font-size: 16px;
-  }
-
-  .card-description {
-    font-size: 0.8rem;
+  .card-container {
+    width: 33%;
   }
 }
+
+@media (min-width: 1201px) and (max-width:1400px ) {
+  .container {
+    max-width: 1200px;
+  }
+  .card-container {
+    width: 30%;
+  }
+}     
