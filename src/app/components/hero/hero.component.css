@@ -1,0 +1,422 @@
+/* Styling for the main text container */
+.hero-section {
+  margin-top: 80px;
+  min-height: calc(100vh - 80px); 
+  display: flex;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+.hero-text{
+    font-family: "Manrope", sans-serif;
+    padding-top: 80px;
+    padding-left: 60px;
+    /* Styling for the title */
+    span{
+        font-weight: 700;
+        font-size: 50px;
+        color: #402c26;
+        line-height: 55px !important;
+    }
+    /* Styling for the subtitle */
+    h5{
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #402c26;
+      margin-bottom: 20px;
+    }
+}
+
+/* Styling for the animated title*/
+
+span .filled-text {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 1px #402c26;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.filled-text::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  color: #402c26;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: fill-text 3s infinite alternate ease-in-out;
+}
+
+@keyframes fill-text {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+
+/* Styling for the video button */
+.video-button {
+  background-color: #FFDE81;
+  color: #402c26;
+  border: none;
+  border-radius: 50px;
+  padding: 5px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Hover effect for the video button */
+.video-button:hover {
+  background-color: #402c26;
+  color: white;
+}
+
+/* Styling for the play icon inside the video button */
+.play-icon {
+  background-color: white;
+  color: #593c34;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 16px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fullscreen overlay that covers the entire screen of popup */
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px);
+}
+
+/* Styling for video inside the fullscreen overlay */
+.fullscreen-content {
+  position: relative;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Close button styling in the video popup */
+.close-button {
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 24px;
+  line-height: 30px;
+  cursor: pointer;
+  background: #402c26;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.close-button:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #402c26;
+}
+
+.responsive-svg{
+  width: 100%;
+  height: 100%;
+  padding-right: 30px;
+  transform: scale(1.07);
+}
+/* Hiding all elements with class 'animable' inside the SVG if the SVG is not animated */
+svg#freepik_stories-in-no-time:not(.animated) .animable {
+    opacity: 0;
+}
+/* Animation for the background of the SVG */
+svg#freepik_stories-in-no-time.animated
+  #freepik--background-complete--inject-108 {
+  animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) zoomOut;
+  animation-delay: 0s;
+}
+/* Animation for the floor element of the SVG */
+svg#freepik_stories-in-no-time.animated #freepik--Floor--inject-108 {
+  animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) slideLeft;
+  animation-delay: 0s;
+}
+
+/* Animation for the device element of the SVG */
+svg#freepik_stories-in-no-time.animated #freepik--Device--inject-108 {
+  animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) slideUp;
+  animation-delay: 0s;
+}
+
+/* Animation for the second character element of the SVG */
+svg#freepik_stories-in-no-time.animated
+  #freepik--character-2--inject-108 {
+  animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) slideDown;
+  animation-delay: 0s;
+}
+/* Animation for the first character element of the SVG*/
+svg#freepik_stories-in-no-time.animated
+  #freepik--character-1--inject-108 {
+  animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) fadeIn;
+  animation-delay: 0s;
+}
+/* Animation for the speech bubble element of the SVG */
+svg#freepik_stories-in-no-time.animated
+  #freepik--speech-bubble--inject-108 {
+  animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) fadeIn;
+  animation-delay: 0s;
+}
+@keyframes zoomOut {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: inherit;
+  }
+}
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1401px){
+  .hero-text h5 {
+    font-size: 1.375rem; /* 22px */
+  }
+  .video-button {
+    padding: 0.3125rem 1.125rem; /* 5px 18px */
+    font-size: 0.9375rem; /* 15px */
+  }
+  .responsive-svg{
+    width: 100%;
+    height: 100%;
+    padding-right: 6.2rem;
+    padding-bottom: 4rem;
+    padding-top: 5rem;
+    transform: scale(1.38);
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1024px) {
+  .hero-text{
+    padding-left: 3.75rem; /* 60px */
+    padding-top: 3.75rem;
+  }
+  .hero-text span {
+    font-size: 2.5rem; /* 40px */
+    line-height: 2.875rem; /* 46px */
+  }
+  .hero-text h5 {
+    font-size: 1.25rem; /* 20px */
+  }
+  .video-button {
+    padding: 0.25rem 1rem; /* 4px 16px */
+    font-size: 0.875rem; /* 14px */
+  }
+  .play-icon {
+    width: 1.75rem; /* 28px */
+    height: 1.75rem;
+    font-size: 0.875rem;
+  }
+  .responsive-svg{
+    width: 100%;
+    height: 100%;
+    padding-right: 5.625rem; /* 90px */
+    padding-left: 0rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  .hero-section{
+    min-height: 100%; 
+  }
+  .hero-text{
+    padding-left: 1.875rem; /* 30px */
+    padding-top: 5rem; /* 80px ≈ 5rem */
+  }
+  .hero-text span {
+    font-size: 2.5rem;
+    line-height: 3.125rem !important; /* 50px */
+  }
+  .hero-text h5 {
+    font-size: 1.125rem; /* 18px */
+    margin-bottom: 0.9375rem; /* 15px */
+  }
+  .video-button {
+    padding: 0.25rem 0.875rem; /* 4px 14px */
+    font-size: 0.8125rem; /* 13px */
+  }
+  .fullscreen-overlay {
+    padding: 1.25rem; /* 20px */
+  }
+  .responsive-svg{
+    width: 100%;
+    height: 100%;
+    padding-top: 2.5rem; /* 40px */
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 2rem;
+    transform: scale(1.15);
+  }
+}
+
+@media (min-width: 577px) and (max-width: 767px){
+  .hero-text {
+    padding-top: 0;
+    padding-left: 0.625rem; /* 10px */
+    display: block;
+  }
+  .hero-text span {
+    font-size: 1.875rem; /* 30px */
+  }
+  .hero-text h5 {
+    font-size: 0.875rem; /* 14px */
+    margin-bottom: 1.25rem; /* 20px */
+  }
+  .video-button {
+    padding: 0.3125rem 0.75rem; /* 5px 12px */
+    font-size: 0.75rem; /* 12px */
+  }
+  .play-icon {
+    width: 1.5rem; /* 24px */
+    height: 1.5rem;
+    font-size: 0.875rem;
+  }
+  .close-button {
+    width: 1.875rem; /* 30px */
+    height: 1.875rem;
+    font-size: 1.25rem; /* 20px */
+  }
+  .responsive-svg{
+    width: 100%;
+    height: 100%;
+    transform: scale(1.2);
+    padding-bottom: 0;  
+  }
+}
+
+@media (min-width: 426px) and (max-width: 576px) {
+  .hero-text {
+    text-align: center;
+    padding-left: 0;
+    padding-top: 1.25rem; /* 20px */
+  }
+  .hero-text span {
+    font-size: 2.5rem; /* 40px */
+  }
+  .hero-text h5 {
+    font-size: 1rem; /* 16px */
+    margin-bottom: 1.25rem;
+  }
+  .video-button {
+    padding: 0.3125rem 0.75rem; /* 5px 12px */
+    font-size: 0.75rem;
+    margin: auto;
+  }
+  .play-icon {
+    font-weight: 700;
+    font-size: 0.75rem;
+  }
+  .responsive-svg{
+    width: 100%;
+    height: 80%;
+    padding-bottom: 0;
+    padding-right: 0;
+    padding-top: 1.875rem; /* 30px */
+  }
+  .responsive-svg svg{
+    width: 40%;
+  }
+} 
+
+@media (min-width: 320px) and (max-width: 426px) {
+  .hero-text {
+    text-align: center;
+    padding-left: 0;
+    padding-top: 1.25rem; /* 20px */
+  }
+  .hero-text span {
+    font-size: 1.625rem; /* 26px */
+  }
+  .hero-text h5 {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .video-button {
+    padding: 0.3125rem 0.75rem;
+    font-size: 0.75rem;
+    margin: auto;
+  }
+  .play-icon {
+    font-weight: 700;
+    font-size: 0.75rem;
+  }
+  .responsive-svg{
+    width: 100%;
+    height: 80%;
+    padding-bottom: 0;
+    padding-right: 0;
+    padding-top: 1.875rem;
+  }
+  .responsive-svg svg{
+    width: 40%;
+  }
+}
