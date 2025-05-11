@@ -1,10 +1,14 @@
 #breadcrumnd-banner{
     background: url('/assets/breadcrumb.jpg') no-repeat center center;
     background-size: cover;
-    height: 80dvh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh; 
 }
 .breadcrumnd-content{
-    margin: 180px 0px ;
+    margin: 0 ;
 }
 
 .breadcrumnd-content h1{
@@ -88,13 +92,14 @@
         font-size: 60px;
     }
     #breadcrumnd-banner{
-        height: 66dvh; 
+        height: 66vh; 
     }
 }
 @media (max-width: 768px) {
     .container{
         max-width: 736px;
     }
+    
 }
 
 @media (max-width:426px) {
