@@ -229,6 +229,7 @@ section h2 {
     margin: auto;
     max-width: 90%;
     overflow: hidden;
+    overscroll-behavior: auto;
   }
 }
 
@@ -277,6 +278,7 @@ section h2 {
   .team-card {
     margin-left: 20px;
     overflow: hidden;
+    overscroll-behavior: auto;
   }
   /* .tilt {
     border-radius: 5px;
