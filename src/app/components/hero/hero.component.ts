@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, ViewChild, ViewEncapsulation } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import * as AOS from 'aos';
 @Component({
   selector: 'app-hero',
   standalone: true,
@@ -26,9 +25,11 @@ export class HeroComponent implements AfterViewInit{
     // Initialize AOS (Animate On Scroll) library only if running in the browser 
     // to prevent issues during server-side rendering
     if (isPlatformBrowser(this.platformId)) {
-      AOS.init({
-        duration: 1200,
-        once: true
+      import('aos').then(AOS => {
+        AOS.init({
+          duration: 1200,
+          once: true
+        });
       });
     }
   }
