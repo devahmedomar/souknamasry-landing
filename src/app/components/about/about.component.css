@@ -42,7 +42,8 @@
 ============================= */
 .main-text {
   color: #e99619;
-  font-size: 23px;
+  /* font-size: 20px; */
+  font-weight: 600;
 }
 
 /* =============================
@@ -213,6 +214,17 @@
 .card-text {
   color: #604239;
   font-weight: 500;
+}
+@media (max-width: 427px) {
+  .feature-title {
+    max-width: 300px;
+    height: auto; 
+    font-size: 26px; 
+    line-height: 1.4; 
+    text-align: center; 
+    padding: 10px; 
+    margin: 0 auto; 
+  }
 }
 
 

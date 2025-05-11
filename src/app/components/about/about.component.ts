@@ -20,7 +20,7 @@ export class AboutComponent {
   description = ` is a digital platform made for small and medium-sized shops across Egypt. We’re here to support every local brand with big dreams but limited resources.
 We give shop owners a personalized store page, an easy-to-use dashboard to track sales and visits, and the support they need to grow — from product promotion to real insights And for shoppers, we offer a smart, simple way to discover and buy authentic Egyptian products while supporting passionate local entrepreneurs.`;
   aboutimg = `assets/images/about.png`;
-  subDescription = ` , we bring people together,`;
+  // subDescription = ` , we bring people together,`;
   highlightedLine = `one product, one story, one dream at a time.`;
   features_title = `Features that make your experience smarter and easier`;
   features = [
