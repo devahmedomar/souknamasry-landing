@@ -32,8 +32,9 @@
   align-items: flex-start;
   justify-content: space-evenly;
   gap: 1.5rem;
-  font-size: 19px;
+  font-size: 1.1875rem; /* 19px */
   line-height: 1.8;
+  text-justify: inter-word;
   text-align: justify;
 }
 
@@ -42,7 +43,6 @@
 ============================= */
 .main-text {
   color: #e99619;
-  /* font-size: 20px; */
   font-weight: 600;
 }
 
@@ -58,7 +58,7 @@
    About Image Style
 ============================= */
 .about-section .text-container img {
-  width: 520px;
+  width: 32.5rem; /* 520px */
   height: auto;
   border-radius: 0.25rem;
 }
@@ -68,7 +68,7 @@
 ============================= */
 .highlighted-phrase {
   color: #e99619;
-  font-size: 28px;
+  font-size: 1.75rem; /* 28px */
   font-weight: 500;
   font-style: italic;
   display: inline-block;
@@ -95,12 +95,12 @@
 }
 
 .glitch-text::before {
-  left: 2px;
+  left: 0.125rem; /* 2px */
   animation-delay: 0.1s;
 }
 
 .glitch-text::after {
-  left: -2px;
+  left: -0.125rem; /* -2px */
   animation-delay: 0.2s;
 }
 
@@ -163,7 +163,7 @@
    Hover Effect on Feature Card
 ============================= */
 .feature-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-0.3125rem); /* -5px */
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
@@ -174,23 +174,23 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
-  height: 40px;
+  width: 0.25rem; /* 4px */
+  height: 2.5rem; /* 40px */
   background-color: #e99619;
   transition: height 0.3s ease;
-  border-top-left-radius: 4px;
+  border-top-left-radius: 0.25rem;
 }
 
 .feature-card:hover .left-border {
-  height: 80px;
+  height: 5rem; /* 80px */
 }
 
 /* =============================
    Icon Box Inside Card
 ============================= */
 .icon-box {
-  width: 60px;
-  height: 60px;
+  width: 3.75rem; /* 60px */
+  height: 3.75rem;
   background: #f1d7b9;
   border-radius: 50%;
   display: flex;
@@ -199,7 +199,7 @@
 }
 
 .icon-box .pi {
-  font-size: 23px;
+  font-size: 1.4375rem; /* 23px */
   color: #e99619;
 }
 
@@ -215,43 +215,49 @@
   color: #604239;
   font-weight: 500;
 }
-@media (max-width: 427px) {
+
+/* ========== Media Queries ========== */
+@media (max-width: 427px) { 
   .feature-title {
-    max-width: 300px;
-    height: auto; 
-    font-size: 26px; 
-    line-height: 1.4; 
-    text-align: center; 
-    padding: 10px; 
-    margin: 0 auto; 
+    width: 18.60rem; /* 300px */
+    font-size: 1.500rem; /* 26px */
+    line-height: 1.4;
+    text-align: center;
+    padding-right: 1.2rem;
+    margin: 0 auto;
   }
 }
 
+@media (max-width: 50rem) { 
+  .about-section {
+    padding: 0.625rem; 
+  }
+  .container {
+    width: 90%;
+  }
 
-@media (max-width: 800px) {
-  
   .custom-width {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 1rem;
+    max-width: 100%;
   }
 
   .text-container {
     flex-direction: column;
-    text-align: center;
+  }
+
+  .par1 {
+    text-align: start;
   }
 
   .text-container .col-md-5,
   .text-container .col-md-6 {
     width: 100%;
-    max-width: 100%;
     margin: 0 auto;
     padding: 0;
   }
 
   .row.g-4 {
     flex-direction: column !important;
-    gap: 1.5rem;              
+    gap: 1.5rem;
   }
 
   .row.g-4 .col-md-4 {
@@ -263,7 +269,7 @@
   .text-container img {
     display: block;
     margin: 1rem auto;
-    width: 80%;                
+    width: 80%;
     height: auto;
   }
 
@@ -273,8 +279,7 @@
   }
 }
 
-
-@media (min-width: 801px) and (max-width: 1300px) {
+@media (min-width: 50.0625rem) and (max-width: 81.25rem) {
   .custom-width {
     max-width: 88%;
     margin: 0 auto;
@@ -282,7 +287,10 @@
 
   .text-container {
     flex-direction: column;
-    text-align: center;
+  }
+
+  .par1 {
+    text-align: start;
   }
 
   .text-container .col-md-5,
@@ -305,7 +313,7 @@
   .text-container img {
     display: block;
     margin: 1rem auto;
-    width: 80%;                
+    width: 80%;
     height: auto;
   }
 
@@ -315,11 +323,12 @@
   }
 }
 
-
-@media (min-width: 750px) and (max-width: 800px) {
+/* for cards */
+@media (min-width:750px) and (max-width: 800px) { 
   .container {
-    max-width: 700px;
+    max-width: 43.75rem; 
   }
+
   .custom-width {
     width: 100%;
   }
@@ -335,8 +344,12 @@
   }
 }
 
-@media (min-width: 1302px)  {
+@media (min-width:1302px) { 
   .custom-width {
     max-width: 90%;
+  }
+
+  .par1 {
+    text-align: start;
   }
 }
