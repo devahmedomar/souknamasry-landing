@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, NgZone, PLATFORM_ID, ViewChild, ViewEncapsulation } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-hero',
@@ -9,15 +9,35 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
   encapsulation: ViewEncapsulation.None
 })
 export class HeroComponent implements AfterViewInit{
-  // Injects the PLATFORM_ID token to determine whether the code is running on the browser or server
-  isBrowser: boolean;
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-        this.isBrowser = isPlatformBrowser(this.platformId);
-  }
-  
   // Reference to the SVG element to manipulate its classes or styles
   @ViewChild('svgElement') svgRef!: ElementRef<SVGElement>;
+  // Reference to the video player element to manipulate the video
+  @ViewChild('videoPlayer') videoPlayer!: ElementRef<HTMLVideoElement>;
+
+
+  // State variable to control the visibility of the video popup
+  showVideoPopup = false;
+    
+  // Injects the PLATFORM_ID token to determine whether the code is running on the browser or server
+  isBrowser: boolean;
+  constructor(
+      @Inject(PLATFORM_ID) private platformId: Object,
+      private ngZone: NgZone
+    ) {
+      this.isBrowser = isPlatformBrowser(this.platformId);
+  }
+  
+  private async initAOS() {
+     try {
+       const AOS = await import('aos');
+       AOS.init({ duration: 1200, once: true });
+       AOS.refresh();
+     } catch (error) {
+       console.error('Failed to load AOS:', error);
+     }
+  }
   ngAfterViewInit(): void {
+    if (!this.isBrowser) return;
     // Adding an animation class to the SVG element
     setTimeout(() => {
       if (this.svgRef?.nativeElement) {
@@ -26,20 +46,14 @@ export class HeroComponent implements AfterViewInit{
     }, 1000);
     // Initialize AOS (Animate On Scroll) library only if running in the browser 
     // to prevent issues during server-side rendering
-    if (isPlatformBrowser(this.platformId)) {
-      import('aos')
-        .then(AOS => {
-          AOS.init({ duration: 1200, once: true });
-        })
-        .catch(err => console.error('Failed to load AOS', err));
-    }
+    this.ngZone.runOutsideAngular(() => {
+      if (document.readyState !== 'complete') {
+        window.addEventListener('load', () => this.initAOS());
+      } else {
+        this.initAOS();
+      }
+    });
   }
-  
-  // State variable to control the visibility of the video popup
-  showVideoPopup = false;
-    
-  // Reference to the video player element to manipulate the video
-  @ViewChild('videoPlayer') videoPlayer!: ElementRef<HTMLVideoElement>;
   
   // Function to pause the video and hide the dialog
   pauseVideo() {
