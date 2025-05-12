@@ -36,6 +36,22 @@
           <a class="nav-link mx-1" routerLinkActive="actives" routerLink="/contact">{{'navbar.Contact Us' |
             translate}}</a>
         </li>
+        <li class="relative">
+          <div #dropdown class="dropdown">
+            <button #dropdownButton class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{"navbar.Lang" | translate}}
+            </button>
+            <ul class="dropdown-menu">
+              @if (this.translateService.currentLang === 'en') {
+                <li><a (click)="changeLanguage('ar')" role="button" class="dropdown-item">Ar</a></li>
+              }
+              @if ( this.translateService.currentLang === 'ar') {
+                <li><a (click)="changeLanguage('en')" role="button" class="dropdown-item">En</a></li>
+              }
+
+            </ul>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
