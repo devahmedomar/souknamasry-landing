@@ -2,68 +2,105 @@ section {
   background-color: #402c26;
   padding-block: 60px;
 }
+
 section h2 {
   color: #fff;
   text-align: center;
   font-size: 2.5rem;
   margin-block: 50px;
 }
+
+::ng-deep
+  .p-carousel
+  .p-carousel-indicators
+  .p-carousel-indicator.p-highlight
+  button {
+  background: #ffd666 !important;
+  color: #ffd666 !important;
+}
 .custom-carousel .team-card {
-  padding: 1rem;
+  position: relative;
   text-align: center;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-}
-
-.team-card .image-wrapper {
-  position: relative;
-  width: 350px;
-  height: 320px;
+  box-shadow: 0 40px 70px -15px rgba(0, 0, 0, 0.192);
+  margin-inline: 3px;
   overflow: hidden;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
 }
 
 .team-card img {
-  width: 350px;
-  height: 370px;
-  object-fit: cover;
+  max-width: 300px;
+  height: 310px;
+  object-fit: contain;
   display: block;
 }
 
 .team-card .overlay {
   position: absolute;
-  bottom: 0;
+  content: "";
+  bottom: -100%;
+  left: 0px;
   width: 100%;
-  height: 50%;
-  background: linear-gradient(to top, #e3ff04 0%, transparent 60%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(239, 100, 76, 0) 64.05%,
+    #ffd666 115.68%
+  );
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
   opacity: 0;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  left: -100%;
 }
+
 .team-card:hover .overlay {
-  opacity: 1;
   left: 0;
+  opacity: 1;
+  bottom: 60px;
+  background: linear-gradient(
+    180deg,
+    rgba(239, 100, 76, 0) 64.05%,
+    #ffd666 115.68%
+  );
+  transform: translateY(-1px);
+  -webkit-transform: translateY(-1px);
+  -moz-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
+  -o-transform: translateY(-1px);
 }
-.team-card .social-icons {
-  display: flex;
-  gap: 1rem;
-  transform: translate(-40px, 45px);
-  -webkit-transform: translate(-40px, 45px);
-  -moz-transform: translate(-40px, 45px);
-  -ms-transform: translate(-40px, 45px);
-  -o-transform: translate(-40px, 45px);
+
+.tilt {
+  border-radius: 5px;
+  max-width: 277px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-out;
+  transform: perspective(800px) rotateX(-5.77deg) rotateY(6.25deg)
+    scale3d(1.01, 1.01, 1.01);
+  -webkit-transform: perspective(800px) rotateX(-5.77deg) rotateY(6.25deg)
+    scale3d(1.01, 1.01, 1.01);
+  -moz-transform: perspective(800px) rotateX(-5.77deg) rotateY(6.25deg)
+    scale3d(1.01, 1.01, 1.01);
+  -ms-transform: perspective(800px) rotateX(-5.77deg) rotateY(6.25deg)
+    scale3d(1.01, 1.01, 1.01);
+  -o-transform: perspective(800px) rotateX(-5.77deg) rotateY(6.25deg)
+    scale3d(1.01, 1.01, 1.01);
 }
+
+.tilt:hover {
+  transform: perspective(800px) rotateX(-5.77deg) rotateY(6.25deg)
+    scale3d(1.01, 1.01, 1.01);
+  -webkit-transform: perspective(800px) rotateX(-5.77deg) rotateY(6.25deg)
+    scale3d(1.01, 1.01, 1.01);
+  -moz-transform: perspective(800px) rotateX(-5.77deg) rotateY(6.25deg)
+    scale3d(1.01, 1.01, 1.01);
+  -ms-transform: perspective(800px) rotateX(-5.77deg) rotateY(6.25deg)
+    scale3d(1.01, 1.01, 1.01);
+  -o-transform: perspective(800px) rotateX(-5.77deg) rotateY(6.25deg)
+    scale3d(1.01, 1.01, 1.01);
+}
+
+
 
 .team-card .social-icons i {
   color: white;
@@ -76,12 +113,53 @@ section h2 {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   border: 1px solid #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 .team-card .social-icons i:hover {
-  background: #e3ff04;
+  background: #ffd666;
   color: #000;
-  border: none;
+  border-color: #ffd666;
+}
+
+.team-card .social-icons {
+  display: flex;
+  gap: 0.5rem;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  transform: translateX(-120%);
+  transition: all 0.8s ease-in-out;
+  visibility: hidden;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -ms-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+}
+
+.team-card:hover .social-icons {
+  transform: translateX(0);
+  visibility: visible;
+  animation: animate__animated animate__slideInLeft;
+  animation-duration: 0.5s;
+}
+
+.animate__slideInLeft {
+  animation-name: slideInLeft;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .team-card .role {
@@ -89,7 +167,11 @@ section h2 {
   margin: 0.5rem 0 0;
   font-size: 0.9rem;
   text-align: start;
-  transform: translateX(10px);
+  transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
 }
 
 .team-card .name {
@@ -98,5 +180,69 @@ section h2 {
   font-size: 1.4rem;
   font-weight: bold;
   text-align: start;
-  transform: translateX(10px);
+  transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
 }
+
+@media (min-width: 320px) and (max-width: 767.98px) {
+  ::ng-deep #pn_id_1 .p-carousel-container {
+    overflow: hidden;
+  }
+
+  ::ng-deep #pn_id_1 .p-carousel-item {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    justify-content: center;
+    display: flex;
+    box-sizing: border-box;
+  }
+
+  .team-card {
+    margin: auto;
+    max-width: 90%;
+    overflow: hidden;
+    overscroll-behavior: auto;
+  }
+}
+
+
+
+@media (min-width: 768px) {
+   ::ng-deep #pn_id_1 .p-carousel-container {
+    overflow: hidden;
+  }
+  ::ng-deep #pn_id_1 .p-carousel-item {
+    flex: 0 0 50% !important;
+    margin: auto;
+    box-sizing: border-box;
+  }
+  .team-card {
+    margin-left: 20px;
+    overflow: hidden;
+    overscroll-behavior: auto;
+  }
+
+}
+@media (min-width: 992px) {
+  ::ng-deep #pn_id_1 .p-carousel-container {
+    overflow: hidden;
+  }
+
+  ::ng-deep #pn_id_1 .p-carousel-item {
+    flex: 0 0 33.3333% !important;
+    max-width: 33.3333% !important;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  .team-card {
+    margin-inline: 40px !important;
+    overflow: hidden;
+  }
+}
+
+
