@@ -6,19 +6,25 @@
               <div class="hero-text">
 
                   <!-- Title -->
-                  <span class="d-block text-uppercase"  data-aos="fade-right">
+                  <span class="d-block text-uppercase"  
+                    *ngIf="isBrowser"
+                    [attr.data-aos]="isBrowser ? 'fade-right' : null">
                     From the heart
                     <br>
-                    <span class="filled-text" data-text="of Egypt" data-aos="fade-in">
+                    <span class="filled-text" data-text="of Egypt" *ngIf="isBrowser"
+                    [attr.data-aos]="isBrowser ? 'fade-in': null">
                       of Egypt
                     </span>
                   </span>
                     
                   <!-- Subtitle-->
-                  <h5  data-aos="fade-right">Buy and sell with ease</h5>
+                  <h5 *ngIf="isBrowser"
+                    [attr.data-aos]="isBrowser ? 'fade-right' : null">Buy and sell with ease</h5>
 
                   <!-- Button to trigger the video popup when clicked -->
-                  <button class="video-button"  data-aos="fade-right" (click)="showVideoPopup = true">
+                  <button class="video-button" 
+                    *ngIf="isBrowser"
+                    [attr.data-aos]="isBrowser ? 'fade-right' : null" (click)="showVideoPopup = true">
                       <i class="pi pi-play play-icon"></i>
                       Watch promo
                   </button>
