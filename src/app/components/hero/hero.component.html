@@ -6,19 +6,19 @@
               <div class="hero-text">
 
                   <!-- Title -->
-                  <span class="d-block text-uppercase" data-aos="fade-right">
+                  <span class="d-block text-uppercase" *ngIf="isBrowser" data-aos="fade-right">
                     From the heart
                     <br>
-                    <span class="filled-text" data-text="of Egypt" data-aos="fade-in">
+                    <span class="filled-text" data-text="of Egypt" *ngIf="isBrowser" data-aos="fade-in">
                       of Egypt
                     </span>
                   </span>
                     
                   <!-- Subtitle-->
-                  <h5 data-aos="fade-right">Buy and sell with ease</h5>
+                  <h5 *ngIf="isBrowser" data-aos="fade-right">Buy and sell with ease</h5>
 
                   <!-- Button to trigger the video popup when clicked -->
-                  <button class="video-button" data-aos="fade-right" (click)="showVideoPopup = true">
+                  <button class="video-button" *ngIf="isBrowser" data-aos="fade-right" (click)="showVideoPopup = true">
                       <i class="pi pi-play play-icon"></i>
                       Watch promo
                   </button>
@@ -52,7 +52,7 @@
             <div class="col-xl-5 col-lg-5 col-md-6 col-sm-6">
 
               <!-- Main SVG illustration -->
-              <svg id="freepik_stories-in-no-time" xmlns="http://www.w3.org/2000/svg" class="animated responsive-svg"
+              <svg id="freepik_stories-in-no-time" *ngIf="isBrowser" xmlns="http://www.w3.org/2000/svg" class="animated responsive-svg"
               viewBox="0 0 500 500"
               >
                   <g  id="freepik--background-complete--inject-108" class="animable" style="transform-origin:238.114px 253.76px">
