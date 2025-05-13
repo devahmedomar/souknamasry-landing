@@ -37,9 +37,9 @@
             translate}}</a>
         </li>
         <li class="relative">
-          <div #dropdown class="dropdown">
+          <div #dropdown class="dropdown language-dropdown">
             <button #dropdownButton class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {{"navbar.Lang" | translate}}
+             <i class="pi pi-language"></i>
             </button>
             <ul class="dropdown-menu">
               @if (this.translateService.currentLang === 'en') {

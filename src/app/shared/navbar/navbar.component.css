@@ -182,6 +182,7 @@
     padding-inline: 30px;
   }
 }
+/* Shared styles for both directions */
 @media (min-width: 992px) {
   .my-navbar {
     padding-block: 5px;
@@ -213,7 +214,8 @@
   }
 .actives {
   color: white !important;
-  background-color: #604239 !important;
+  background-color:
+#604239 !important;
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
@@ -231,5 +233,53 @@
   }
   .my-section ul {
     margin-right: 56px;
+}
+/* تخصيص اللغة العربية (RTL) */
+:lang(ar) .my-navbar img,
+html[dir="rtl"] .my-navbar img {
+  width: 200px;
+  height: 100px;
+  margin-right: 0;
+  transform: translateX(20px);
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  -o-transform: translateX(20px);
+}
+
+:lang(ar) .navbar-brand,
+html[dir="rtl"] .navbar-brand {
+  margin-right: 100px;
+  padding-right: 0;
+}
+
+:lang(ar) .my-section ul,
+html[dir="rtl"] .my-section ul {
+  margin-left: 0;
+  transform: translateX(-170px);
+  -webkit-transform: translateX(-170px);
+  -moz-transform: translateX(-170px);
+  -ms-transform: translateX(-170px);
+  -o-transform: translateX(-170px);
+}
+
+html[dir="rtl"] .dropdown-toggle::after,
+:lang(ar) .dropdown-toggle::after {
+margin-right: 0.255em;
+margin-left: 0;
+}
+html[dir="rtl"] .dropdown-item li ,
+:lang(ar) .dropdown-item li  {
+
+   margin-left: 1.8rem;
+   transform: translateX(150px);
+   -webkit-transform: translateX(150px);
+   -moz-transform: translateX(150px);
+   -ms-transform: translateX(150px);
+   -o-transform: translateX(150px);
+}
+html[dir="rtl"] .dropdown ul,
+  :lang(ar) .dropdown ul{
+  margin-left: 40px;
 }
 }
