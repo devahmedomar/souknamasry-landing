@@ -228,6 +228,9 @@
     padding-right: 1.2rem;
     margin: 0 auto;
   }
+  .row.g-4  {
+    margin: 0;
+   }
 }
 
 @media (max-width: 50rem) { 
@@ -260,8 +263,10 @@
   .row.g-4 {
     flex-direction: column !important;
     gap: 1.5rem;
-  }
+    margin: 0;
 
+  }
+  
   .row.g-4 .col-md-4 {
     flex: 0 0 100% !important;
     max-width: 100% !important;
@@ -304,6 +309,7 @@
 
   .row.g-4 {
     gap: 1.5rem !important;
+    margin: 0;
   }
 
   .row.g-4 .col-md-4 {
