@@ -144,7 +144,7 @@
 /* small phones */
 @media (max-width: 479.98px) {
   .container {
-    max-width: 540px;
+    max-width: 440px;
   }
 }
 @media (min-width: 768px) and (max-width: 992px) {
