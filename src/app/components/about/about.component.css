@@ -58,8 +58,8 @@
    About Image Style
 ============================= */
 .about-section .text-container img {
-  width: 32.5rem; /* 520px */
-  height: auto;
+  width: 35.5rem; 
+  height:  23.125rem;
   border-radius: 0.25rem;
 }
 
@@ -140,7 +140,9 @@
   flex-wrap: wrap;
   gap: 1.5rem;
 }
-
+.row.g-4  {
+ margin-left: 40px;
+}
 .row.g-4 .col-md-4 {
   flex: 0 0 calc(33.333% - 1rem);
   max-width: calc(31% - 1rem);
