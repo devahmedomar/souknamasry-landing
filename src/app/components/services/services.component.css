@@ -144,16 +144,14 @@
 /* small phones */
 @media (max-width: 479.98px) {
   .container {
-    max-width: 540px;
+    max-width: 440px;
   }
-
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .container {
     max-width: 710px;
   }
   .card-container {
-
     width: 100%;
   }
 
@@ -176,7 +174,7 @@
   }
 }
 
-@media (min-width: 1201px) and (max-width:1400px ) {
+@media (min-width: 1201px) and (max-width:1399px ) {
   .container {
     max-width: 1200px;
   }
@@ -184,3 +182,20 @@
     width: 30%;
   }
 }     
+/* for large screen */
+@media (min-width: 1400px) and (max-width: 1420px) {
+  .container {
+    max-width: 1490px;
+  }
+  .card-container {
+    width: 30.70%;
+  }
+}
+@media (min-width: 1421px) {
+  .container {
+    max-width: 1420px;
+  }
+  .card-container {
+    width: 30.3%;
+  }
+}
