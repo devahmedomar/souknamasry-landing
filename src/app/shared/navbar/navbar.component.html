@@ -42,13 +42,14 @@
              <i class="pi pi-language"></i>
             </button>
             <ul class="dropdown-menu">
-              @if (this.translateService.currentLang === 'en') {
-                <li><a (click)="changeLanguage('ar')" role="button" class="dropdown-item">Ar</a></li>
+              @if (currentLanguage === 'en') {
+              <li><a (click)="changeLanguage('ar')" role="button" class="dropdown-item">Ar</a></li>
               }
-              @if ( this.translateService.currentLang === 'ar') {
-                <li><a (click)="changeLanguage('en')" role="button" class="dropdown-item">En</a></li>
+              @if ( currentLanguage === 'ar') {
+              <li><a (click)="changeLanguage('en')" role="button" class="dropdown-item">En</a></li>
               }
 
+                         
             </ul>
           </div>
         </li>
