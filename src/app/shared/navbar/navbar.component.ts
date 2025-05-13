@@ -49,9 +49,7 @@ export class NavbarComponent {
     this.currentLanguage = lang;
   }
   ngAfterViewInit(): void {
-    
-    console.log(this.translateService.currentLang);
-    this.dropdownElement.nativeElement.addEventListener(
+        this.dropdownElement.nativeElement.addEventListener(
       'hidden.bs.dropdown',
       () => {
         this.dropdownButton.nativeElement.classList.remove('open');
