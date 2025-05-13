@@ -1,99 +1,82 @@
+/* =============================
+   Base Font for Component
+============================= */
 :host {
   font-family: 'Montserrat', sans-serif;
 }
 
+/* =============================
+   About Section Styles
+============================= */
 .about-section {
   background-color: #4e342e;
   color: #ffffff;
+  padding: 5rem 3rem;
 }
 
-.about-section .text-container {
-  font-size: 15px;
-  line-height: 30px;
-  text-align: justify;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-}
+/* =============================
+   Container Width and Centering
+============================= */
 .custom-width {
-  max-width: 940px;
-  margin-left: auto;
-  /* margin-right: auto; */
-  margin-left: 156px;
-  margin-right: 156px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  align-items: center;
 }
 
-.about-section .row {
+/* =============================
+   Text and Image Layout
+============================= */
+.about-section .text-container {
   display: flex;
-  align-items: stretch;  
-   flex-wrap: wrap;      
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  font-size: 1.1875rem; /* 19px */
+  line-height: 1.8;
+  text-justify: inter-word;
+  text-align: justify;
 }
 
+/* =============================
+   Highlighted Main Text Style
+============================= */
 .main-text {
-  font-size: 20px;
-  font-weight: 500;
+  color: #e99619;
+  font-weight: 600;
 }
 
-.about-section img {
-  transform: scale(1);
-  object-fit: contain;
+/* =============================
+   Flex Settings for Columns
+============================= */
+.about-section .text-container .col-md-5,
+.about-section .text-container .col-md-6 {
+  flex: 1;
 }
 
-.row h2 {
-  font-size: 25px;
-  font-weight: 500;
+/* =============================
+   About Image Style
+============================= */
+.about-section .text-container img {
+  width: 35.5rem; 
+  height:  23.125rem;
+  border-radius: 0.25rem;
 }
+
+/* =============================
+   Highlighted Phrase Style
+============================= */
 .highlighted-phrase {
   color: #e99619;
-  font-size: 20px;
+  font-size: 1.75rem; /* 28px */
   font-weight: 500;
   font-style: italic;
   display: inline-block;
 }
 
-.feature-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: #f5eadb;
-  position: relative;
-  border-radius: 4px;
-}
-
-.feature-card:hover,
-.feature-card:focus {
-  transform: translateY(-5px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-}
-
-.left-border {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 40px;
-  background-color: #e99619;
-  transition: height 0.3s ease;
-  border-top-left-radius: 4px;
-}
-
-.feature-card:hover .left-border {
-  height: 80px;
-}
-
-.icon-box {
-  width: 60px;
-  height: 60px;
-  background: #f1d7b9;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon-box .pi {
-  font-size: 23px;
-  color: #e99619;
-}
-
+/* =============================
+   Glitch Effect Text Styling
+============================= */
 .glitch-text {
   position: relative;
   font-size: 2rem;
@@ -112,175 +95,269 @@
 }
 
 .glitch-text::before {
-  left: 2px;
+  left: 0.125rem; /* 2px */
   animation-delay: 0.1s;
 }
 
 .glitch-text::after {
-  left: -2px;
+  left: -0.125rem; /* -2px */
   animation-delay: 0.2s;
 }
 
+/* =============================
+   Glitch Animation Keyframes
+============================= */
 @keyframes glitch {
-  0% { transform: skew(-5deg); }
-  20% { transform: skew(5deg); }
-  40% { transform: skew(-5deg); }
-  60% { transform: skew(5deg); }
-  80% { transform: skew(-5deg); }
+  0%   { transform: skew(-5deg); }
+  20%  { transform: skew(5deg); }
+  40%  { transform: skew(-5deg); }
+  60%  { transform: skew(5deg); }
+  80%  { transform: skew(-5deg); }
   100% { transform: skew(5deg); }
 }
 
-/* Responsive Styles */
+/* =============================
+   Center Section Title
+============================= */
+.d-flex.justify-content-center h2 {
+  text-align: center;
+}
 
-/* Extra small devices (phones, less than 576px) */
-@media (max-width: 575.98px) {
+/* =============================
+   Features Section Title
+============================= */
+.feature-title {
+  font-size: 2rem;
+  margin: 4rem 0 2rem;
+  text-align: center;
+}
+
+/* =============================
+   Features Grid Layout
+============================= */
+.row.g-4 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.row.g-4  {
+ margin-left: 40px;
+}
+.row.g-4 .col-md-4 {
+  flex: 0 0 calc(33.333% - 1rem);
+  max-width: calc(31% - 1rem);
+}
+
+/* =============================
+   Feature Card Styling
+============================= */
+.feature-card {
+  background: #f5eadb;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+/* =============================
+   Hover Effect on Feature Card
+============================= */
+.feature-card:hover {
+  transform: translateY(-0.3125rem); /* -5px */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* =============================
+   Left Border on Hover
+============================= */
+.left-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.25rem; /* 4px */
+  height: 2.5rem; /* 40px */
+  background-color: #e99619;
+  transition: height 0.3s ease;
+  border-top-left-radius: 0.25rem;
+}
+
+.feature-card:hover .left-border {
+  height: 5rem; /* 80px */
+}
+
+/* =============================
+   Icon Box Inside Card
+============================= */
+.icon-box {
+  width: 3.75rem; /* 60px */
+  height: 3.75rem;
+  background: #f1d7b9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box .pi {
+  font-size: 1.4375rem; /* 23px */
+  color: #e99619;
+}
+
+/* =============================
+   Feature Card Text Styling
+============================= */
+.card-title {
+  color: #604239;
+  font-weight: 600;
+}
+
+.card-text {
+  color: #604239;
+  font-weight: 500;
+}
+
+/* ========== Media Queries ========== */
+@media (max-width: 427px) { 
+  .feature-title {
+    width: 18.60rem; /* 300px */
+    font-size: 1.500rem; /* 26px */
+    line-height: 1.4;
+    text-align: center;
+    padding-right: 1.2rem;
+    margin: 0 auto;
+  }
+  .row.g-4  {
+    margin: 0;
+   }
+}
+
+@media (max-width: 50rem) { 
   .about-section {
-    padding: 2rem 1rem;
+    padding: 0.625rem; 
+  }
+  .container {
+    width: 90%;
+  }
+
+  .custom-width {
+    max-width: 100%;
   }
 
   .text-container {
     flex-direction: column;
   }
 
-  .text-container .text {
-    margin-bottom: 2rem;
-    text-align: center;
+  .par1 {
+    text-align: start;
+  }
+
+  .text-container .col-md-5,
+  .text-container .col-md-6 {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .row.g-4 {
+    flex-direction: column !important;
+    gap: 1.5rem;
+    margin: 0;
+
+  }
+  
+  .row.g-4 .col-md-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 1.5rem;
   }
 
   .text-container img {
-    width: 100%;
+    display: block;
+    margin: 1rem auto;
+    width: 80%;
     height: auto;
   }
 
-  h2 {
-    font-size: 1.8rem;
-  }
-
   .feature-card {
-    padding: 1.5rem 1rem;
-  }
-
-  .icon-box {
-    font-size: 2rem;
+    width: 100%;
+    margin: auto;
   }
 }
 
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .about-section {
-    padding: 2.5rem 1.5rem;
+@media (min-width: 50.0625rem) and (max-width: 81.25rem) {
+  .custom-width {
+    max-width: 88%;
+    margin: 0 auto;
   }
 
   .text-container {
     flex-direction: column;
   }
 
-  .text-container .text {
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-
-  .feature-card {
-    padding: 2rem 1.5rem;
-    align-items: center;
-  }
-
-  .icon-box {
-    font-size: 2.2rem;
-  }
-}
-@media (min-width: 768px) and (max-width: 992.98px) {
-
-  .container.custom-width {
-    padding-left: 156px;
-    padding-right: 156px;
-  }
-
-  .text-container {
-    flex-direction: column !important;
+  .par1 {
+    text-align: start;
   }
 
   .text-container .col-md-5,
   .text-container .col-md-6 {
-    width: 80% !important;
-    margin: auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
   }
 
-  .text-container .col-md-5 {
-    font-size: 18px;
-    text-align: center;
+  .row.g-4 {
+    gap: 1.5rem !important;
+    margin: 0;
   }
 
-  .text-container .col-md-6 img {
-    height: 300px;
-    object-fit: cover;
+  .row.g-4 .col-md-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 1.5rem !important;
   }
 
-  .feature-card {
-    padding: 2.5rem 2rem;
-    text-align: center;
-  }
-
-  .icon-box {
-    font-size: 2.5rem;
-    margin: auto;
-  }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  
-  .container.custom-width {
-    margin-left: 156px;
-    margin-right: 156px;
-  }
-
-  .text-container {
-    flex-direction: column !important;
-  }
-  
-  .text-container .col-md-5,
-  .text-container .col-md-6 {
-    width: 80% !important;
-    margin-left: 50px;
-  }
-  
-  .text-container .col-md-5 {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  .text-container .col-md-6 img {
-    height: 300px;
-    object-fit: cover;
-  }
-  .col-md-6  {
-    align-items: center;
-    padding-left: 150px;
+  .text-container img {
+    display: block;
+    margin: 1rem auto;
+    width: 80%;
+    height: auto;
   }
 
   .feature-card {
-    padding: 2.5rem 2rem;
-    text-align: center;
-  }
-
-  .icon-box {
-    font-size: 2.5rem;
+    width: 80%;
     margin: auto;
   }
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  .about-section {
-    padding: 5rem 3rem;
+/* for cards */
+@media (min-width:750px) and (max-width: 800px) { 
+  .container {
+    max-width: 43.75rem; 
+  }
+
+  .custom-width {
+    width: 100%;
+  }
+
+  .row.g-4 .col-md-4 {
+    max-width: none !important;
+    width: 100% !important;
   }
 
   .feature-card {
-    padding: 3rem 2.5rem;
+    width: 100% !important;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width:1302px) { 
+  .custom-width {
+    max-width: 90%;
   }
 
-  .icon-box {
-    font-size: 3.2rem;
+  .par1 {
+    text-align: start;
   }
 }
