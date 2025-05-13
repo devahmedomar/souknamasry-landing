@@ -173,7 +173,7 @@
     width: 33%;
   }
 }
-/* for large screen */
+
 @media (min-width: 1201px) and (max-width:1399px ) {
   .container {
     max-width: 1200px;
@@ -182,6 +182,7 @@
     width: 30%;
   }
 }     
+/* for large screen */
 @media (min-width: 1400px) and (max-width: 1420px) {
   .container {
     max-width: 1490px;
