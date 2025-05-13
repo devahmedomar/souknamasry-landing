@@ -22,7 +22,7 @@
       font-family: "Plus Jakarta Sans", sans-serif;
       font-size: 24px;
       font-weight: 700;
-      color: #402c26;
+      color: #FD7E35;
       margin-bottom: 20px;
     }
 }
@@ -63,8 +63,8 @@ span .filled-text {
 
 /* Styling for the video button */
 .video-button {
-  background-color: #FFDE81;
-  color: #402c26;
+  background-color: #402c26;
+  color: white;
   border: none;
   border-radius: 50px;
   padding: 5px 20px;
@@ -79,19 +79,22 @@ span .filled-text {
 
 /* Hover effect for the video button */
 .video-button:hover {
-  background-color: #402c26;
+  background-color: #FD7E35;
   color: white;
+  .play-icon{
+  color: #402c26;
+  }
 }
 
 /* Styling for the play icon inside the video button */
 .play-icon {
   background-color: white;
-  color: #593c34;
+  color: #FD7E35;
   border-radius: 50%;
-  padding: 5px;
   font-size: 16px;
   width: 32px;
   height: 32px;
+  padding-left: 0.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
