@@ -8,11 +8,11 @@
     "Contact Us": "Contact Us",
     "Lang":"Lang"
   },
-  
-   "blogs": {
-   "Heading": "Your Guide to Success in Sales and Marketing",
-   "ReadMore": "Read more",
-   "cards": [
+
+  "blogs": {
+  "Heading": "Your Guide to Success in Sales and Marketing",
+  "ReadMore": "Read more",
+  "cards": [
         {
           "title": "Why E-commerce is the Future for Small Businesses in Egypt",
           "description": "In today’s fast-paced world, online presence is no longer a luxury — it’s a must..."
@@ -27,7 +27,10 @@
         }
       ]
     }
-  
+  ,"BREADCRUMB": {
+  "HOME": "Home",
+  "BLOG_DETAILS": "Blog Details"
+  }
   
 }
     

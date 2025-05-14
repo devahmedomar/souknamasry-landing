@@ -1,13 +1,13 @@
-<section id="breadcrumnd-banner">
+<section id="breadcrumnd-banner"  [ngClass]="{'rtl': translate.currentLang === 'ar', 'ltr': translate.currentLang == 'en'}">
     <div class="container">
         <div class="row justify-content-center">
                 <div class="breadcrumnd-content text-center">
                     <h1>
-                        {{breadcrumbHeading()}}
+                        {{breadcrumbHeading()  | translate }}
                     </h1>
 
                     <div class="d-flex justify-content-center">
-                        <p-breadcrumb [model]="items()"  />
+                        <p-breadcrumb [model]="breadcrumb_items()"  />
                     </div>
                 </div>
             </div>
