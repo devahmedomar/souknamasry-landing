@@ -51,7 +51,7 @@ export class NavbarComponent {
   ngAfterViewInit(): void {
 
     console.log(this.translateService.currentLang);
-    this.dropdownElement.nativeElement.addEventListener(
+    
         this.dropdownElement.nativeElement.addEventListener(
       'hidden.bs.dropdown',
       () => {
