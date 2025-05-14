@@ -1,49 +1,38 @@
 <section id="blogs" class="blogs py-5">
-    <div class="container p-5">
-      <div class="heading-1 text-center mb-5">
-        <h1>{{ 'blogsSection.Heading' | translate }} <i class="pi pi-book"></i></h1>
-      </div>
-      <div class="row g-4">
-        <!-- Blog card -->
-        <div
-          class="cardscontainer"
-          *ngFor="let card of cards; let i = index"
-          data-aos="fade-up"
-          [attr.data-aos-delay]="i * 200"
-          data-aos-duration="1000"
-        >
-          <div class="blog-item h-100 d-flex flex-column overflow-hidden text-center cards">
-            <!-- img -->
-            <div
-              class="blog-img-wrapper rounded"
-              style="height: 250px; overflow: hidden;"
-            >
-              <img
-                [src]="card.image"
-                class="img-fluid w-100 h-100"
-                style="object-fit: cover;"
-                alt="Blog"
-              />
+  <div class="container p-5">
+    <div class="heading-1 text-center mb-5">
+      <h1>{{ heading() }} <i class="pi pi-book"></i></h1>
+    </div>
+    <div class="row g-4">
+      <!-- Blog card -->
+      <div
+        class="cardscontainer"
+        *ngFor="let card of cards(); let i = index"
+        data-aos="fade-up"
+        [attr.data-aos-delay]="i * 200"
+        data-aos-duration="1000"
+      >
+        <div class="blog-item h-100 d-flex flex-column overflow-hidden text-center cards">
+          <!-- img -->
+          <div class="blog-img-wrapper rounded" style="height: 250px; overflow: hidden;">
+            <img [src]="card.image" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="Blog" />
+          </div>
+
+          <!-- content -->
+          <div class="blog-content bg-white rounded p-4 flex-grow-1 d-flex flex-column justify-content-between position-relative">
+            <div class="blog-icon position-absolute top-0 start-50 translate-middle bg-orange text-white d-flex align-items-center justify-content-center rounded-circle">
+              <i [class]="card.icon"></i>
             </div>
-  
-            <!-- content -->
-            <div
-              class="blog-content bg-white rounded p-4 flex-grow-1 d-flex flex-column justify-content-between position-relative"
-            >
-              <div
-                class="blog-icon position-absolute top-0 start-50 translate-middle bg-orange text-white d-flex align-items-center justify-content-center rounded-circle"
-              >
-                <i [class]="card.icon"></i>
-              </div>
-              <div class="blog-text d-flex flex-column h-100">
-                <h5 class="mt-3">{{ ('blogsSection.cards.' + i + '.title') | translate }}</h5>
-                <p class="text-muted">{{ ('blogsSection.cards.' + i + '.description') | translate }}</p>
-                <div class="btn1" (click)="navigate(card.id)">{{ 'blogsSection.ReadMore' | translate }}</div>
+            <div class="blog-text d-flex flex-column h-100">
+              <h5 class="mt-3">{{ card.title }}</h5>
+              <p class="text-muted">{{ card.description }}</p>
+              <div class="btn1" (click)="navigate(card.id)">
+                {{ readMoreText() }}
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>
