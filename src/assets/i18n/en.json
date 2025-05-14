@@ -14,7 +14,7 @@
   },
 
   "BLOG-DETAILS": {
-    "BLOG_DETAILS": "Blog Details",
+    "Blog_Details": "Blog Details",
     "BLOG_1": {
       "TITLE": "Why E-commerce is a Game-Changer for Small Shops in Egypt",
       "PARAGRAPH_1": "In today’s fast-paced world, online presence is no longer a luxury — it’s a must.<br>For small and medium-sized businesses in Egypt, moving online opens up endless possibilities.<br>Instead of relying only on walk-in customers or social media, e-commerce gives shops a 24/7 storefront that works even while you sleep.<br>At Soukna Masry, we offer shop owners a ready-made online platform to showcase their products professionally,<br>track their sales, and grow their customer base — all without the high cost of building a website from scratch.",
@@ -50,6 +50,5 @@
       "PARAGRAPH_2": "No hidden costs. No complicated systems. Just a smart way to take your business to the next level.<br>Whether you sell accessories, handmade crafts, fashion, or beauty products — Soukna Masry is your partner in growth."
     }
   }
-  ,
 }
 
