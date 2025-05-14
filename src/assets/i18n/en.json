@@ -7,5 +7,10 @@
     "Blog": "Blog",
     "Contact Us": "Contact Us",
     "Lang":"Lang"
+  },
+
+  "BREADCRUMB": {
+  "HOME": "Home",
+  "BLOG_DETAILS": "Blog Details"
   }
 }
