@@ -1,13 +1,4 @@
-import {
-  Component,
-  AfterViewInit,
-  OnInit,
-  inject,
-  DestroyRef,
-  Inject,
-  PLATFORM_ID,
-  signal,
-} from '@angular/core';
+import {Component,AfterViewInit,OnInit,inject,DestroyRef,Inject,PLATFORM_ID,signal,} from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
