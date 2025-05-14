@@ -101,12 +101,15 @@
   box-shadow: none !important;
 }
 /* media query */
-
 @media (min-width: 320px) {
   .navbar-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-block: 30px;
+  }
+  .my-section {
+    margin-top: -55px;
   }
   .navbar-nav li {
     padding-bottom: 1px;
@@ -136,10 +139,33 @@
 
     max-width: 140px;
   }
+  .dropdown {
+    transform: translate(230px , -35px);
+    -webkit-transform: translate(230px , -35px);
+    -moz-transform: translate(230px , -35px);
+    -ms-transform: translate(230px , -35px);
+    -o-transform: translate(230px , -35px);
+}
+  html[dir="rtl"] .drop,
+  :lang(ar) .drop {
+   position: relative;
+  }
+  html[dir="rtl"] .dropdown,
+:lang(ar) .dropdown {
+ transform: translate(-205px, -35px);
+ -webkit-transform: translate(-205px, -35px);
+ -moz-transform: translate(-205px, -35px);
+ -ms-transform: translate(-205px, -35px);
+ -o-transform: translate(-205px, -35px);
+}
+html[dir="rtl"] .dropdown ul,
+  :lang(ar) .dropdown ul{
+  margin-left: 330px;
+}
 }
 @media (min-width: 768px) {
   .my-navbar {
-    padding: 15px 0;
+    padding: 10px 0;
   }
   .navbar-nav {
     display: flex;
@@ -181,6 +207,35 @@
   .my-padding {
     padding-inline: 30px;
   }
+  .dropdown {
+    transform: translate(320px, -36px);
+    -webkit-transform: translate(320px, -36px);
+    -moz-transform: translate(320px, -36px);
+    -ms-transform: translate(320px, -36px);
+    -o-transform: translate(320px, -36px);
+}
+  html[dir="rtl"] .drop,
+  :lang(ar) .drop {
+   position: relative;
+  }
+  html[dir="rtl"] .dropdown,
+:lang(ar) .dropdown {
+ transform: translate(-300px,-44px );
+ -webkit-transform: translate(-300px,-44px );
+ -moz-transform: translate(-300px,-44px );
+ -ms-transform: translate(-300px,-44px );
+ -o-transform: translate(-300px,-44px );
+}
+html[dir="rtl"] .dropdown ul,
+  :lang(ar) .dropdown ul{
+  margin-left: 630px;
+  margin-top: 10px;
+}
+html[dir="rtl"] .my-section ul,
+  :lang(ar) .my-section ul{
+  margin-top: 5px;
+}
+
 }
 /* Shared styles for both directions */
 @media (min-width: 992px) {
@@ -190,12 +245,13 @@
 }
 
   .navbar-expand-lg .navbar-nav {
-    transform: translateY(6px);
-    -webkit-transform: translateY(6px);
-    -moz-transform: translateY(6px);
-    -ms-transform: translateY(6px);
-    -o-transform: translateY(6px);
+    transform: translateY(36px);
+    -webkit-transform: translateY(36px);
+    -moz-transform: translateY(36px);
+    -ms-transform: translateY(36px);
+    -o-transform: translateY(36px);
 }
+
   .navbar-nav {
     display: flex;
     justify-content: space-between;
@@ -211,6 +267,7 @@
     -moz-transform: translateX(120px);
     -ms-transform: translateX(120px);
     -o-transform: translateX(120px);
+    margin-right: 5px;
   }
 .actives {
   color: white !important;
@@ -231,8 +288,20 @@
     font-size: 2rem;
     font-weight: 700;
   }
-  .my-section ul {
-    margin-right: 56px;
+  .my-section ul:not:last-child {
+    transform: translate(990px);
+    -webkit-transform: translate(990px);
+    -moz-transform: translate(990px);
+    -ms-transform: translate(990px);
+    -o-transform: translate(990px);
+}
+.dropdown {
+  margin-right: 30px;
+  transform: translate(-42px, 36px);
+  -webkit-transform: translate(-42px, 36px);
+  -moz-transform: translate(-42px, 36px);
+  -ms-transform: translate(-42px, 36px);
+  -o-transform: translate(-42px, 36px);
 }
 /* تخصيص اللغة العربية (RTL) */
 :lang(ar) .my-navbar img,
@@ -240,11 +309,11 @@ html[dir="rtl"] .my-navbar img {
   width: 200px;
   height: 100px;
   margin-right: 0;
-  transform: translateX(20px);
-  -webkit-transform: translateX(20px);
-  -moz-transform: translateX(20px);
-  -ms-transform: translateX(20px);
-  -o-transform: translateX(20px);
+  transform: translateX(21px);
+  -webkit-transform: translateX(21px);
+  -moz-transform: translateX(21px);
+  -ms-transform: translateX(21px);
+  -o-transform: translateX(21px);
 }
 
 :lang(ar) .navbar-brand,
@@ -253,14 +322,23 @@ html[dir="rtl"] .navbar-brand {
   padding-right: 0;
 }
 
-:lang(ar) .my-section ul,
+/* :lang(ar) .my-section ul,
 html[dir="rtl"] .my-section ul {
   margin-left: 0;
-  transform: translateX(-170px);
-  -webkit-transform: translateX(-170px);
-  -moz-transform: translateX(-170px);
-  -ms-transform: translateX(-170px);
-  -o-transform: translateX(-170px);
+  transform: translateX(-185px);
+  -webkit-transform: translateX(-185px);
+  -moz-transform: translateX(-185px);
+  -ms-transform: translateX(-185px);
+  -o-transform: translateX(-185px);
+} */
+:lang(ar) .my-section ul:not:last-child,
+html[dir="rtl"] .my-section ul:not:last-child {
+  /*margin-left: 0;
+  */transform: translate(430px, 40px);
+  -webkit-transform: translate(430px, 40px);
+  -moz-transform: translate(430px, 40px);
+  -ms-transform: translate(430px, 40px);
+  -o-transform: translate(430px, 40px);
 }
 
 html[dir="rtl"] .dropdown-toggle::after,
@@ -278,8 +356,18 @@ html[dir="rtl"] .dropdown-item li ,
    -ms-transform: translateX(150px);
    -o-transform: translateX(150px);
 }
+html[dir="rtl"] .dropdown,
+:lang(ar) .dropdown {
+  transform: translate(77px , 36px);
+  -webkit-transform: translate(77px , 36px);
+  -moz-transform: translate(77px , 36px);
+  -ms-transform: translate(77px , 36px);
+  -o-transform: translate(77px , 36px);
+  margin-right: 70px;
+}
 html[dir="rtl"] .dropdown ul,
   :lang(ar) .dropdown ul{
-  margin-left: 40px;
+  margin-left: -65px;
 }
+
 }

@@ -36,10 +36,14 @@
           <a class="nav-link mx-1" routerLinkActive="actives" routerLink="/contact">{{'navbar.Contact Us' |
             translate}}</a>
         </li>
-        <li class="relative">
+
+      </ul>
+      <ul class="list-unstyled">
+        <li class="relative drop">
           <div #dropdown class="dropdown language-dropdown">
-            <button #dropdownButton class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-             <i class="pi pi-language"></i>
+            <button #dropdownButton class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="pi pi-language"></i>
             </button>
             <ul class="dropdown-menu">
               @if (currentLanguage === 'en') {
@@ -49,7 +53,6 @@
               <li><a (click)="changeLanguage('en')" role="button" class="dropdown-item">En</a></li>
               }
 
-                         
             </ul>
           </div>
         </li>
