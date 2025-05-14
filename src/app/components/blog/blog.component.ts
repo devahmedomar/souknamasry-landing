@@ -34,38 +34,38 @@ export class BlogComponent implements OnInit, AfterViewInit {
 
     const updateContent = () => {
       this.translate.get([
-        'blogsSection.Heading',
-        'blogsSection.ReadMore',
-        'blogsSection.cards.0.title',
-        'blogsSection.cards.0.description',
-        'blogsSection.cards.1.title',
-        'blogsSection.cards.1.description',
-        'blogsSection.cards.2.title',
-        'blogsSection.cards.2.description',
+        'blogs.Heading',
+        'blogs.ReadMore',
+        'blogs.cards.0.title',
+        'blogs.cards.0.description',
+        'blogs.cards.1.title',
+        'blogs.cards.1.description',
+        'blogs.cards.2.title',
+        'blogs.cards.2.description',
       ]).subscribe(translations => {
-        this.heading.set(translations['blogsSection.Heading']);
-        this.readMoreText.set(translations['blogsSection.ReadMore']);
+        this.heading.set(translations['blogs.Heading']);
+        this.readMoreText.set(translations['blogs.ReadMore']);
         this.cards.set([
           {
             id: '1',
             image: 'assets/images/card1.png',
             icon: 'pi pi-shopping-cart',
-            title: translations['blogsSection.cards.0.title'],
-            description: translations['blogsSection.cards.0.description']
+            title: translations['blogs.cards.0.title'],
+            description: translations['blogs.cards.0.description']
           },
           {
             id: '2',
             image: 'assets/images/card2.png',
             icon: 'pi pi-shopping-bag',
-            title: translations['blogsSection.cards.1.title'],
-            description: translations['blogsSection.cards.1.description']
+            title: translations['blogs.cards.1.title'],
+            description: translations['blogs.cards.1.description']
           },
           {
             id: '3',
             image: 'assets/images/card3.png',
             icon: 'pi pi-chart-line',
-            title: translations['blogsSection.cards.2.title'],
-            description: translations['blogsSection.cards.2.description']
+            title: translations['blogs.cards.2.title'],
+            description: translations['blogs.cards.2.description']
           }
         ]);
       });

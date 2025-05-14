@@ -1,6 +1,9 @@
 :root {
     --surface-color: #ffffff; 
   }
+  :host {
+    font-family: "Vazirmatn", sans-serif;
+  }  
   
   .container {
     max-width: 1170px;
