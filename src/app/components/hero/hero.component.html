@@ -8,25 +8,28 @@
                   <!-- Title -->
                   <span class="d-block text-uppercase"  
                     *ngIf="isBrowser"
-                    [attr.data-aos]="isBrowser ? 'fade-right' : null">
-                    From the heart
+                    [attr.data-aos]="isBrowser ? aosDirection : null">
+                    {{'HERO.titleLine1' | translate}}
                     <br>
-                    <span class="filled-text" data-text="of Egypt" *ngIf="isBrowser"
-                    [attr.data-aos]="isBrowser ? 'fade-in': null">
-                      of Egypt
+                    <span class="filled-text"   
+                    *ngIf="isBrowser"
+                    [attr.data-text]="('HERO.titleLine2' | translate)"
+                    [class.rtl]="translate.currentLang === 'ar'"
+                    >
+                    {{'HERO.titleLine2' | translate}}
                     </span>
                   </span>
                     
                   <!-- Subtitle-->
                   <h5 *ngIf="isBrowser"
-                    [attr.data-aos]="isBrowser ? 'fade-right' : null">Buy and sell with ease</h5>
+                    [attr.data-aos]="isBrowser ? aosDirection : null">{{'HERO.subtitle' | translate}}</h5>
 
                   <!-- Button to trigger the video popup when clicked -->
                   <button class="video-button" 
                     *ngIf="isBrowser"
-                    [attr.data-aos]="isBrowser ? 'fade-right' : null" (click)="showVideoPopup = true">
+                    [attr.data-aos]="isBrowser ? aosDirection : null" (click)="showVideoPopup = true">
                       <i class="pi pi-play play-icon"></i>
-                      Watch promo
+                    {{'HERO.watchPromo' | translate}}
                   </button>
                   
                   <!-- Rendering the video popup -->
