@@ -1,9 +1,10 @@
-import { AfterViewInit, Component, ElementRef, Inject, NgZone, PLATFORM_ID, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, Inject, NgZone, PLATFORM_ID, ViewChild, ViewEncapsulation } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,TranslatePipe],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css',
   encapsulation: ViewEncapsulation.None
@@ -13,7 +14,7 @@ export class HeroComponent implements AfterViewInit{
   @ViewChild('svgElement') svgRef!: ElementRef<SVGElement>;
   // Reference to the video player element to manipulate the video
   @ViewChild('videoPlayer') videoPlayer!: ElementRef<HTMLVideoElement>;
-
+  translate=inject(TranslateService)
 
   // State variable to control the visibility of the video popup
   showVideoPopup = false;
@@ -54,7 +55,9 @@ export class HeroComponent implements AfterViewInit{
       }
     });
   }
-  
+  get aosDirection(): 'fade-right' | 'fade-left' {
+  return this.translate.currentLang === 'ar' ? 'fade-left' : 'fade-right';
+  }
   // Function to pause the video and hide the dialog
   pauseVideo() {
     if (this.videoPlayer?.nativeElement) {
