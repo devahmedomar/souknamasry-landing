@@ -5,6 +5,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { blogsData } from './blog-data';
 import AOS from 'aos';
 import { NotfoundComponent } from "../../shared/notfound/notfound.component";
+import { TranslatePipe } from '@ngx-translate/core';
 
 export interface Blog {
   id: number;
@@ -26,7 +27,7 @@ export type BlogContentBlock =
 @Component({
   selector: 'app-blog-details',
   standalone: true,
-  imports: [BreadcrumbComponent, CommonModule, NotfoundComponent],
+  imports: [BreadcrumbComponent, CommonModule, NotfoundComponent,TranslatePipe],
   templateUrl: './blog-details.component.html',
   styleUrl: './blog-details.component.css'
 })
