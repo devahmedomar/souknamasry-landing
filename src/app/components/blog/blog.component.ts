@@ -3,13 +3,13 @@ import { CardModule } from 'primeng/card';
 import { Router } from '@angular/router';
  import { AfterViewInit, Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild, ViewEncapsulation } from '@angular/core';
  import { isPlatformBrowser } from '@angular/common';
+ import { TranslateModule } from '@ngx-translate/core';
 import AOS from 'aos';
-
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [CardModule , CommonModule],
+  imports: [CardModule , CommonModule , TranslateModule],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'
 })
@@ -43,7 +43,6 @@ cards = [
   },
   {
     id: '2' ,
-
     image: 'assets/images/card2.png',
     icon: 'pi pi-shopping-bag',
     title: '5 Reasons to Shop Local Online and Support Egyptian Brands',
