@@ -35,7 +35,11 @@
       "title": "Ongoing Support",
       "description": "We're always here for you — with technical help and friendly customer service whenever you need it."
     }
-  ]
-}
+    ]
+  },
 
+  "BREADCRUMB": {
+    "HOME": "Home",
+    "BLOG_DETAILS": "Blog Details"
+  }
 }
