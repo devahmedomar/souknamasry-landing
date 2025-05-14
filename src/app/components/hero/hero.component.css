@@ -7,21 +7,20 @@
   padding: 2rem 1rem;
 }
 .hero-text{
-    font-family: "Manrope", sans-serif;
+    font-family: "Vazirmatn", sans-serif;
     padding-top: 80px;
     padding-left: 60px;
+    font-weight: 700;
+
     /* Styling for the title */
     span{
-        font-weight: 700;
         font-size: 50px;
         color: #402c26;
-        line-height: 55px !important;
+        line-height: 70px !important;
     }
     /* Styling for the subtitle */
     h5{
-      font-family: "Plus Jakarta Sans", sans-serif;
       font-size: 24px;
-      font-weight: 700;
       color: #FD7E35;
       margin-bottom: 20px;
     }
@@ -35,13 +34,13 @@ span .filled-text {
   color: transparent;
   -webkit-text-stroke: 1px #402c26;
   font-weight: bold;
-  overflow: hidden;
+  overflow: visible;
+  padding-bottom: 10px;
 }
 
 .filled-text::before {
   content: attr(data-text);
   position: absolute;
-  left: 0;
   top: 0;
   width: 0%;
   height: 100%;
@@ -49,16 +48,37 @@ span .filled-text {
   white-space: nowrap;
   overflow: hidden;
   animation: fill-text 3s infinite alternate ease-in-out;
+  left: 0; /* default for LTR */
+}
+
+/* RTL version: override direction */
+.filled-text.rtl::before {
+  right: 0;
+  left: auto;
+  direction: rtl;
+  text-align: right;
+  animation-name: fill-text-rtl;
 }
 
 @keyframes fill-text {
-  0% {
+  from {
     width: 0%;
   }
-  100% {
+  to {
     width: 100%;
   }
 }
+
+/* RTL version of the animation */
+@keyframes fill-text-rtl {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 
 
 /* Styling for the video button */
