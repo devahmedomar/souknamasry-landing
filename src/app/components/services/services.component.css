@@ -1,7 +1,9 @@
 * {
   box-sizing: border-box;
 }
-
+:host {
+  font-family: "Vazirmatn", sans-serif;
+}
 .services {
   background-color: rgb(231, 231, 231);
   font-family: Arial, sans-serif;
@@ -58,14 +60,14 @@
 
 .card-title {
   margin: 0;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .card-description {
   opacity: 0;
   transition: opacity 0.3s ease;
   margin-top: 4px;
-  font-size: 0.89rem;
+  font-size: 0.90rem;
 }
 
 .custom-card:hover .card-description {

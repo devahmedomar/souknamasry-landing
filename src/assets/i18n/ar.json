@@ -9,8 +9,9 @@
   "Lang": "اللغة"
   },
   
-    "servicesSection": {
-      "cards": [
+  "services": {
+  "title1": "خدماتنا المميزة",
+  "cards": [
         {
           "title": "صفحة متجر مخصصة",
           "description": "أنشئ صفحتك الجميلة وعرّض منتجاتك بشكل احترافي."
