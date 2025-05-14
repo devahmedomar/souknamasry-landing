@@ -47,25 +47,25 @@
 }
 
 .card-overlay {
-  position: absolute;
+   position: absolute;
   bottom: 0;
-  left: 0;
-  padding: 12px;
+  padding: 12px ;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  width: 100%;
   color: white;
   transition: 0.3s ease;
 }
 
 .card-title {
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .card-description {
   opacity: 0;
   transition: opacity 0.3s ease;
   margin-top: 4px;
-  font-size: 0.85rem;
+  font-size: 0.89rem;
 }
 
 .custom-card:hover .card-description {

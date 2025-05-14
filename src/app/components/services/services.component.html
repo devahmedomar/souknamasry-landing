@@ -20,8 +20,8 @@
         <div class="card custom-card h-100">
           <img [src]="service.image" class="card-img" alt="loading..">
           <div class="card-overlay">
-            <h5 class="card-title">{{ service.title }}</h5>
-            <p class="card-description">{{ service.description }}</p>
+            <h5 class="card-title">{{ service.title | translate }}</h5>
+            <p class="card-description">{{ service.description | translate }}</p>
           </div>
         </div>
       </div>

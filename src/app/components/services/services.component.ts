@@ -1,11 +1,13 @@
 import { AfterViewInit, Component,  Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common'
 import AOS from 'aos';
+import { TranslateModule} from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css'
 })
@@ -23,35 +25,36 @@ export class ServicesComponent implements AfterViewInit {
   
   services = [
     {
-      title: 'A Personalized Shop Page',
-      description: 'Create your own beautiful page and showcase your products professionally.',
+      title: 'servicesSection.cards.0.title',
+      description: 'servicesSection.cards.0.description',
       image: 'assets/images/ser1.jpg'
     },
     {
-      title: 'Smart Dashboard',
-      description: 'Track your sales, page visits, and insights that help you grow your business.',
+      title: 'servicesSection.cards.1.title',
+      description: 'servicesSection.cards.1.description',
       image: 'assets/images/ser2.avif'
     },
     {
-      title: 'Marketing Support',
-      description: 'We help promote your approved products through targeted campaigns.',
+      title: 'servicesSection.cards.2.title',
+      description: 'servicesSection.cards.2.description',
       image: 'assets/images/ser3.avif'
     },
     {
-      title: 'Seamless Buying Experience',
-      description: 'Make it easy for customers to find and purchase your products without hassle.',
+      title: 'servicesSection.cards.3.title',
+      description: 'servicesSection.cards.3.description',
       image: 'assets/images/ser4.avif'
     },
     {
-      title: 'Visitor & Customer Insights',
-      description: 'See who’s visiting your page and which products get the most attention.',
+      title: 'servicesSection.cards.4.title',
+      description: 'servicesSection.cards.4.description',
       image: 'assets/images/ser5.jpg'
     },
     {
-      title: 'Ongoing Support',
-      description: 'We\'re always here for you — with technical help and friendly customer service whenever you need it.',
+      title: 'servicesSection.cards.5.title',
+      description: 'servicesSection.cards.5.description',
       image: 'assets/images/ser6.jpg'
     }
   ];
+  
 
 }
