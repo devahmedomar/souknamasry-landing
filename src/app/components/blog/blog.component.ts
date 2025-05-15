@@ -19,20 +19,37 @@ export class BlogComponent implements OnInit, AfterViewInit {
     private router: Router
   ) {}
 
-  // Inject services
+  // Inject TranslateService and DestroyRef
   private translate = inject(TranslateService);
   private destroyRef = inject(DestroyRef);
 
   // Reactive signals
-  heading = signal<string>('');
-  readMoreText = signal<string>('');
-  cards = signal<any[]>([]);
+  heading = signal<string>(''); 
+  // text for "Read More" button
+  readMoreText = signal<string>(''); 
+  cards = signal<
+    { id: string; title: string; description: string; image: string; icon: string }[]
+  >([]);
 
   ngOnInit(): void {
+    // Listen to language changes
     const lang$ = this.translate.onLangChange.pipe(
       takeUntilDestroyed(this.destroyRef)
     );
 
+    // Define static image/icon lists
+    const images = [
+      'assets/images/card1.png',
+      'assets/images/card2.png',
+      'assets/images/card3.png',
+    ];
+    const icons = [
+      'pi pi-shopping-cart',
+      'pi pi-shopping-bag',
+      'pi pi-chart-line',
+    ];
+
+    //  fetch translation and update signals
     const updateContent = () => {
       this.translate
         .get(['blogs.Heading', 'blogs.ReadMore', 'blogs.cards'])
@@ -40,41 +57,27 @@ export class BlogComponent implements OnInit, AfterViewInit {
           this.heading.set(translations['blogs.Heading']);
           this.readMoreText.set(translations['blogs.ReadMore']);
 
-          const cardTranslations = translations['blogs.cards'] as {
-            title: string;
-            description: string;
-          }[];
+          const rawCards = translations['blogs.cards'];
+          const cardsArray = Array.isArray(rawCards) ? rawCards : [];
 
-          // Static assets: images and icons
-          const images = [
-            'assets/images/card1.png',
-            'assets/images/card2.png',
-            'assets/images/card3.png',
-          ];
-          const icons = [
-            'pi pi-shopping-cart',
-            'pi pi-shopping-bag',
-            'pi pi-chart-line',
-          ];
-
-          // Build cards dynamically
-          const cardsData = cardTranslations.map((card, index) => ({
-            id: (index + 1).toString(),
-            title: card.title,
-            description: card.description,
-            image: images[index],
-            icon: icons[index],
-          }));
-
-          this.cards.set(cardsData);
+          this.cards.set(
+            cardsArray.map((card, index) => ({
+              id: (index + 1).toString(),
+              title: card.title,
+              description: card.description,
+              image: images[index],
+              icon: icons[index],
+            }))
+          );
         });
     };
 
-    updateContent(); // Initial load
+    updateContent(); 
     lang$.subscribe(updateContent); // Update on language change
   }
 
   ngAfterViewInit(): void {
+    // Initialize AOS animations only in browser
     if (isPlatformBrowser(this.platformId)) {
       AOS.init({
         duration: 1200,
@@ -83,6 +86,7 @@ export class BlogComponent implements OnInit, AfterViewInit {
     }
   }
 
+  // Navigate to blog details
   navigate(id: string | number): void {
     this.router.navigate(['/blog-details', id]);
   }
