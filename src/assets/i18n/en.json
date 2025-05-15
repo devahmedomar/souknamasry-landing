@@ -9,10 +9,6 @@
     "Lang":"Lang"
   },
 
-  "BREADCRUMB": {
-  "HOME": "Home"
-  },
-
   "BLOG-DETAILS": {
     "Blog_Details": "Blog Details",
     "BLOG_1": {
@@ -49,8 +45,8 @@
       ],
       "PARAGRAPH_2": "No hidden costs. No complicated systems. Just a smart way to take your business to the next level.<br>Whether you sell accessories, handmade crafts, fashion, or beauty products — Soukna Masry is your partner in growth."
     }
-  }
-}
+  },
+
 
   "blogs": {
   "Heading": "Your Guide to Success in Sales and Marketing",
