@@ -98,9 +98,40 @@
   ,"BREADCRUMB": {
     "HOME": "Home",
     "BLOG_DETAILS": "Blog Details"
+  },
+   "about": {
+     "title": "Why",
+     "title2": "Soukna Masry?",
+     "description": "is a digital platform made for small and medium-sized shops across Egypt. We’re here to support every local brand with big dreams but limited resources. We give shop owners a personalized store page, an easy-to-use dashboard to track sales and visits, and the support they need to grow from product promotion to real insights. And for shoppers, we offer a smart, simple way to discover and buy authentic Egyptian products while supporting passionate local entrepreneurs.",
+     "strongText": "Soukna Masry",
+     "atText": "AT",
+     "subdescription": ", we bring people together,",
+     "highlightedLine": "one product, one story, one dream at a time.",
+     "featuresTitle": "Features that make your experience smarter and easier",
+     "features": [
+        {
+          "icon": "pi-chart-line",
+          "title": "Easy and Simple Dashboard",
+          "description": "Track your sales, page visits, and all essential details in one place."
+        },
+        {
+          "icon": "pi-globe",
+          "title": "Free Marketing for Your Products",
+          "description": "We help your products reach a wider audience of potential customers."
+        },
+        {
+          "icon": "pi-shopping-cart",
+          "title": "Seamless Shopping Experience",
+          "description": "Smart design that makes it easy for customers to find and purchase what they need."
+        }
+      ]
+    }
+  
+  
   }
   
-}
+  
+
     
   
   
