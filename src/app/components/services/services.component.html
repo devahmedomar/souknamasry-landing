@@ -5,7 +5,7 @@
     <!-- Section Title -->
     <div class="text-center mt-4 mb-5">
       <h2 class="featured-title" data-aos="zoom-in-up">
-        Featured Services
+        {{ title1() }}
         <i class="pi pi-star"></i>
       </h2>
     </div>
@@ -13,10 +13,10 @@
     <!-- Services Cards -->
     <div class="row">
       <div class="card-container"
-           *ngFor="let service of services"
+           *ngFor="let service of services()"
            [attr.data-aos]="'fade-up'"
            [attr.data-aos-duration]="'1000'"
-           [attr.data-aos-delay]="(services.indexOf(service) * 200)">
+           [attr.data-aos-delay]="(services().indexOf(service) * 200)">
         <div class="card custom-card h-100">
           <img [src]="service.image" class="card-img" alt="loading..">
           <div class="card-overlay">
