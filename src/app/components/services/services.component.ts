@@ -1,4 +1,13 @@
-import {Component,AfterViewInit,OnInit,inject,DestroyRef,Inject,PLATFORM_ID,signal,} from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  OnInit,
+  inject,
+  DestroyRef,
+  Inject,
+  PLATFORM_ID,
+  signal,
+} from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -14,14 +23,10 @@ import AOS from 'aos';
 export class ServicesComponent implements OnInit, AfterViewInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-  // Inject TranslateService to access translations
   private translate = inject(TranslateService);
-
-  // Inject DestroyRef to automatically clean up subscriptions on component destroy
   private destroyRef = inject(DestroyRef);
 
   title1 = signal<string>('');
-
   services = signal<{ title: string; description: string; image: string }[]>([]);
 
   ngOnInit(): void {
@@ -29,7 +34,6 @@ export class ServicesComponent implements OnInit, AfterViewInit {
       takeUntilDestroyed(this.destroyRef)
     );
 
-    // images paths corresponding to the service cards
     const images = [
       'assets/images/ser1.jpg',
       'assets/images/ser2.avif',
@@ -39,13 +43,12 @@ export class ServicesComponent implements OnInit, AfterViewInit {
       'assets/images/ser6.jpg',
     ];
 
-    //  fetch translations and update the reactive signals
     const updateServices = () => {
-      this.translate.get(['services.title1', 'services.cards']).subscribe((translations) => {
-        this.title1.set(translations['services.title1']);
-        const cards = translations['services.cards'] as { title: string; description: string }[];
+      this.translate.get(['services2.title1', 'services2.cards']).subscribe((translations) => {
+        this.title1.set(translations['services2.title1']);
+        const rawCards = translations['services2.cards'];
+        const cards = Array.isArray(rawCards) ? rawCards : [];
 
-        // Combine each card with its corresponding image and update the reactive signal
         this.services.set(
           cards.map((card, index) => ({
             title: card.title,
@@ -57,12 +60,10 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     };
 
     updateServices();
-    // Reload content when the language changes
     lang$.subscribe(updateServices);
   }
 
   ngAfterViewInit(): void {
-    // Initialize AOS animation only when running in the browser (not during SSR)
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
         AOS.init({ once: false });
