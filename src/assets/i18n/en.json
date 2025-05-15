@@ -8,6 +8,74 @@
     "Contact Us": "Contact Us",
     "Lang":"Lang"
   },
+  "services2": {
+  "title1": "Featured Services",
+  "cards": [
+    {
+      "title": "A Personalized Shop Page",
+      "description": "Create your own beautiful page and showcase your products professionally."
+    },
+    {
+      "title": "Smart Dashboard",
+      "description": "Track your sales, page visits, and insights that help you grow your business."
+    },
+    {
+      "title": "Marketing Support",
+      "description": "We help promote your approved products through targeted campaigns."
+    },
+    {
+      "title": "Seamless Buying Experience",
+      "description": "Make it easy for customers to find and purchase your products without hassle."
+    },
+    {
+      "title": "Visitor & Customer Insights",
+      "description": "See who’s visiting your page and which products get the most attention."
+    },
+    {
+      "title": "Ongoing Support",
+      "description": "We're always here for you — with technical help and friendly customer service whenever you need it."
+    }
+    ]
+  },
+
+  "BLOG-DETAILS": {
+    "Blog_Details": "Blog Details",
+    "BLOG_1": {
+      "TITLE": "Why E-commerce is a Game-Changer for Small Shops in Egypt",
+      "PARAGRAPH_1": "In today’s fast-paced world, online presence is no longer a luxury — it’s a must.<br>For small and medium-sized businesses in Egypt, moving online opens up endless possibilities.<br>Instead of relying only on walk-in customers or social media, e-commerce gives shops a 24/7 storefront that works even while you sleep.<br>At Soukna Masry, we offer shop owners a ready-made online platform to showcase their products professionally,<br>track their sales, and grow their customer base — all without the high cost of building a website from scratch.",
+      "LIST_1": [
+        "Create a branded shop page in minutes",
+        "Access real-time insights and visitor stats",
+        "Get free marketing support to reach more people"
+      ],
+      "PARAGRAPH_2": "Start small, grow smart — that’s the Soukna Masry way."
+    },
+
+    "BLOG_2": {
+      "TITLE": "5 Reasons to Shop Local Online and Support Egyptian Brands",
+      "PARAGRAPH_1": "Online shopping doesn’t have to mean buying from huge international brands. With platforms like Soukna Masry,<br>you can support local Egyptian shops while enjoying the ease of online buying.",
+      "LIST_1": [
+        "<strong>Support Real People, Not Corporations</strong><br>Every purchase helps a local entrepreneur grow their dream.",
+        "<strong>Discover Unique Products</strong><br>Find handmade, high-quality, and authentic Egyptian items you won’t get elsewhere.",
+        "<strong>Fast & Smart Checkout</strong><br>Our platform is designed to make your buying journey smooth and stress-free.",
+        "<strong>Community Impact</strong><br>You’re not just shopping — you’re uplifting communities.",
+        "<strong>Trust & Transparency</strong><br>All shops on our platform are verified and approved for quality."
+      ],
+      "PARAGRAPH_2": "Shopping local has never been this easy — or this rewarding."
+    },
+
+    "BLOG_3": {
+      "TITLE": "How Soukna Masry Helps Egyptian Shop Owners Sell Smarter",
+      "PARAGRAPH_1": "Running a small shop is hard work. You have to manage inventory, customers, marketing, and still make time to grow your brand.<br>That’s why Soukna Masry was created — to make e-commerce simple and accessible for every shop owner in Egypt.",
+      "LIST_1": [
+        "<span class='fw-bold'>Your Own Shop Page:</span> No tech skills needed — just upload your products and start selling.",
+        "<span class='fw-bold'>Built-in Insights:</span> See what sells best, when people visit, and how they interact with your store.",
+        "<span class='fw-bold'>Free Promotion:</span> We help market your products through our platform and social media."
+      ],
+      "PARAGRAPH_2": "No hidden costs. No complicated systems. Just a smart way to take your business to the next level.<br>Whether you sell accessories, handmade crafts, fashion, or beauty products — Soukna Masry is your partner in growth."
+    }
+  },
+
 
   "blogs": {
   "Heading": "Your Guide to Success in Sales and Marketing",
@@ -28,8 +96,8 @@
       ]
     }
   ,"BREADCRUMB": {
-  "HOME": "Home",
-  "BLOG_DETAILS": "Blog Details"
+    "HOME": "Home",
+    "BLOG_DETAILS": "Blog Details"
   }
   
 }
