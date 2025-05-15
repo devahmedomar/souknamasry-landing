@@ -35,7 +35,7 @@
                   <!-- Rendering the video popup -->
                   @if (showVideoPopup) {
 
-                    <div class="fullscreen-overlay" (click)="closeDialog($event)">
+                    <div class="fullscreen-overlay" (click)="onBackdropClick($event)">
                       <div class="fullscreen-content" (click)="$event.stopPropagation()">
                         
                         <!-- Promo Video -->
