@@ -6,6 +6,7 @@
     align-items: center;
     flex-direction: column;
     height: 80vh; 
+    font-family: "Vazirmatn", sans-serif;
 }
 .breadcrumnd-content{
     margin: 0 ;
@@ -64,6 +65,7 @@
 ::ng-deep .p-breadcrumb .p-menuitem-link .p-menuitem-text{
     color: white;
     font-weight: 500;
+    font-family: "Vazirmatn", sans-serif;
 }
 ::ng-deep .p-breadcrumb .p-menuitem-link{
     text-decoration: none;
