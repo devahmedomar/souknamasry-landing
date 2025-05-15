@@ -8,14 +8,14 @@
     "Contact Us": "Contact Us",
     "Lang":"Lang"
   },
-    "services2": {
   "HERO": {
     "titleLine1": "From the heart",
     "titleLine2": "of Egypt",
     "subtitle": "Buy and sell with ease",
     "watchPromo": "Watch promo"
   },
-
+  
+  "services2": {
   "title1": "Featured Services",
   "cards": [
     {
