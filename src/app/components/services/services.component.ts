@@ -1,13 +1,4 @@
-import {
-  Component,
-  AfterViewInit,
-  OnInit,
-  inject,
-  DestroyRef,
-  Inject,
-  PLATFORM_ID,
-  signal,
-} from '@angular/core';
+import {  Component,AfterViewInit, OnInit, inject, DestroyRef, Inject, PLATFORM_ID, signal,} from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -21,11 +12,14 @@ import AOS from 'aos';
   styleUrl: './services.component.css',
 })
 export class ServicesComponent implements OnInit, AfterViewInit {
+    // Inject platform ID to check if running in the browser
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
+  // Inject TranslateService and DestroyRef using signal-based approach
   private translate = inject(TranslateService);
   private destroyRef = inject(DestroyRef);
 
+  // Signals to hold translated title and service cards
   title1 = signal<string>('');
   services = signal<{ title: string; description: string; image: string }[]>([]);
 
@@ -34,6 +28,7 @@ export class ServicesComponent implements OnInit, AfterViewInit {
       takeUntilDestroyed(this.destroyRef)
     );
 
+// List of static image paths for the service cards
     const images = [
       'assets/images/ser1.jpg',
       'assets/images/ser2.avif',
@@ -42,10 +37,14 @@ export class ServicesComponent implements OnInit, AfterViewInit {
       'assets/images/ser5.jpg',
       'assets/images/ser6.jpg',
     ];
-
+   //fetch translations and update signals
     const updateServices = () => {
       this.translate.get(['services2.title1', 'services2.cards']).subscribe((translations) => {
+
+           // Set the translated title
         this.title1.set(translations['services2.title1']);
+
+         // Set the translated cards with images
         const rawCards = translations['services2.cards'];
         const cards = Array.isArray(rawCards) ? rawCards : [];
 
@@ -60,10 +59,12 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     };
 
     updateServices();
+       // Update translations on language change
     lang$.subscribe(updateServices);
   }
 
   ngAfterViewInit(): void {
+    // Initialize AOS animations on the browser only
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
         AOS.init({ once: false });
