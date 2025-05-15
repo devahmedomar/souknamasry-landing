@@ -1,6 +1,6 @@
 <section>
     <!-- Breadcrumb component displaying the current page heading -->
-    <app-breadcrumb [breadcrumbHeading]="'BREADCRUMB.BLOG_DETAILS'" />
+    <app-breadcrumb [breadcrumbHeading]="'BLOG-DETAILS.Blog_Details'" />
 
     <div class="container">
       <!-- Render blog details only if the blog exists, otherwise show NotFound -->
@@ -12,23 +12,23 @@
         </div>
 
         <!-- Blog title -->
-        <h3 class="blog-heading" data-aos="fade-left">{{ blog.title }}</h3>
+        <h3 class="blog-heading" data-aos="fade-left">{{ blog.title| translate }}</h3>
         
         <!-- Blog content blocks rendered dynamically -->
         <div class="blog-content">
           <ng-container *ngFor="let block of blog.content">
 
             <!-- Heading and paragraph of blogs -->
-            <p *ngIf="block.type === 'paragraph'" [innerHTML]="block.html" data-aos="fade-left"></p>
+            <p *ngIf="block.type === 'paragraph'" [innerHTML]="block.html|translate" data-aos="fade-left"></p>
   
             <!-- Blog 2 list content -->
             <ul *ngIf="block.type === 'list' && block.listType === 'ul'" data-aos="fade-left">
-              <li *ngFor="let item of block.items" [innerHTML]="item.html"></li>
+              <li *ngFor="let item of block.items" [innerHTML]="item.html|translate"></li>
             </ul>
   
             <!-- Blog 1 and Blog 3 list content -->
             <ol *ngIf="block.type === 'list' && block.listType === 'ol'" data-aos="fade-left">
-              <li *ngFor="let item of block.items" [innerHTML]="item.html"></li>
+              <li *ngFor="let item of block.items" [innerHTML]="item.html|translate"></li>
             </ol>
 
           </ng-container>

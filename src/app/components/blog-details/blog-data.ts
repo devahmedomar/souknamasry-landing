@@ -5,84 +5,74 @@ export const blogsData:Blog[] = [
     // First blog entry
     {
       id: 1,
-      title: 'Why E-commerce is a Game-Changer for Small Shops in Egypt',
+      title: 'BLOG-DETAILS.BLOG_1.TITLE',
       image: 'assets/images/blog1.jpg',
       content: [
         {
-          type: 'paragraph',
-          html: `In today’s fast-paced world, online presence is no longer a luxury — it’s a must.
-          <br>For small and medium-sized businesses in Egypt, moving online opens up endless possibilities.
-          <br>Instead of relying only on walk-in customers or social media, e-commerce gives shops a 24/7 storefront that works even while you sleep.
-          <br>At Soukna Masry, we offer shop owners a ready-made online platform to showcase their products professionally,
-          <br>track their sales, and grow their customer base — all without the high cost of building a website from scratch.`
+          type: 'paragraph',html: 'BLOG-DETAILS.BLOG_1.PARAGRAPH_1'
         },
         {
           type: 'list',
           listType: 'ul',
           items: [
-            { html: 'Create a branded shop page in minutes' },
-            { html: 'Access real-time insights and visitor stats' },
-            { html: 'Get free marketing support to reach more people' }
+              { html: 'BLOG-DETAILS.BLOG_1.LIST_1.0'},
+              { html: 'BLOG-DETAILS.BLOG_1.LIST_1.1'},
+              {html: 'BLOG-DETAILS.BLOG_1.LIST_1.2'}
           ]
         },
         {
           type: 'paragraph',
-          html: 'Start small, grow smart — that’s the Soukna Masry way.'
+          html: 'BLOG-DETAILS.BLOG_1.PARAGRAPH_2' 
         }
       ]
     },
     // Second blog entry
     {
       id: 2,
-      title: '5 Reasons to Shop Local Online and Support Egyptian Brands',
+      title: 'BLOG-DETAILS.BLOG_2.TITLE',
       image: 'assets/images/blog2.jpg',
       content: [
         {
-          type: 'paragraph',
-          html: `Online shopping doesn’t have to mean buying from huge international brands. With platforms like Soukna Masry,
-          <br>you can support local Egyptian shops while enjoying the ease of online buying.`
+          type: 'paragraph', html: 'BLOG-DETAILS.BLOG_2.PARAGRAPH_1'
         },
         {
           type: 'list',
           listType: 'ol',
           items: [
-            { html: '<strong>Support Real People, Not Corporations</strong><br>Every purchase helps a local entrepreneur grow their dream.' },
-            { html: '<strong>Discover Unique Products</strong><br>Find handmade, high-quality, and authentic Egyptian items you won’t get elsewhere.' },
-            { html: '<strong>Fast & Smart Checkout</strong><br>Our platform is designed to make your buying journey smooth and stress-free.' },
-            { html: '<strong>Community Impact</strong><br>You’re not just shopping — you’re uplifting communities.' },
-            { html: '<strong>Trust & Transparency</strong><br>All shops on our platform are verified and approved for quality.' }
+            { html: 'BLOG-DETAILS.BLOG_2.LIST_1.0' },
+            { html: 'BLOG-DETAILS.BLOG_2.LIST_1.1' },
+            { html: 'BLOG-DETAILS.BLOG_2.LIST_1.2'},
+            { html: 'BLOG-DETAILS.BLOG_2.LIST_1.3' },
+            { html: 'BLOG-DETAILS.BLOG_2.LIST_1.4' }
           ]
         },
         {
-          type: 'paragraph',
-          html: 'Shopping local has never been this easy — or this rewarding.'
+          type: 'paragraph', html:  'BLOG-DETAILS.BLOG_2.PARAGRAPH_2'
         }
       ]
     },
     // Third blog entry
     {
       id: 3,
-      title: 'How Soukna Masry Helps Egyptian Shop Owners Sell Smarter',
+      title: 'BLOG-DETAILS.BLOG_3.TITLE',
       image: 'assets/images/blog3.jpg',
       content: [
         {
           type: 'paragraph',
-          html: `Running a small shop is hard work. You have to manage inventory, customers, marketing, and still make time to grow your brand. 
-          <br>That’s why Soukna Masry was created — to make e-commerce simple and accessible for every shop owner in Egypt.`
+          html: 'BLOG-DETAILS.BLOG_3.PARAGRAPH_1'
         },
         {
           type: 'list',
           listType: 'ul',
           items: [
-            { html: '<span class="fw-bold">Your Own Shop Page:</span> No tech skills needed — just upload your products and start selling.' },
-            { html: '<span class="fw-bold">Built-in Insights:</span> See what sells best, when people visit, and how they interact with your store.' },
-            { html: '<span class="fw-bold">Free Promotion:</span> We help market your products through our platform and social media.' }
+            { html: 'BLOG-DETAILS.BLOG_3.LIST_1.0'},
+            { html: 'BLOG-DETAILS.BLOG_3.LIST_1.1'},
+            { html: 'BLOG-DETAILS.BLOG_3.LIST_1.2' }
           ]
         },
         {
           type: 'paragraph',
-          html: `No hidden costs. No complicated systems. Just a smart way to take your business to the next level.
-          <br>Whether you sell accessories, handmade crafts, fashion, or beauty products — Soukna Masry is your partner in growth.`
+          html: 'BLOG-DETAILS.BLOG_3.PARAGRAPH_2'
         }
       ]
     }
