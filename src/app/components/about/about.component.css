@@ -32,7 +32,7 @@
   align-items: flex-start;
   justify-content: space-evenly;
   gap: 1.5rem;
-  font-size: 1.1875rem; /* 19px */
+  font-size: 1.1895rem; /* 19px */
   line-height: 1.8;
   text-justify: inter-word;
   text-align: justify;
@@ -86,7 +86,8 @@
 
 .glitch-text::before,
 .glitch-text::after {
-  content: "Why";
+  /* content: "Why"; */
+  content: attr(data-text);
   position: absolute;
   top: 0;
   left: 0;
