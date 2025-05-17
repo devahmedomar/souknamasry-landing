@@ -1,0 +1,8 @@
+.container{
+    min-height: 100vh;
+    margin-top: 5rem;
+}
+
+.card-content{
+    font-family: "Vazirmatn", sans-serif;
+}
