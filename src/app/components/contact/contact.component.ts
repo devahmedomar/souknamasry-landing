@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
 import { BreadcrumbComponent } from '../../shared/breadcrumb/breadcrumb.component';
 import { CardModule } from 'primeng/card';
 import { TranslatePipe } from '@ngx-translate/core';
+import { isPlatformBrowser } from '@angular/common';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-contact',
@@ -10,6 +12,12 @@ import { TranslatePipe } from '@ngx-translate/core';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
-export class ContactComponent {
-
+export class ContactComponent implements AfterViewInit{
+    constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  
+   ngAfterViewInit(): void {
+      if (isPlatformBrowser(this.platformId)) {
+        setTimeout(() => AOS.init());
+      }
+    }
 }
