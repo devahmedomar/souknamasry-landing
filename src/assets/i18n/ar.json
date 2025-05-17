@@ -137,10 +137,27 @@
         }
       ]
     }
-  
-  
-  
-  
+    ,
+    "CONTACT-US": {
+    "Contact-Us": "تواصل معنا",
+    "PHONE":{
+      "title": "رقم الهاتف",
+      "mobile":"۲۰۱۲۰۸٤٤٤٤۸۱+"
+    },
+    "Mail":{
+      "title":"عنوان البريد",
+      "email-address":"souknamasry22@gmail.com "
+    },
+    "LOCATION":{
+      "title":"عنواننا",
+      "address": "بني سويف | مصر"
+    },
+    "OFFICE-HOUR":{
+      "title":"ساعات العمل",
+      "slot1": "الأحد - الخميس ۹ص - ٦م",
+      "slot2": "الجمعة - السبت ٤م - ۱۰م"
+    }
+  }
 }
   
 

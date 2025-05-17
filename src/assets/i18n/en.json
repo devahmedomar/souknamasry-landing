@@ -134,7 +134,27 @@
       ]
     }
   
-  
+      ,
+      "CONTACT-US": {
+      "Contact-Us": "Contact Us",
+      "PHONE":{
+        "title":"Phone",
+        "mobile":"+201208444481"
+      },
+      "Mail":{
+        "title":"Mail Address",
+        "email-address":"souknamasry22@gmail.com "
+      },
+      "LOCATION":{
+        "title":"Our Location",
+        "address": "Beni-suef | Egypt"
+      },
+      "OFFICE-HOUR":{
+        "title":"Office Hours",
+        "slot1": "Sun - Thu 09 am - 06pm",
+        "slot2": "Fri - Sat 4 pm - 10pm"
+      }
+    }
   }
   
   
