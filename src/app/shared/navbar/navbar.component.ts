@@ -1,10 +1,11 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import {
   Component,
   ElementRef,
   inject,
   ViewChild,
   OnInit,
+  AfterViewInit,
 } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { FragmentActiveDirective } from '../directives/fragment-active.directive';
@@ -21,17 +22,19 @@ import { MyTranslateService } from '../../services/myTranslate/my-translate.serv
     RouterModule,
     RouterLinkActive,
     TranslatePipe,
+    NgIf,
+
   ],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit, AfterViewInit {
   translateService = inject(TranslateService);
   myTranslateService = inject(MyTranslateService);
   @ViewChild('dropdown') dropdownElement!: ElementRef;
   @ViewChild('dropdownButton') dropdownButton!: ElementRef;
 
-  currentLanguage: string = 'en'; // default
+  currentLanguage: string = 'ar'; // default
   ngOnInit(): void {
     // Listen for language change to keep it updated
     this.translateService.onLangChange.subscribe((event) => {
@@ -50,8 +53,8 @@ export class NavbarComponent {
   }
   ngAfterViewInit(): void {
 
-    console.log(this.translateService.currentLang);
     
+
         this.dropdownElement.nativeElement.addEventListener(
       'hidden.bs.dropdown',
       () => {

@@ -1,7 +1,12 @@
 <nav class="navbar navbar-expand-lg my-navbar">
   <div class="container d-flex justify-content-between align-items-center">
     <a class="navbar-brand" routerLink="/home">
-      <img src="/assets/images/souknamasry_logo.png" alt="souknamasry logo" />
+     @if (currentLanguage === 'ar') {
+      <img class="arab_logo" src="/assets/images/souknamasry_logo_arabic.png" alt="souknamasry logo">
+     }
+      @else if(currentLanguage === 'en') {
+        <img src="/assets/images/souknamasry_logo.png" alt="souknamasry logo" />
+      }
 
     </a>
 
@@ -43,16 +48,11 @@
           <div #dropdown class="dropdown language-dropdown">
             <button #dropdownButton class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown"
               aria-expanded="false">
-              <i class="pi pi-language"></i>
+              <i class="pi pi-globe"></i>
             </button>
             <ul class="dropdown-menu">
-              @if (currentLanguage === 'en') {
-              <li><a (click)="changeLanguage('ar')" role="button" class="dropdown-item">Ar</a></li>
-              }
-              @if ( currentLanguage === 'ar') {
-              <li><a (click)="changeLanguage('en')" role="button" class="dropdown-item">En</a></li>
-              }
-
+              <li *ngIf="translateService.currentLang === 'en'"><a (click)="changeLanguage('ar')" role="button" class="dropdown-item">Ar</a></li>
+              <li *ngIf="translateService.currentLang === 'ar'"><a (click)="changeLanguage('en')" role="button" class="dropdown-item">En</a></li>
             </ul>
           </div>
         </li>
