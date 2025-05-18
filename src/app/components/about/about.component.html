@@ -31,7 +31,7 @@
       </div>
 
       <!-- Features Title -->
-      <h2 class="feature-title mb-5 mt-5" data-aos="zoom-in-up" data-aos-delay="900" data-aos-duration="1500">
+      <h2 [class.rtl]="currentLang() === 'ar'" class="feature-title mb-5 mt-5" data-aos="zoom-in-up" data-aos-delay="900" data-aos-duration="1500">
         {{ features_title() }}
       </h2>
 

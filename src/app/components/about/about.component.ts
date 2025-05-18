@@ -27,6 +27,8 @@ export class AboutComponent implements OnInit, AfterViewInit {
   highlightedLine = signal('');
   features_title = signal('');
   features = signal<{ icon: string; title: string; description: string }[]>([]);
+  currentLang = signal(this.translate.currentLang || 'en');
+
 
   aboutimg = 'assets/images/about.png';
 
@@ -65,6 +67,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
     };
 
     updateTranslations();
+    this.currentLang.set(this.translate.currentLang || 'en');
     lang$.subscribe(updateTranslations);
   }
 
