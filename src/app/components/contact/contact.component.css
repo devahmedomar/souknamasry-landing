@@ -5,4 +5,58 @@
 
 .card-content{
     font-family: "Vazirmatn", sans-serif;
+    color: #402c26;
+}
+
+.contact-content{
+    padding-top: 2rem;
+}
+.contact-image{
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 0.5rem;
+    height:35rem;
+}
+
+.contact-image.rtl{
+    padding-left: 0px;
+    padding-right: 5rem;
+}
+
+.contact-form .contact-form-content{
+    padding: 2rem 1rem;
+}
+
+.contact-form h2{
+    font-family: "Vazirmatn", sans-serif;
+    color: #402c26;
+    font-size: 3rem;
+}
+
+.form-inputs input,textarea{
+    font-family: "Vazirmatn", sans-serif;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    color: #402c26;
+    border-bottom-color: #402c26;
+}
+.form-inputs input::placeholder,textarea::placeholder {
+    color: #402c26;
+}
+
+.form-inputs textarea{
+    padding: 0;
+}
+.form-inputs input,textarea:focus{
+    outline: none;
+}
+
+textarea.form-control:focus {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.sendbtn{
+    background-color: white!important;
 }

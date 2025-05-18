@@ -26,5 +26,44 @@
                 </p-card>
             }
         </div>
+        <div class="row">
+            <div class="contact-content d-flex gap-2">
+                <div class="col-6">
+                    <img
+                    [class.rtl]="translate.currentLang === 'ar'"
+                    data-aos="fade-right" data-aos-delay="100" data-aos-duration="900"
+                    class="contact-image" src="assets/images/contact-image.jpg" alt="">
+                </div>
+                <div class="col-6">
+                    <div class="contact-form" data-aos="fade-left" data-aos-delay="100" data-aos-duration="900">
+                    <p-card [style]="{ width: '34rem',height: '35rem'}" >
+                        <div class="contact-form-content">
+                            <h2>{{"CONTACT-US.CONTACT-FORM.title" |translate}} </h2>
+                            <form action="https://formspree.io/f/mqaqnorz" method="POST" class=" form-inputs d-flex flex-column gap-3 mt-4">
+                                <div class="d-flex justify-content-between gap-5">
+                                    <input 
+                                        class="name-input" 
+                                        type="text" pInputText 
+                                        formControlName="text" 
+                                        [placeholder]="'CONTACT-US.CONTACT-FORM.NAME-INPUT' |translate"/>
+                                    <input 
+                                        class="email-input"
+                                        type="email" pInputText 
+                                        formControlName="text" 
+                                        [placeholder]="'CONTACT-US.CONTACT-FORM.EMAIL-INPUT' |translate"/>
+                                </div>
+                                    <textarea class="form-control" 
+                                    id="exampleFormControlTextarea1" 
+                                    rows="5"
+                                    [placeholder]="'CONTACT-US.CONTACT-FORM.MESSAGE'| translate"
+                                    ></textarea>
+                                    <button type="submit" class="sendbtn">{{'CONTACT-US.CONTACT-FORM.BUTTON-LABEL'| translate}}</button>
+                            </form>
+                        </div>
+                    </p-card>
+                </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
