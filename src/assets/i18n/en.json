@@ -153,6 +153,13 @@
         "title":"Office Hours",
         "slot1": "Sun - Thu 09 am - 06pm",
         "slot2": "Fri - Sat 4 pm - 10pm"
+      },
+      "CONTACT-FORM":{
+        "title": "Leave A Message",
+        "NAME-INPUT": "Full Name",
+        "EMAIL-INPUT":"Email Address",
+        "MESSAGE":"Message",
+        "BUTTON-LABEL":"Send Message"
       }
     }
   }
