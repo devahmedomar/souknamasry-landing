@@ -357,6 +357,9 @@
   .custom-width {
     max-width: 90%;
   }
+.row.g-4 {
+    margin-right: 70px;
+  }
 
   .par1 {
     text-align: start;
