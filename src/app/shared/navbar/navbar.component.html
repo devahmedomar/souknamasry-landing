@@ -43,20 +43,18 @@
         </li>
 
       </ul>
-      <ul class="list-unstyled">
+      <ul class="list-unstyled m-0">
         <li class="relative drop">
-          <div #dropdown class="dropdown language-dropdown">
-            <button #dropdownButton class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
+          <div class="dropdown language-dropdown">
+            <button (click)="toggleLanguage()" type="button" class="btn btn-info d-flex align-items-center gap-2">
               <i class="pi pi-globe"></i>
             </button>
-            <ul class="dropdown-menu">
-              <li *ngIf="translateService.currentLang === 'en'"><a (click)="changeLanguage('ar')" role="button" class="dropdown-item">Ar</a></li>
-              <li *ngIf="translateService.currentLang === 'ar'"><a (click)="changeLanguage('en')" role="button" class="dropdown-item">En</a></li>
-            </ul>
           </div>
+
+
         </li>
       </ul>
+
     </div>
   </div>
 </nav>

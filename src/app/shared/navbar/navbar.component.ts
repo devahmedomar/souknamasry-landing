@@ -1,12 +1,5 @@
-import { CommonModule, NgIf } from '@angular/common';
-import {
-  Component,
-  ElementRef,
-  inject,
-  ViewChild,
-  OnInit,
-  AfterViewInit,
-} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { FragmentActiveDirective } from '../directives/fragment-active.directive';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
@@ -22,51 +15,35 @@ import { MyTranslateService } from '../../services/myTranslate/my-translate.serv
     RouterModule,
     RouterLinkActive,
     TranslatePipe,
-    NgIf,
-
   ],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
-export class NavbarComponent implements OnInit, AfterViewInit {
+export class NavbarComponent implements OnInit {
   translateService = inject(TranslateService);
   myTranslateService = inject(MyTranslateService);
-  @ViewChild('dropdown') dropdownElement!: ElementRef;
-  @ViewChild('dropdownButton') dropdownButton!: ElementRef;
 
-  currentLanguage: string = 'ar'; // default
+  currentLanguage: string = 'ar'; // default language
+
   ngOnInit(): void {
-    // Listen for language change to keep it updated
+    // Subscribe to language change
     this.translateService.onLangChange.subscribe((event) => {
       this.currentLanguage = event.lang;
     });
 
-    // fallback in case currentLang is available at init
+    // fallback in case language is already set
     if (this.translateService.currentLang) {
       this.currentLanguage = this.translateService.currentLang;
     }
   }
 
+  toggleLanguage(): void {
+    const newLang = this.currentLanguage === 'ar' ? 'en' : 'ar';
+    this.changeLanguage(newLang);
+  }
+
   changeLanguage(lang: string): void {
     this.myTranslateService.changeLanguage(lang);
     this.currentLanguage = lang;
-  }
-  ngAfterViewInit(): void {
-
-    
-
-        this.dropdownElement.nativeElement.addEventListener(
-      'hidden.bs.dropdown',
-      () => {
-        this.dropdownButton.nativeElement.classList.remove('open');
-      }
-    );
-
-    this.dropdownElement.nativeElement.addEventListener(
-      'show.bs.dropdown',
-      () => {
-        this.dropdownButton.nativeElement.classList.add('open');
-      }
-    );
   }
 }
