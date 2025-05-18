@@ -4,6 +4,7 @@ import { CardModule } from 'primeng/card';
 import { TranslatePipe } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
 import AOS from 'aos';
+import { contactData } from './contact-data';
 
 @Component({
   selector: 'app-contact',
@@ -13,11 +14,13 @@ import AOS from 'aos';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent implements AfterViewInit{
-    constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  contact_data = contactData
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
   
-   ngAfterViewInit(): void {
+  ngAfterViewInit(): void {
       if (isPlatformBrowser(this.platformId)) {
         setTimeout(() => AOS.init());
       }
-    }
+    }   
 }
