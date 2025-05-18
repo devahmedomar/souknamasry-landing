@@ -1,31 +1,30 @@
-import { AfterViewInit, Component, ElementRef, Inject, NgZone, PLATFORM_ID, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, Inject, NgZone, PLATFORM_ID, ViewChild, ViewEncapsulation } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,TranslatePipe],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css',
   encapsulation: ViewEncapsulation.None
 })
 export class HeroComponent implements AfterViewInit{
   // Reference to the SVG element to manipulate its classes or styles
-  @ViewChild('svgElement') svgRef!: ElementRef<SVGElement>;
+  @ViewChild('svgElement') svgRef?: ElementRef<SVGElement>;
+  
   // Reference to the video player element to manipulate the video
-  @ViewChild('videoPlayer') videoPlayer!: ElementRef<HTMLVideoElement>;
+  @ViewChild('videoPlayer') videoPlayer?: ElementRef<HTMLVideoElement>;
+  
+  translate=inject(TranslateService)
+  
+  // Injects the PLATFORM_ID token to determine whether the code is running on the browser or server
 
-
+  private ngZone= inject(NgZone)
+  private platformId = inject(PLATFORM_ID)
+  isBrowser = isPlatformBrowser(this.platformId);
   // State variable to control the visibility of the video popup
   showVideoPopup = false;
-    
-  // Injects the PLATFORM_ID token to determine whether the code is running on the browser or server
-  isBrowser: boolean;
-  constructor(
-      @Inject(PLATFORM_ID) private platformId: Object,
-      private ngZone: NgZone
-    ) {
-      this.isBrowser = isPlatformBrowser(this.platformId);
-  }
   
   private async initAOS() {
      try {
@@ -54,7 +53,9 @@ export class HeroComponent implements AfterViewInit{
       }
     });
   }
-  
+  get aosDirection(): 'fade-right' | 'fade-left' {
+  return this.translate.currentLang === 'ar' ? 'fade-left' : 'fade-right';
+  }
   // Function to pause the video and hide the dialog
   pauseVideo() {
     if (this.videoPlayer?.nativeElement) {
@@ -64,7 +65,7 @@ export class HeroComponent implements AfterViewInit{
   }
 
   // Function to close the dialog when clicking outside of it
-  closeDialog(event: MouseEvent) {
+  onBackdropClick(event: MouseEvent) {
     this.pauseVideo();
   }
 }
