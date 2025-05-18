@@ -58,5 +58,11 @@ textarea.form-control:focus {
 }
 
 .sendbtn{
-    background-color: white!important;
+    background-color: white;
+    width:14rem;
+    padding: 1rem 1.2rem;
+    border-radius: 50px;
+    color: #402c26;
+    border-color: #402c26;
+    border-style: solid;
 }
