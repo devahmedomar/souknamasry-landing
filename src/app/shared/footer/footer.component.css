@@ -1,0 +1,97 @@
+footer {
+    background-color: #604239;
+  }
+  
+  /* Transition for text and links */
+  footer .text-white,
+  .quick-link2,
+  .quick-link {
+    transition: all 0.4s ease;
+  }
+  
+  /* Hover effect for main text and quick-link2 */
+  footer .text-white:hover,
+  .quick-link2,
+  .quick-link2:hover {
+    color: #fd7e35 !important;
+  }
+  
+
+  .quick-link:hover {
+    background-color: #fd7e35;
+    color: #fff;
+  }
+  
+  /* Footer paragraph  */
+  footer .col-md-3 p {
+    font-size: 1.125rem; /* 18px */
+  }
+  
+  /* Footer highlighted span  */
+  footer .col-md-3 p span {
+    font-size: 1.25rem; /* 20px */
+    cursor: pointer;
+  }
+  
+  /* Extra small screens (less than 576px) */
+  @media (max-width: 35.99875rem) {
+    footer {
+      text-align: center;
+    }
+  
+    footer .row > div {
+      margin-bottom: 2rem;
+    }
+  
+    footer h5 {
+      font-size: 1.2rem;
+    }
+  
+    footer p,
+    footer a {
+      font-size: 0.95rem;
+    }
+  
+    .btn.btn-floating {
+      padding: 0.5rem 0.6rem;
+      font-size: 1rem;
+    }
+  }
+  
+  /* Small to medium screens (576px - 767.98px) */
+  @media (min-width: 36rem) and (max-width: 47.99875rem) {
+    footer h5 {
+      font-size: 1.3rem;
+    }
+  
+    footer p,
+    footer a {
+      font-size: 1rem;
+    }
+  
+    .btn.btn-floating {
+      padding: 0.5rem 0.7rem;
+      font-size: 1.1rem;
+    }
+  }
+  
+  /* Medium to large screens (768px - 991.98px) */
+  @media (min-width: 48rem) and (max-width: 61.99875rem) {
+    footer h5 {
+      font-size: 1.4rem;
+    }
+  
+    footer p,
+    footer a {
+      font-size: 1.05rem;
+    }
+  
+    .btn.btn-floating {
+      width: 2.25rem;    /* 36px */
+      height: 2.25rem;   /* 36px */
+      padding: 0;
+      font-size: 1rem;
+      line-height: 2.25rem; /* 36px */
+    }
+  }
+  
