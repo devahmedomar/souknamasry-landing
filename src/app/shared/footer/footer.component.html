@@ -1,56 +1,80 @@
-<footer class=" text-white pt-5 pb-4">
-    <div class="container text-center text-md-start pl-5">
-      <div class="row text-center text-md-start">
-        
-        <!-- Logo and About -->
-        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold quick-link2 ">Soukna Masry</h5>
-          <p>
-            <span class="quick-link2 " [routerLink]="['/']" fragment="home"appFragmentActive="home" >Soukna Masry </span> brings people closer and makes buying and selling easier through a simple and human experience.
-          </p>
-        </div>
-  
-        <!-- Useful Links -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold quick-link2 ">Quick Links</h5>
-          <p><a [routerLink]="['/']" fragment="home"appFragmentActive="home" class="text-white text-decoration-none">Home</a></p>
-          <p><a [routerLink]="['/']" fragment="about"appFragmentActive="about" class="text-white text-decoration-none">About</a></p>
-          <p><a [routerLink]="['/']" fragment="services"appFragmentActive="services" class="text-white text-decoration-none">Services</a></p>
-          <p><a [routerLink]="['/contact']" class="text-white text-decoration-none">Contact</a></p>
-        </div>
-  
-        <!-- Contact Info -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h5 class="text-uppercase mb-4 font-weight-bold quick-link2  ">Contact</h5>
-          <p> <i class="pi pi-map-marker me-3 quick-link2"></i>Cairo, Egypt</p>
-          <p> <i class="pi pi-envelope me-3 quick-link2"></i>
-            <a href="mailto:Souknamasry22@gmail.com" class="text-white text-decoration-none ">Souknamasry22&#64;gmail.com</a>
-          </p>
-          <p>
-            <a href="tel:01208444481" class="text-decoration-none text-white ">
-              <i class="pi pi-phone me-3 quick-link2"></i>01208444481
-            </a>
-          </p>         
-          </div>
-          
-  
-        <!-- Social Media -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold quick-link2 ">Follow Us</h5>
-          <a href="https://www.facebook.com/souknamasry/" class="btn btn-outline-light btn-floating m-1 rounded-circle quick-link"><i class="pi pi-facebook"></i></a>
-          <a href="https://wa.me/201208444481" class="btn btn-outline-light btn-floating m-1 rounded-circle quick-link"><i class="pi pi-whatsapp"></i></a>
-          <!-- <a href="#" class="btn btn-outline-light btn-floating m-1 rounded-circle quick-link"><i class="pi pi-instagram"></i></a> -->
-          <a href="https://www.linkedin.com/company/souknamasry/" class="btn btn-outline-light btn-floating m-1 rounded-circle quick-link"><i class="pi pi-linkedin"></i></a>
-        </div>
-  
+<footer class="footer  text-white pt-5 pb-4">
+  <div class="container text-center text-md-start">
+    <div class="row">
+
+      <!-- Logo and About -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mb-4">
+        <h5 class="text-uppercase fw-bold mb-3 quick-link2">Soukna Masry</h5>
+        <p>
+          <a [routerLink]="['/']" fragment="home" appFragmentActive="home" class="text-white fw-semibold text-decoration-none quick-link2">
+            Soukna Masry
+          </a>
+          brings people closer and makes buying and selling easier through a simple and human experience.
+        </p>
       </div>
-  
-      <!-- Copyright -->
-      <div class="row">
-        <div class="col-md-12 mt-4 text-center">
-          <p class="text-white-50">© 2025 All rights reserved - Soukna Masry</p>
+
+      <!-- Quick Links -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mb-4">
+        <h5 class="text-uppercase fw-bold mb-3 quick-link2">Quick Links</h5>
+        <ng-container *ngFor="let link of quickLinks">
+          <p class="mb-2">
+            <a 
+              [routerLink]="[link.routerLink]"
+              [fragment]="link.fragment"
+              appFragmentActive="{{ link.fragment }}"
+              class="text-white text-decoration-none"
+              *ngIf="link.fragment; else noFragment">
+              {{ link.label }}
+            </a>
+            <ng-template #noFragment>
+              <a [routerLink]="[link.routerLink]" class="text-white text-decoration-none">
+                {{ link.label }}
+              </a>
+            </ng-template>
+          </p>
+        </ng-container>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mb-4">
+        <h5 class="text-uppercase fw-bold mb-3 quick-link2">Contact</h5>
+        <p class="mb-2">
+          <i class="pi pi-map-marker me-2 quick-link2"></i>{{ contactInfo.location }}
+        </p>
+        <p class="mb-2">
+          <i class="pi pi-envelope me-2 quick-link2"></i>
+          <a href="https://mail.google.com/mail/?view=cm&to=Souknamasry22@gmail.com" target="_blank" class="text-white text-decoration-none">
+            Souknamasry22&#64;gmail.com
+          </a>
+        </p>
+        <p class="mb-2">
+          <i class="pi pi-phone me-2 quick-link2"></i>
+          <a [href]="'tel:' + contactInfo.phone" class="text-white text-decoration-none">
+            {{ contactInfo.phone }}
+          </a>
+        </p>
+      </div>
+
+      <!-- Social Media -->
+      <div class="col-md-3 col-lg-4 col-xl-4 mb-4">
+        <h5 class="text-uppercase fw-bold mb-3 quick-link2">Follow Us</h5>
+        <div class="d-flex justify-content-md-start justify-content-center flex-wrap">
+          <a *ngFor="let social of socialLinks"
+             [href]="social.url"
+             class="btn btn-outline-light btn-sm m-1 rounded-circle d-flex align-items-center justify-content-center"
+             style="width: 36px; height: 36px;">
+            <i class="pi quick-link" [ngClass]="social.icon"></i>
+          </a>
         </div>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="row">
+      <div class="col-12 text-center mt-4">
+        <p class="text-white-50 mb-0">© 2025 All rights reserved - Soukna Masry</p>
       </div>
     </div>
-  </footer>
-  
+  </div>
+</footer>
