@@ -15,8 +15,8 @@ section h2 {
   .p-carousel-indicators
   .p-carousel-indicator.p-highlight
   button {
-  background: #ffd666 !important;
-  color: #ffd666 !important;
+  background: #fd6f1d !important;
+  color: #fd6f1d !important;
 }
 .custom-carousel .team-card {
   position: relative;
@@ -44,7 +44,7 @@ section h2 {
   background: linear-gradient(
     180deg,
     rgba(239, 100, 76, 0) 64.05%,
-    #ffd666 115.68%
+    #fd6f1d 115.68%
   );
   transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
@@ -61,7 +61,7 @@ section h2 {
   background: linear-gradient(
     180deg,
     rgba(239, 100, 76, 0) 64.05%,
-    #ffd666 115.68%
+    #fd6f1d 115.68%
   );
   transform: translateY(-1px);
   -webkit-transform: translateY(-1px);
@@ -100,8 +100,6 @@ section h2 {
     scale3d(1.01, 1.01, 1.01);
 }
 
-
-
 .team-card .social-icons i {
   color: white;
   font-size: 1.2rem;
@@ -120,9 +118,9 @@ section h2 {
 }
 
 .team-card .social-icons i:hover {
-  background: #ffd666;
+  background: #fd6f1d;
   color: #000;
-  border-color: #ffd666;
+  border-color: #fd6f1d;
 }
 
 .team-card .social-icons {
@@ -187,31 +185,47 @@ section h2 {
   -o-transform: translateX(0px);
 }
 
-@media (min-width: 320px) and (max-width: 767.98px) {
-  ::ng-deep #pn_id_1 .p-carousel-container {
-    overflow: hidden;
+@media (min-width: 320px) {
+  #pn_id_1 .p-carousel-container {
+    overflow-x: auto; /* Enables horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Forces scroll to snap to each card */
+    scroll-behavior: smooth; /* Smooth scrolling behavior */
+    -webkit-overflow-scrolling: touch; /* Improves mobile scrolling */
+    display: block !important; /* Ensures block-level behavior */
+    white-space: nowrap; /* Prevents wrapping of items */
+    width: 100%; /* Ensures the container takes full width */
+    padding: 0; /* Removes any default padding */
   }
 
-  ::ng-deep #pn_id_1 .p-carousel-item {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-    justify-content: center;
-    display: flex;
-    box-sizing: border-box;
+  #pn_id_1 .p-carousel-item {
+    flex: none !important; /* Removes flex behavior */
+    width: 100vw !important; /* Each item takes full viewport width */
+    min-width: 100vw !important; /* Ensures no shrinking */
+    scroll-snap-align: center; /* Snaps to center of viewport */
+    display: inline-block !important; /* Inline-block for horizontal layout */
+    margin: 0 !important; /* Removes any margins */
+    vertical-align: middle; /* Centers vertically */
+    box-sizing: border-box; /* Ensures padding/borders are included in width */
+    text-align: center; /* Centers the card horizontally */
   }
 
   .team-card {
-    margin: auto;
-    max-width: 90%;
-    overflow: hidden;
-    overscroll-behavior: auto;
+    width: 80%; /* Adjust width to leave space for centering */
+    max-width: 400px; /* Optional max width for larger screens */
+    margin: 0 auto; /* Centers the card within the item */
+    box-sizing: border-box; /* Includes padding/borders in width */
+    display: inline-block; /* Ensures proper centering */
+  }
+
+  .team-card img {
+    width: 100%; /* Image scales to card width */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: cover; /* Ensures image covers the area without distortion */
   }
 }
 
-
-
 @media (min-width: 768px) {
-   ::ng-deep #pn_id_1 .p-carousel-container {
+  ::ng-deep #pn_id_1 .p-carousel-container {
     overflow: hidden;
   }
   ::ng-deep #pn_id_1 .p-carousel-item {
@@ -224,7 +238,6 @@ section h2 {
     overflow: hidden;
     overscroll-behavior: auto;
   }
-
 }
 @media (min-width: 992px) {
   ::ng-deep #pn_id_1 .p-carousel-container {
@@ -244,5 +257,3 @@ section h2 {
     overflow: hidden;
   }
 }
-
-

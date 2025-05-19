@@ -14,7 +14,7 @@
     "subtitle": "Buy and sell with ease",
     "watchPromo": "Watch promo"
   },
-  
+
   "services2": {
   "title1": "Featured Services",
   "cards": [
@@ -132,14 +132,17 @@
           "description": "Smart design that makes it easy for customers to find and purchase what they need."
         }
       ]
+    },
+    "team":{
+      
     }
-  
-  
-  }
-  
-  
 
-    
-  
-  
+
+  }
+
+
+
+
+
+
 

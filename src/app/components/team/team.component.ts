@@ -29,31 +29,51 @@ export class TeamComponent implements OnInit, AfterViewInit {
 
   teamMembers = [
     {
-      image: '/assets/team3.png',
-      role: 'Programmer',
-      name: 'Leslie Alexander',
+      image: '/assets/images/ahmed.jpg',
+      role: 'Front End Developer',
+      name: 'Ahmed Muhammad',
     },
     {
-      image: '/assets/team3.png',
-      role: 'UI/UX designer',
-      name: 'Courtney Henry',
+      image: '/assets/images/reham.jpg',
+      role: 'Front End Developer',
+      name: 'Reham Reda',
     },
     {
-      image: '/assets/team3.png',
-      role: 'Web developer',
+      image: '/assets/images/shahd.jpg',
+      role: 'Front End Developer',
+      name: 'Shahd Salama',
+    },
+    {
+      image: '/assets/images/hassan.jpg',
+      role: 'Software Tester',
+      name: 'Hassan Elsakka',
+    },
+    {
+      image: '/assets/images/amina.jpg',
+      role: 'Data Analyst',
+      name: 'Amina Younis'
+    },
+    {
+      image: '/assets/images/mariam.jpg',
+      role: 'UI/UX Designer',
+      name: 'Mariam Bakr',
+    },
+    {
+      image: '/assets/images/nor.jpg',
+      role: 'UI/UX Designer',
+      name: 'Noran Morsy',
+    },
+    {
+      image:'/assets/images/team3.png',
+      role: 'Back End Developer',
       name: 'Marvin McKinney',
     },
-    { image: '/assets/team3.png', role: 'CEO', name: 'Jacob Jones' },
     {
-      image: '/assets/team3.png',
-      role: 'Back End developer',
-      name: 'Jacob Jack',
+      image: '/assets/images/team3.png',
+      role: 'Back End Developer',
+      name: 'Darlene Robertson',
     },
-    {
-      image: '/assets/team3.png',
-      role: 'Software Engineer',
-      name: 'Jacob Jon',
-    },
+
   ];
 
   responsiveOptions: any[] = [];
