@@ -1,8 +1,9 @@
 <section>
   <div class="container">
-    <h2>Meet Our Team</h2>
-    <p-carousel [value]="teamMembers" [numVisible]="3" [numScroll]="1" [circular]="true" [autoplayInterval]="3000"
-      [responsiveOptions]="responsiveOptions" styleClass="custom-carousel">
+    <h2>{{ "team.Meet Our Team" | translate }}</h2>
+
+    <p-carousel *ngIf="isBrowser" [value]="teamMembers" [numVisible]="3" [numScroll]="1" [circular]="true"
+      [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions" styleClass="custom-carousel" [dir]="direction">
       <ng-template pTemplate="item" let-member>
         <div class="team-card tilt" data-tilt data-tilt-reverse="true" data-tilt-glare data-tilt-max-glare="0.8">
           <div class="image-wrapper">
@@ -14,12 +15,15 @@
               </div>
             </div>
           </div>
-          <h3 class="name">{{ member.name }}</h3>
-          <p class="role">{{ member.role }}</p>
-
+          <h3 class="name">
+            {{ 'team.members.' + member.key + '.name' | translate }}
+          </h3>
+          <p class="role">
+            {{ 'team.members.' + member.key + '.role' | translate }}
+          </p>
         </div>
       </ng-template>
-
     </p-carousel>
   </div>
 </section>
+

@@ -184,7 +184,18 @@ section h2 {
   -ms-transform: translateX(0px);
   -o-transform: translateX(0px);
 }
-
+html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-prev  ,
+:lang(ar) ::ng-deep .p-carousel .p-carousel-prev  {
+  transform: rotate(180deg);
+  left: auto;
+  right: 0;
+}
+html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next   ,
+:lang(ar) ::ng-deep .p-carousel .p-carousel-next   {
+  transform: rotate(180deg);
+  right: auto;
+  left: 0;
+}
 @media (min-width: 320px) {
   #pn_id_1 .p-carousel-container {
     overflow-x: auto; /* Enables horizontal scrolling */
@@ -222,6 +233,18 @@ section h2 {
     height: auto; /* Maintains aspect ratio */
     object-fit: cover; /* Ensures image covers the area without distortion */
   }
+  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-prev  ,
+  :lang(ar) ::ng-deep .p-carousel .p-carousel-prev  {
+    transform: rotate(180deg);
+    left: auto;
+    right: 0;
+  }
+  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next   ,
+  :lang(ar) ::ng-deep .p-carousel .p-carousel-next   {
+    transform: rotate(180deg);
+    right: auto;
+    left: 0;
+  }
 }
 
 @media (min-width: 768px) {
@@ -256,4 +279,17 @@ section h2 {
     margin-inline: 40px !important;
     overflow: hidden;
   }
+  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-prev  ,
+  :lang(ar) ::ng-deep .p-carousel .p-carousel-prev  {
+    transform: rotate(180deg);
+    left: auto;
+    right: 0;
+  }
+  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next   ,
+  :lang(ar) ::ng-deep .p-carousel .p-carousel-next   {
+    transform: rotate(180deg);
+    right: auto;
+    left: 0;
+  }
+  
 }

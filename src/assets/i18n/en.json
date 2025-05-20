@@ -133,9 +133,21 @@
         }
       ]
     },
-    "team":{
-      
-    }
+ "team": {
+  "Meet Our Team": "Meet Our Team",
+  "members": {
+    "ahmed": { "name": "Ahmed Muhammad", "role": "Front End Developer" },
+    "reham": { "name": "Reham Reda", "role": "Front End Developer" },
+    "shahd": { "name": "Shahd Salama", "role": "Front End Developer" },
+    "hassan": { "name": "Hassan Elsakka", "role": "Software Tester" },
+    "amina": { "name": "Amina Younis", "role": "Data Analyst" },
+    "mariam": { "name": "Mariam Bakr", "role": "UI/UX Designer" },
+    "noran": { "name": "Noran Morsy", "role": "UI/UX Designer" },
+    "marvin": { "name": "Marvin McKinney", "role": "Back End Developer" },
+    "darlene": { "name": "Darlene Robertson", "role": "Back End Developer" }
+  }
+}
+
 
 
   }
