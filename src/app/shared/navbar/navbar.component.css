@@ -386,8 +386,8 @@ html[dir="rtl"] .my-section ul,
 /* تخصيص اللغة العربية (RTL) */
 :lang(ar) .my-navbar img,
 html[dir="rtl"] .my-navbar img {
-  width: 200px;
-  height: 100px;
+  max-width: 1000px;
+  height: 800px;
   margin-right: 0;
   transform: translateX(21px);
   -webkit-transform: translateX(21px);

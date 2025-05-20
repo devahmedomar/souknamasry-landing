@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg my-navbar">
+<nav *ngIf="!isLoading" class="navbar navbar-expand-lg my-navbar">
   <div class="container d-flex justify-content-between align-items-center">
-    <a class="navbar-brand" routerLink="/home">
-     @if (currentLanguage === 'ar') {
-      <img class="arab_logo" src="/assets/images/souknamasry_logo_arabic.png" alt="souknamasry logo">
-     }
+    <a class="navbar-brand" routerLink="/home"  role="button">
+      @if (currentLanguage === 'ar') {
+      <img class="arab_logo" src="/assets/images/orange.png" alt="souknamasry logo">
+      }
       @else if(currentLanguage === 'en') {
-        <img src="/assets/images/souknamasry_logo.png" alt="souknamasry logo" />
+      <img src="/assets/images/souknamasry_logo.png" alt="souknamasry logo" />
       }
 
     </a>
