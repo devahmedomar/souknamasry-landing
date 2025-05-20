@@ -1,97 +1,116 @@
+.footer {
+  background-color: #d9c5bf;
+  color: rgb(104, 41, 26);
+}
 
-footer {
-    background-color: #604239;
+.footer .container {
+  padding-left: 3.5rem;
+}
+
+.footer-logo-wrapper {
+  height: 32px;
+  justify-content: start;
+}
+
+/* ===== Logo Image ===== */
+.footer-logo {
+  height: 120px;
+  width: 360px;
+  object-fit: contain;
+  padding-right: 220px;
+}
+
+/* ===== Social Icons ===== */
+footer .icons {
+  font-size: 30px;
+  transition: all 0.3s ease;
+}
+
+footer .icons:hover {
+  color: #fd7e35;
+}
+
+/* ===== Footer Links ===== */
+.footer .th-color {
+  color: rgb(104, 41, 26);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer .th-color:hover {
+  color: #fd7e35;
+}
+
+/* ===== Contact Icons ===== */
+.contact-icons {
+  color: #fd7e35;
+}
+
+/* ===== Text Color Class ===== */
+.t-color {
+  color: rgb(104, 41, 26);
+  font-size: 19px;
+}
+
+/* ===== Social Button Style ===== */
+.social-icon {
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  border-radius: 50%;
+}
+
+/* ===== Responsive: Tablets & Below ===== */
+@media (max-width: 1199.98px) {
+  .footer .container {
+    padding: 0 1rem;
   }
-  
-  /* Transition for text and links */
-  footer .text-white,
-  .quick-link2,
-  .quick-link {
-    transition: all 0.4s ease;
+
+  .center-on-mobile {
+    justify-content: center;
   }
-  
-  /* Hover effect for main text and quick-link2 */
-  footer .text-white:hover,
-  .quick-link2,
-  .quick-link2:hover {
-    color: #fd7e35 !important;
+
+  .footer-logo {
+    width: 100%;
+    max-width: 300px;
+    height: 150px;
+    padding-right: 0;
   }
-  
-  .quick-link:hover {
-    background-color: #fd7e35;
-    color: #fff;
+
+  .footer [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 2rem;
   }
-  
-  /* Footer paragraph  */
-  footer .col-md-3 p {
-    font-size: 1.125rem; /* 18px */
+
+  .footer-logo-wrapper {
+    justify-content: center;
   }
-  
-  /* Footer highlighted span  */
-  footer .col-md-3 p span {
-    font-size: 1.25rem; /* 20px */
-    cursor: pointer;
+
+  .offset-lg-1 {
+    margin-left: 0 !important;
   }
-  
-  /* Extra small screens (less than 576px) */
-  @media (max-width: 35.99875rem) {
-    footer {
-      text-align: center;
-    }
-  
-    footer .row > div {
-      margin-bottom: 2rem;
-    }
-  
-    footer h5 {
-      font-size: 1.2rem;
-    }
-  
-    footer p,
-    footer a {
-      font-size: 0.95rem;
-    }
-  
-    .btn.btn-floating {
-      padding: 0.5rem 0.6rem;
-      font-size: 1rem;
-    }
+
+  .footer p, 
+  .footer h5 {
+    text-align: center;
   }
-  
-  /* Small to medium screens (576px - 767.98px) */
-  @media (min-width: 36rem) and (max-width: 47.99875rem) {
-    footer h5 {
-      font-size: 1.3rem;
-    }
-  
-    footer p,
-    footer a {
-      font-size: 1rem;
-    }
-  
-    .btn.btn-floating {
-      padding: 0.5rem 0.7rem;
-      font-size: 1.1rem;
-    }
+}
+
+/* ===== Responsive: Mobile Phones ===== */
+@media (max-width: 767.98px) {
+  .footer-logo {
+    width: 100%;
+    max-width: 300px;
+    height: 150px;
+    padding-right: 0;
   }
-  
-  /* Medium to large screens (768px - 991.98px) */
-  @media (min-width: 48rem) and (max-width: 61.99875rem) {
-    footer h5 {
-      font-size: 1.4rem;
-    }
-  
-    footer p,
-    footer a {
-      font-size: 1.05rem;
-    }
-  
-    .btn.btn-floating {
-      width: 2.25rem;    /* 36px */
-      height: 2.25rem;   /* 36px */
-      padding: 0;
-      font-size: 1rem;
-      line-height: 2.25rem; /* 36px */
-    }
+}
+
+/* ===== Extra Margin for Large Screens ===== */
+@media (min-width: 992px) {
+  .footer .custom-margin-start {
+    margin-left: 30px;
   }
-  
+}

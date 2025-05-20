@@ -10,7 +10,9 @@ import { FragmentActiveDirective } from '../directives/fragment-active.directive
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-
+  des= ' brings people closer and makes buying and selling easier through a simple and human experience.';
+  Links = 'Quick Links';
+  copyright = '© 2025 All rights reserved - Soukna Masry';
   quickLinks = [
     { label: 'Home', fragment: 'home', routerLink: '/' },
     { label: 'About', fragment: 'about', routerLink: '/' },
