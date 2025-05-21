@@ -154,12 +154,30 @@
         "slot1": "Sun - Thu 09 am - 06pm",
         "slot2": "Fri - Sat 4 pm - 10pm"
       },
-      "CONTACT-FORM":{
+
+      "CONTACT-IMAGE":"Soukna Masry coverage map across governorates"
+
+      ,"CONTACT-FORM":{
         "title": "Leave A Message",
         "NAME-INPUT": "Full Name",
         "EMAIL-INPUT":"Email Address",
         "MESSAGE":"Message",
         "BUTTON-LABEL":"Send Message"
+      },
+      "FORM-ERROR":{
+        "NAME-ERROR": {
+          "NAME-REQUIRED":"Name is required",
+          "NAME-MINLENGTH":"Name must be at least 3 characters",
+          "NAME-PATTERN": "The name must contain only letters and numbers without symbols"
+        },
+        "EMAIL-MESSAGE": {
+          "EMAIL-REQUIRED":"Email is required.",
+          "EMAIL-INVALID":"Please enter a valid email address."
+        },
+        "TEXTAREA-MESSAGE": {
+          "TEXTAREA-REQUIRED":"Message is required.",
+          "TEXTAREA-MINLENGTH":"Message must be at least 10 characters."
+        }
       }
     }
   }

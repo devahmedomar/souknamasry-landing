@@ -156,13 +156,31 @@
       "title":"ساعات العمل",
       "slot1": "الأحد - الخميس ۹ص - ٦م",
       "slot2": "الجمعة - السبت ٤م - ۱۰م"
-    }
+    },
+
+    "CONTACT-IMAGE":"خريطة تغطية المحافظات لخدمة سوقنا مصري"
+
     ,"CONTACT-FORM":{
         "title": "أترك لنا رسالة",
         "NAME-INPUT": "الأسم بالكامل",
         "EMAIL-INPUT":"عنوان البريد الألكترونى",
         "MESSAGE":"الرسالة",
         "BUTTON-LABEL":"أرسلها الان"
+    },
+    "FORM-ERROR": {
+      "NAME-ERROR": {
+        "NAME-REQUIRED": "الأسم مطلوب",
+        "NAME-MINLENGTH": "يجب أن يكون الأسم 3 أحرف على الأقل",
+        "NAME-PATTERN": "الأسم يجب أن يحتوي فقط على حروف وأرقام بدون رموز"
+      },
+      "EMAIL-MESSAGE": {
+        "EMAIL-REQUIRED": "البريد الإلكتروني مطلوب",
+        "EMAIL-INVALID": "من فضلك أدخل بريدًا إلكترونيًا صحيحًا"
+      },
+      "TEXTAREA-MESSAGE": {
+        "TEXTAREA-REQUIRED": "الرسالة مطلوبة",
+        "TEXTAREA-MINLENGTH": "يجب أن تحتوي الرسالة على 10 أحرف على الأقل"
+      }
     }
   }
 }
