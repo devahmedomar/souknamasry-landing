@@ -2,8 +2,8 @@
   <div class="container">
     <h2>{{ "team.Meet Our Team" | translate }}</h2>
 
-    <p-carousel *ngIf="isBrowser" [value]="teamMembers" [numVisible]="3" [numScroll]="1" [circular]="true"
-      [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions" styleClass="custom-carousel" [dir]="direction">
+    <p-carousel *ngIf="showCarousel" #carousel [value]="teamMembers" [numVisible]="3" [numScroll]="1" [circular]="true" [autoplayInterval]="3000"
+      [responsiveOptions]="responsiveOptions" styleClass="custom-carousel" [dir]="direction">
       <ng-template pTemplate="item" let-member>
         <div class="team-card tilt" data-tilt data-tilt-reverse="true" data-tilt-glare data-tilt-max-glare="0.8">
           <div class="image-wrapper">
@@ -23,7 +23,6 @@
           </p>
         </div>
       </ng-template>
-    </p-carousel>
+      </p-carousel>
   </div>
 </section>
-

@@ -9,7 +9,10 @@ section h2 {
   font-size: 2.5rem;
   margin-block: 50px;
 }
-
+::ng-deep
+  .p-carousel{
+    padding-inline: 50px !important;
+  }
 ::ng-deep
   .p-carousel
   .p-carousel-indicators
@@ -202,36 +205,36 @@ html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next   ,
     scroll-snap-type: x mandatory; /* Forces scroll to snap to each card */
     scroll-behavior: smooth; /* Smooth scrolling behavior */
     -webkit-overflow-scrolling: touch; /* Improves mobile scrolling */
-    display: block !important; /* Ensures block-level behavior */
-    white-space: nowrap; /* Prevents wrapping of items */
-    width: 100%; /* Ensures the container takes full width */
-    padding: 0; /* Removes any default padding */
+    display: block !important;
+    white-space: nowrap;
+    width: 100%;
+    padding: 0;
   }
 
   #pn_id_1 .p-carousel-item {
-    flex: none !important; /* Removes flex behavior */
-    width: 100vw !important; /* Each item takes full viewport width */
-    min-width: 100vw !important; /* Ensures no shrinking */
+    flex: 0 0 100% !important;
+    margin: auto;
+    box-sizing: border-box;
     scroll-snap-align: center; /* Snaps to center of viewport */
-    display: inline-block !important; /* Inline-block for horizontal layout */
-    margin: 0 !important; /* Removes any margins */
-    vertical-align: middle; /* Centers vertically */
-    box-sizing: border-box; /* Ensures padding/borders are included in width */
-    text-align: center; /* Centers the card horizontally */
+    display: inline-block !important;
+    margin: 0 !important;
+    vertical-align: middle;
+    box-sizing: border-box;
+    text-align: center;
   }
 
   .team-card {
-    width: 80%; /* Adjust width to leave space for centering */
-    max-width: 400px; /* Optional max width for larger screens */
-    margin: 0 auto; /* Centers the card within the item */
-    box-sizing: border-box; /* Includes padding/borders in width */
-    display: inline-block; /* Ensures proper centering */
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: inline-block;
   }
 
   .team-card img {
-    width: 100%; /* Image scales to card width */
-    height: auto; /* Maintains aspect ratio */
-    object-fit: cover; /* Ensures image covers the area without distortion */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
   html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-prev  ,
   :lang(ar) ::ng-deep .p-carousel .p-carousel-prev  {
@@ -265,6 +268,7 @@ html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next   ,
 @media (min-width: 992px) {
   ::ng-deep #pn_id_1 .p-carousel-container {
     overflow: hidden;
+    padding-inline: 40px !important;
   }
 
   ::ng-deep #pn_id_1 .p-carousel-item {
@@ -291,5 +295,5 @@ html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next   ,
     right: auto;
     left: 0;
   }
-  
+
 }
