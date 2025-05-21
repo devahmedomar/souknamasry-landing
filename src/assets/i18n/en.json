@@ -132,7 +132,25 @@
           "description": "Smart design that makes it easy for customers to find and purchase what they need."
         }
       ]
-    }
+    },
+
+    
+      "footer": {
+         "brandName": "Soukna Masry",
+        "description": "brings people closer and makes buying and selling easier through a simple and human experience.",
+        "linksTitle": "Quick Links",
+        "contactTitle": "Contact",
+         "location": "Cairo, Egypt",
+        "followUsTitle": "Follow Us On Social Media",
+        "copyright": "© 2025 All rights reserved - Soukna Masry",
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "contact": "Contact"
+      }
+    
+    
+    
   
   
   }
