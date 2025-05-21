@@ -1,6 +1,6 @@
 import { CommonModule, NgIf } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { FragmentActiveDirective } from '../directives/fragment-active.directive';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { MyTranslateService } from '../../services/myTranslate/my-translate.service';
@@ -16,12 +16,13 @@ import { NgxSpinnerService } from 'ngx-spinner';
     RouterModule,
     RouterLinkActive,
     TranslatePipe,
-    NgIf
+    NgIf,
   ],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  constructor(private router: Router) {}
   translateService = inject(TranslateService);
   myTranslateService = inject(MyTranslateService);
   ngxSpinnerService = inject(NgxSpinnerService);
@@ -58,5 +59,27 @@ export class NavbarComponent implements OnInit {
       this.isLoading = false;
       // this.ngxSpinnerService.hide();
     }, 500); // تأخير بسيط لضمان تهيئة الترجمة
+  }
+  scrollToTop(event: Event) {
+    // Stop the default behavior completely
+    event.preventDefault();
+    event.stopPropagation();
+
+    // Check if we're already on the home page
+    if (this.router.url === '/home') {
+      // Use scrollTo with smooth behavior
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Navigate to home and then scroll
+      this.router.navigate(['/home']).then(() => {
+        // Small timeout to ensure DOM is ready
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+      });
+    }
+  }
+  toggleNavbar(list: HTMLElement): void {
+    list.classList.toggle('hidden');
   }
 }
