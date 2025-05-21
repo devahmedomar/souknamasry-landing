@@ -3,6 +3,27 @@
     margin-top: 5rem;
 }
 
+.contact-card {
+    animation: fadeDown 1s ease-out forwards;
+    transition: transform 0.5s ease-out;
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+    transform: translateY(-30px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
 .card-content{
     font-family: "Vazirmatn", sans-serif;
     color: #402c26;
@@ -33,13 +54,17 @@
     font-size: 3rem;
 }
 
-.form-inputs input,textarea{
+input,textarea{
     font-family: "Vazirmatn", sans-serif;
     border-top-style: none;
     border-right-style: none;
     border-left-style: none;
     color: #402c26;
     border-bottom-color: #402c26;
+    padding: 0.5rem;
+}
+textarea{
+   padding: 0.5rem !important;
 }
 .form-inputs input::placeholder,textarea::placeholder {
     color: #402c26;
@@ -57,12 +82,39 @@ textarea.form-control:focus {
   box-shadow: none !important;
 }
 
-.sendbtn{
+
+input::placeholder.ng-touched.ng-invalid.ng-dirty,textarea::placeholder.ng-touched.ng-invalid.ng-dirty {
+    color: white;
+}
+.error-message{
     background-color: white;
+    color: #FF3333;
+    padding: 0.2rem;
+    font-size: 12px;
+
+}
+.sendbtn{
+    font-family: "Vazirmatn", sans-serif;
     width:14rem;
     padding: 1rem 1.2rem;
     border-radius: 50px;
-    color: #402c26;
     border-color: #402c26;
     border-style: solid;
+    background-color: #402c26;
+    color: white;
+    transition: background-color 0.5s ease, transform 0.1s ease;
+}
+
+.sendbtn:hover{
+    background-color: #D9C5BF;
+    color: #402c26;
+    border-color: transparent;
+}
+.sendbtn:active{
+    background-color: #FD7E35;
+    color: white;
+    transform: scale(0.95);
+}
+.error-star{
+    font-size: 16px;
 }
