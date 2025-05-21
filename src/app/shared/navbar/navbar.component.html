@@ -10,13 +10,13 @@
 
     </a>
 
-    <button class="navbar-toggler" type="button" (click)="toggleNavbar(navbarDefault)"
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()"
       data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
       aria-label="Toggle navigation">
       <span class="menu-bar pi pi-bars"></span>
     </button>
 
-    <div class="collapse navbar-collapse my-section" id="navbarSupportedContent" #navbarDefault>
+    <div class="hidden navbar-collapse my-section" id="navbarSupportedContent" #navbarDefault>
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link mx-1" [routerLink]="['/']" fragment="hero" appFragmentActive="hero" activeClass="actives"

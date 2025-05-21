@@ -1,5 +1,5 @@
 import { CommonModule, NgIf } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { FragmentActiveDirective } from '../directives/fragment-active.directive';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
@@ -79,7 +79,9 @@ export class NavbarComponent implements OnInit {
       });
     }
   }
-  toggleNavbar(list: HTMLElement): void {
-    list.classList.toggle('hidden');
+  @ViewChild('navbarDefault') navbar!: ElementRef;
+
+  toggleNavbar(): void {
+    this.navbar.nativeElement.classList.toggle('hidden');
   }
 }
