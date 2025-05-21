@@ -3,7 +3,7 @@
     <div class="container">
         <div class="contact-cards d-flex flex-wrap gap-5 justify-content-center">
             @for( data of contact_data; track data.id){
-                <p-card class="contact-card" [style]="{ width: '16rem',height: '16rem'}" data-aos="fade-up" data-aos-delay="300" data-aos-duration="900">
+                <p-card class="contact-card" [style]="{ width: '15rem',height: '16rem'}">
                     <div class="card-content d-flex flex-column align-items-center">
                         <svg class="mb-4"   
                             [attr.width]="data.svg_width" 
@@ -31,37 +31,111 @@
                 <div class="col-6">
                     <img
                     [class.rtl]="translate.currentLang === 'ar'"
-                    data-aos="fade-right" data-aos-delay="100" data-aos-duration="900"
-                    class="contact-image" src="assets/images/contact-image.jpg" alt="">
+                    [attr.data-aos]="this.translate.currentLang === 'ar' ? 'fade-left' : 'fade-right'" 
+                    data-aos-delay="100" data-aos-duration="900"
+                    [attr.title]="'CONTACT-US.CONTACT-IMAGE' | translate"
+                    [attr.alt]="'CONTACT-US.CONTACT-IMAGE' | translate"
+                    class="contact-image" src="assets/images/contact-image.jpeg" alt="">
                 </div>
                 <div class="col-6">
-                    <div class="contact-form" data-aos="fade-left" data-aos-delay="100" data-aos-duration="900">
-                    <p-card [style]="{ width: '34rem',height: '35rem'}" >
-                        <div class="contact-form-content">
-                            <h2>{{"CONTACT-US.CONTACT-FORM.title" |translate}} </h2>
-                            <form action="https://formspree.io/f/mqaqnorz" method="POST" class=" form-inputs d-flex flex-column gap-3 mt-4">
-                                <div class="d-flex justify-content-between gap-5">
-                                    <input 
-                                        class="name-input" 
-                                        type="text" pInputText 
-                                        formControlName="text" 
-                                        [placeholder]="'CONTACT-US.CONTACT-FORM.NAME-INPUT' |translate"/>
-                                    <input 
-                                        class="email-input"
-                                        type="email" pInputText 
-                                        formControlName="text" 
-                                        [placeholder]="'CONTACT-US.CONTACT-FORM.EMAIL-INPUT' |translate"/>
-                                </div>
-                                    <textarea class="form-control" 
-                                    id="exampleFormControlTextarea1" 
-                                    rows="5"
-                                    [placeholder]="'CONTACT-US.CONTACT-FORM.MESSAGE'| translate"
-                                    ></textarea>
-                                    <button type="submit" class="sendbtn mt-4">{{'CONTACT-US.CONTACT-FORM.BUTTON-LABEL'| translate}}</button>
-                            </form>
-                        </div>
-                    </p-card>
-                </div>
+                    <div class="contact-form" 
+                        [attr.data-aos]="translate.currentLang === 'ar' ? 'fade-right' : 'fade-left'" 
+                        data-aos-delay="100" data-aos-duration="900"
+                        >
+
+                        <p-card [style]="{ width: '34rem',height: '35rem'}" >
+                            <div class="contact-form-content">
+
+                                <h2>{{"CONTACT-US.CONTACT-FORM.title" |translate}} </h2>
+
+                                <form 
+                                    #form="ngForm" 
+                                    class="form-inputs d-flex flex-column gap-3 mt-4">
+                                    <div class="d-flex justify-content-between gap-5">
+                                        <div class="d-flex flex-column">
+                                            <input 
+                                                class="name-input" 
+                                                type="text" pInputText 
+                                                name="fullname"
+                                                ngModel 
+                                                minlength="3"
+                                                maxlength="30"
+                                                pattern="^[a-zA-Z\u0600-\u06FF ]+$"
+                                                required
+                                                #name= "ngModel"
+                                                [placeholder]="'CONTACT-US.CONTACT-FORM.NAME-INPUT' |translate"/>
+                                                @if (name.invalid && (name.dirty || name.touched)) {
+                                                    @if (name.hasError('required')) {
+                                                    <small class="error-message">
+                                                        <span class="error-star">*</span> {{'CONTACT-US.FORM-ERROR.NAME-ERROR.NAME-REQUIRED' |translate}}
+                                                    </small>
+                                                    }
+                                                    @if (name.hasError('minlength')) {
+                                                        <small class="error-message">
+                                                            <span class="error-star">*</span> {{'CONTACT-US.FORM-ERROR.NAME-ERROR.NAME-MINLENGTH' |translate}}
+                                                        </small>
+                                                    }
+                                                    @if (name.hasError('pattern')) {
+                                                        <small class="error-message">
+                                                            <span class="error-star">*</span> {{'CONTACT-US.FORM-ERROR.NAME-ERROR.NAME-PATTERN' |translate}} 
+                                                        </small>
+                                                    }
+                                                }
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                                <input 
+                                                email
+                                                class="email-input"
+                                                type="email"  
+                                                name="email"
+                                                ngModel required
+                                                #email= "ngModel"
+                                                [placeholder]="'CONTACT-US.CONTACT-FORM.EMAIL-INPUT' |translate"/>
+                                                @if (email.invalid && (email.dirty || email.touched)) {
+                                                    @if (email.hasError('required')) {
+                                                        <small class="error-message">
+                                                            <span class="error-star">*</span> {{'CONTACT-US.FORM-ERROR.EMAIL-MESSAGE.EMAIL-REQUIRED' |translate}} 
+                                                        </small>
+                                                    }
+                                                    @else(){
+                                                        <small class="error-message">
+                                                            <span class="error-star">*</span> {{'CONTACT-US.FORM-ERROR.EMAIL-MESSAGE.EMAIL-INVALID' |translate}}
+                                                        </small>
+                                                    }
+                                                }
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <textarea
+                                        id="exampleFormControlTextarea1" 
+                                        rows="5"
+                                        name="message"
+                                        ngModel required
+                                        #message="ngModel"
+                                        minlength="10"
+                                        [placeholder]="'CONTACT-US.CONTACT-FORM.MESSAGE'| translate"
+                                        ></textarea>
+                                        @if (message.invalid && (message.dirty || message.touched)) {
+                                                    @if (message.hasError('required')) {
+                                                        <small class="error-message">
+                                                            <span class="error-star">*</span> {{'CONTACT-US.FORM-ERROR.TEXTAREA-MESSAGE.TEXTAREA-REQUIRED' |translate}}
+                                                        </small>
+                                                    }
+                                                    @if(message.hasError('minlength')){
+                                                        <small class="error-message">
+                                                            <span class="error-star">*</span> {{'CONTACT-US.FORM-ERROR.TEXTAREA-MESSAGE.TEXTAREA-MINLENGTH' |translate}}
+                                                        </small>
+                                                    }
+                                        }
+                                    </div>         
+                                    <button type="submit" class="sendbtn mt-4">
+                                        {{'CONTACT-US.CONTACT-FORM.BUTTON-LABEL'| translate}}
+                                    </button>
+                                </form>
+                            </div>
+                        </p-card>
+                        
+                    </div>
                 </div>
             </div>
         </div>
