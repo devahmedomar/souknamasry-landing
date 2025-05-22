@@ -178,7 +178,8 @@
           "TEXTAREA-REQUIRED":"Message is required.",
           "TEXTAREA-MINLENGTH":"Message must be at least 10 characters."
         }
-      }
+      },
+      "SUCCESS-MESSAGE": "🎉 Thank you, {{name}}! Your message has been received successfully. We will get back to you as soon as possible."
     }
   }
   
