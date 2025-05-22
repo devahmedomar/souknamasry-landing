@@ -1,72 +1,82 @@
-/* ===== Footer Base Styles ===== */
+/* ===== Footer Base ===== */
 .footer {
   background-color: #d9c5bf;
   color: rgb(104, 41, 26);
 }
 
 .footer .container {
-  padding-inline-start: 3.5rem; 
+  padding-inline-start: 3.5rem;
 }
 
 /* ===== Logo Wrapper ===== */
 .footer-logo-wrapper {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  padding: 0;
-  margin: 0;
   height: 32px;
 }
 
-/* ===== Logo Image Styles ===== */
-.footer-logo {
-  height: 150px;
-  width: 450px;
-  object-fit: contain;
-  padding-inline-end: 220px;
-}
-
-/* ===== Show/Hide Logos based on Language (RTL) ===== */
-.footer-rtl .logo-en {
+/* ===== Logo Display by Language ===== */
+.footer-rtl .footer-logo-en {
   display: none !important;
 }
 
-.footer-rtl .rtl-contact {
-  margin-left: 40px !important;
-}
-
-.footer-rtl .rtl-links {
-  margin-right: 15px  !important; 
-}
-
-.footer-rtl .rtl-links p a {
-  font-weight: 600;
-}
-
-.footer-rtl .logo-ar {
+.footer-rtl .footer-logo-ar {
   display: block !important;
-  width: 380px;
-  height: 200px;
+  width: 200px;
+  height: 100px;
+  
 }
 
-/* ===== Footer Columns Layout ===== */
+.footer .footer-logo-en {
+  display: block !important;
+  width: 200px;
+  height: 150px;
+}
+
+/* ===== Brand Description ===== */
+.footer-logo-col p .brand-desc-text {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #5c2e1a;
+  font-weight: 500;
+  max-width: 340px;
+}
+.footer-logo-col p {
+  text-align: center;
+  max-width: 340px;
+}
+
+.footer-rtl .footer-logo-col p {
+  text-align: center !important;
+  width: 340px;
+
+}
+
+
+/* ===== Columns Layout ===== */
 .footer .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
-/* ===== Social Icons ===== */
-footer .icons {
-  font-size: 30px;
-  transition: all 0.3s ease;
+.footer-logo-col,
+.quick-links-col,
+.contact-info-col,
+.social-media-col {
+  flex: 1 1 22%;
+  min-width: 200px;
+  margin: 0 auto 1.5rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-footer .icons:hover {
-  color: #fd7e35;
-}
-
-/* ===== Footer Links ===== */
+/* ===== Links and Colors ===== */
 .footer .th-color {
   color: rgb(104, 41, 26);
   text-decoration: none;
@@ -77,18 +87,25 @@ footer .icons:hover {
   color: #fd7e35;
 }
 
-/* ===== Contact Icons ===== */
 .contact-icons {
   color: #fd7e35;
 }
 
-/* ===== Text Color Class ===== */
 .t-color {
   color: rgb(104, 41, 26);
   font-size: 19px;
 }
 
-/* ===== Social Icon Button Style ===== */
+/* ===== Social Media Icons ===== */
+footer .icons {
+  font-size: 30px;
+  transition: all 0.3s ease;
+}
+
+footer .icons:hover {
+  color: #fd7e35;
+}
+
 .social-icon {
   width: 48px;
   height: 48px;
@@ -96,145 +113,58 @@ footer .icons:hover {
   border-radius: 50%;
 }
 
-/* ===== RTL Adjustments ===== */
-.footer-rtl {
-  direction: rtl;
-  text-align: right;
-}
-
-.footer-rtl .footer-logo-wrapper {
-  justify-content: start;
-}
-
-.footer-rtl h5,
-.footer-rtl p,
-.footer-rtl a,
-.footer-rtl div {
-  text-align: right;
-  direction: rtl;
-}
-
-/* ===== RTL Margin Fixes for Bootstrap Utilities ===== */
-.footer-rtl .me-2 {
-  margin-left: 0.5rem !important;
-  margin-right: 0 !important;
-}
-
-.footer-rtl .ms-2 {
-  margin-right: 0.5rem !important;
-  margin-left: 0 !important;
-}
-
-/* ===== RTL Column Padding Adjustments ===== */
-.footer-rtl .footer-logo-col,
-.footer-rtl .quick-links-col,
-.footer-rtl .contact-info-col,
-.footer-rtl .social-media-col {
-  text-align: right;
-  padding-right: 10px;
-}
-
-.footer-rtl .quick-links-col {
-  margin-right: 30px;
-}
-
-.footer-rtl .contact-icons {
-  padding-left: 0;
-  margin-inline-end: 8px;
-}
-
-.footer-rtl .icon-mobile {
-  justify-content: center;
-}
-
-/* ===== Equal Column Width ===== */
-.footer-logo-col,
-.quick-links-col,
-.contact-info-col,
-.social-media-col {
-  flex: 1 1 22%;
-  min-width: 200px;
-  margin-bottom: 1.5rem;
-}
-
-/* ===== Social Icons Alignment for LTR ===== */
 .social-ltr-center {
   justify-content: center;
   direction: ltr;
 }
 
-/* ===== Logo Text Description ===== */
-.footer-logo-col p {
-  font-size: 16px;
-  color: #5c2e1a;
-  line-height: 1.4;
-  max-width: 340px;
+/* ===== RTL Styles ===== */
+.footer-rtl {
+  direction: rtl;
+  text-align: right;
 }
 
-.footer-logo-col p a {
-  display: inline-block;
-  font-size: 20px;
-  font-weight: 700;
-  color: #68291a;
-  margin-bottom: 0.5rem;
+.footer-rtl .footer-logo-wrapper,
+.footer-rtl .footer-logo-col,
+.footer-rtl .quick-links-col,
+.footer-rtl .contact-info-col,
+.footer-rtl .social-media-col {
+  text-align: right;
+  justify-content: start;
 }
 
-/* ===== Responsive: Tablets & Below ===== */
+.footer-rtl .me-2 {
+  margin-left: 0.5rem !important;
+  margin-right: 0 !important;
+}
+
+.footer-rtl .contact-icons {
+  margin-inline-end: 8px;
+}
+
+/* ===== Responsive Styles ===== */
 @media (max-width: 1199.98px) {
   .footer .container {
     padding: 0 1rem;
   }
 
-  .footer .row {
+  .footer .row,
+  .footer [class*="col-"] {
     flex-direction: column;
     align-items: center;
-  }
-
-  .footer [class*="col-"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 2rem;
     text-align: center !important;
   }
 
   .center-on-mobile {
     justify-content: center !important;
-    text-align: center !important;
-  }
-
-  .center-on-mobile a {
-    margin-left: 0.5rem;
   }
 
   .footer-logo-wrapper {
     justify-content: center;
   }
 
-  .footer-logo {
-    width: 100%;
-    max-width: 300px;
-    height: 150px;
-    padding-inline-end: 0;
-  }
-
-  .footer-rtl .logo-ar {
-    max-width: 250px;
-    height: auto;
-  }
-
-  .footer p,
-  .footer h5 {
-    text-align: center;
-  }
-
-  .footer-logo-col {
-    display: flex;
-    flex-direction: column;
-  }
-
   .footer-logo-col p {
     text-align: center !important;
-    margin: 0 auto;
     max-width: 600px;
   }
 
@@ -242,76 +172,25 @@ footer .icons:hover {
     justify-content: center !important;
   }
 
-  .footer-rtl .footer-logo {
-    padding-inline-end: 0;
-    margin: 0 auto;
-  }
-
-  .footer-rtl .quick-links-col,
-  .footer-rtl .contact-info-col,
-  .footer-rtl .social-media-col {
-    margin-right: 0 !important;
-  }
-
-  .footer-rtl .footer p,
-  .footer-rtl .footer h5 {
-    text-align: center !important;
-  }
-
-  .footer-rtl .contact-icons {
-    margin-inline-end: 6px;
-  }
-}
-
-/* ===== Responsive: Mobile Phones ===== */
-@media (max-width: 767.98px) {
-  .footer .row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-rtl .logo-ar {
-    max-width: 220px;
-    height: auto;
-  }
-
-  .footer-logo {
-    width: 100%;
-    max-width: 300px;
-    height: 150px;
-    padding-inline-end: 0;
-  }
-
-  .footer-logo-col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-logo-col p {
-    text-align: center !important;
-    margin: 0 auto;
-  }
-
-  .footer-rtl .footer-logo-wrapper {
-    justify-content: center !important;
-  }
-
-  .footer-rtl .footer-logo {
-    padding-inline-end: 0;
-    margin: 0 auto;
-  }
-
-  .footer-rtl [class*="col-"] {
-    text-align: center !important;
-  }
-
   .footer-rtl .icon-mobile {
     justify-content: center;
   }
 }
 
-/* ===== RTL Column Spacing on Desktop ===== */
+@media (max-width: 767.98px) {
+  .footer .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-logo-col,
+  .quick-links-col,
+  .contact-info-col,
+  .social-media-col {
+    margin: 0 auto 2rem !important;
+  }
+}
+
 @media (min-width: 768px) {
   .footer-rtl .footer-logo-col,
   .footer-rtl .quick-links-col,
@@ -319,5 +198,20 @@ footer .icons:hover {
   .footer-rtl .social-media-col {
     margin-inline-start: 1rem;
     margin-inline-end: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer .row {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .footer-logo-col,
+  .quick-links-col,
+  .contact-info-col,
+  .social-media-col {
+    margin-bottom: 0;
   }
 }

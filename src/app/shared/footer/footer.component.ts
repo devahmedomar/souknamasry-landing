@@ -22,7 +22,7 @@ export class FooterComponent implements OnInit {
   private destroyRef = inject(DestroyRef);
 
   // Current language as signal
-  currentLang = signal(this.translate.currentLang);
+  currentLang = signal(this.translate.currentLang || this.translate.getBrowserLang() || 'ar');
 
   // Translated text signals
   des = signal('');
