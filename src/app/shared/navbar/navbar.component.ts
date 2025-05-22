@@ -50,6 +50,7 @@ export class NavbarComponent implements OnInit {
   isLoading: boolean = true;
 
   ngOnInit(): void {
+    this.ngxSpinnerService.show();
     this.currentLanguage = this.translateService.currentLang || 'ar';
     this.updateHtmlDirection();
     this.translateService.onLangChange.subscribe((event) => {
@@ -88,13 +89,13 @@ export class NavbarComponent implements OnInit {
 
   private stopLoading(): void {
     setTimeout(() => {
+      this.ngxSpinnerService.hide();
       this.isLoading = false;
     }, 500);
   }
 
   toggleNavbar(list: HTMLElement): void {
     list.classList.toggle('d-none');
-
   }
 
   scrollToTop(event: Event) {
