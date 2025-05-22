@@ -136,6 +136,7 @@
  "team": {
   "Meet Our Team": "Meet Our Team",
   "members": {
+    "ahmedomar": { "name": "Ahmed Omar", "role": "Front End Developer" },
     "ahmed": { "name": "Ahmed Muhammad", "role": "Front End Developer" },
     "reham": { "name": "Reham Reda", "role": "Front End Developer" },
     "shahd": { "name": "Shahd Salama", "role": "Front End Developer" },
@@ -143,8 +144,11 @@
     "amina": { "name": "Amina Younis", "role": "Data Analyst" },
     "mariam": { "name": "Mariam Bakr", "role": "UI/UX Designer" },
     "noran": { "name": "Noran Morsy", "role": "UI/UX Designer" },
-    "marvin": { "name": "Marvin McKinney", "role": "Back End Developer" },
-    "darlene": { "name": "Darlene Robertson", "role": "Back End Developer" }
+    "mai": { "name": "Mai Elsaid", "role": "UI/UX Designer" },
+    "rehab": { "name": "Rehab Hassan", "role": "UI/UX Designer" },
+    "esraa": { "name": "Esraa Mohamed", "role": "UI/UX Designer" },
+    "hager": { "name": "Hager Barakat", "role": "UI/UX Designer" },
+    "sherif": { "name": "Sherif Mohsen", "role": "Graphic Designer" }
   }
 }
 

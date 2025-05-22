@@ -1,28 +1,31 @@
 <section>
   <div class="container">
     <h2>{{ "team.Meet Our Team" | translate }}</h2>
-
-    <p-carousel *ngIf="showCarousel" #carousel [value]="teamMembers" [numVisible]="3" [numScroll]="1" [circular]="true" [autoplayInterval]="3000"
-      [responsiveOptions]="responsiveOptions" styleClass="custom-carousel" [dir]="direction">
-      <ng-template pTemplate="item" let-member>
-        <div class="team-card tilt" data-tilt data-tilt-reverse="true" data-tilt-glare data-tilt-max-glare="0.8">
-          <div class="image-wrapper">
-            <img [src]="member.image" alt="team member" />
-            <div class="overlay" data-aos="fade-up" data-aos-duration="1000">
-              <div class="social-icons">
-                <i class="pi pi-linkedin"></i>
-                <i class="pi pi-envelope"></i>
-              </div>
+<div class="carousel">
+  <p-carousel *ngIf="showCarousel" #carousel [value]="teamMembers" [numVisible]="3" [numScroll]="3" [circular]="true"
+    [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions" [showIndicators]="true" [showNavigators]="true"
+     [dir]="direction">
+    <ng-template pTemplate="item" let-member>
+      <div class="team-card tilt" data-tilt data-tilt-reverse="true" data-tilt-glare data-tilt-max-glare="0.8">
+        <div class="image-wrapper">
+          <img [src]="member.image" alt="team member" />
+          <div class="overlay" data-aos="fade-up" data-aos-duration="1000">
+            <div class="social-icons">
+              <i class="pi pi-linkedin"></i>
+              <i class="pi pi-envelope"></i>
             </div>
           </div>
-          <h3 class="name">
-            {{ 'team.members.' + member.key + '.name' | translate }}
-          </h3>
-          <p class="role">
-            {{ 'team.members.' + member.key + '.role' | translate }}
-          </p>
         </div>
-      </ng-template>
-      </p-carousel>
+        <h3 class="name">
+          {{ 'team.members.' + member.key + '.name' | translate }}
+        </h3>
+        <p class="role">
+          {{ 'team.members.' + member.key + '.role' | translate }}
+        </p>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>
+
   </div>
 </section>

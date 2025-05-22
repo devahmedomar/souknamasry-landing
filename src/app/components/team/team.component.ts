@@ -8,6 +8,7 @@ import {
   ChangeDetectorRef,
   inject,
   ViewChild,
+  ViewEncapsulation,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { DataViewModule } from 'primeng/dataview';
@@ -21,6 +22,7 @@ import { Subscription } from 'rxjs';
   selector: 'app-team',
   templateUrl: './team.component.html',
   styleUrls: ['./team.component.scss'],
+
   standalone: true,
   imports: [
     DataViewModule,
@@ -43,20 +45,32 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('carousel', { static: false }) carousel!: Carousel;
 
   teamMembers = [
+    { image: '/assets/images/ahmedomar.jpg', key: 'ahmedomar' },
     { image: '/assets/images/ahmed.jpg', key: 'ahmed' },
     { image: '/assets/images/reham.jpg', key: 'reham' },
     { image: '/assets/images/shahd.jpg', key: 'shahd' },
     { image: '/assets/images/hassan.jpg', key: 'hassan' },
     { image: '/assets/images/amina.jpg', key: 'amina' },
     { image: '/assets/images/mariam.jpg', key: 'mariam' },
-    { image: '/assets/images/nor.jpg', key: 'noran' },
-    { image: '/assets/images/team3.png', key: 'marvin' },
-    { image: '/assets/images/team3.png', key: 'darlene' },
+    { image: '/assets/images/norann.jpg', key: 'noran' },
+    { image: '/assets/images/mai.jpg', key: 'mai' },
+    { image: '/assets/images/rehab.jpg', key: 'rehab' },
+    { image: '/assets/images/EsraaMohamedYousefporposal.jpg', key: 'esraa' },
+    { image: '/assets/images/hager.jpg', key: 'hager' },
+    { image: '/assets/images/sherifmohsen.jpg', key: 'sherif' },
   ];
 
   responsiveOptions = [
+  
+    {
+      breakpoint: '1199px',
+      numVisible: 3,
+      numScroll: 3,
+    },
     { breakpoint: '992px', numVisible: 3, numScroll: 3 },
     { breakpoint: '768px', numVisible: 2, numScroll: 2 },
+    { breakpoint: '425px', numVisible: 1, numScroll: 1 },
+    { breakpoint: '375px', numVisible: 1, numScroll: 1 },
     { breakpoint: '320px', numVisible: 1, numScroll: 1 },
   ];
 
@@ -122,12 +136,7 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
             (card as any).vanillaTilt.destroy();
           }
         });
-        VanillaTilt.default.init(cards as any, {
-          max: 25,
-          speed: 400,
-          glare: true,
-          'max-glare': 0.5,
-        });
+        VanillaTilt.default.init(cards as any);
       });
     }, 500); // تأخير لتأكد من عرض الكروت بالكامل
   }

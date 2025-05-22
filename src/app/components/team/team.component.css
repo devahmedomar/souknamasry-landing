@@ -9,10 +9,9 @@ section h2 {
   font-size: 2.5rem;
   margin-block: 50px;
 }
-::ng-deep
-  .p-carousel{
-    padding-inline: 50px !important;
-  }
+/* ::ng-deep .p-carousel {
+  padding-inline: 50px !important;
+} */
 ::ng-deep
   .p-carousel
   .p-carousel-indicators
@@ -21,22 +20,21 @@ section h2 {
   background: #fd6f1d !important;
   color: #fd6f1d !important;
 }
-.custom-carousel .team-card {
-  position: relative;
+.carousel .team-card {
+  /* position: relative; */
   text-align: center;
   border-radius: 12px;
   box-shadow: 0 40px 70px -15px rgba(0, 0, 0, 0.192);
-  margin-inline: 3px;
   overflow: hidden;
-}
+  width: 30rem;
+  height: fit-content;
 
+}
 .team-card img {
-  max-width: 300px;
-  height: 310px;
-  object-fit: contain;
+  width: 100%;
   display: block;
-}
 
+}
 .team-card .overlay {
   position: absolute;
   content: "";
@@ -66,16 +64,16 @@ section h2 {
     rgba(239, 100, 76, 0) 64.05%,
     #fd6f1d 115.68%
   );
-  transform: translateY(-1px);
-  -webkit-transform: translateY(-1px);
-  -moz-transform: translateY(-1px);
-  -ms-transform: translateY(-1px);
-  -o-transform: translateY(-1px);
+  transform: translate(0px, 0px);
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
 }
 
 .tilt {
   border-radius: 5px;
-  max-width: 277px;
+  max-width: 240px;
   transform-style: preserve-3d;
   transition: transform 0.5s ease-out;
   transform: perspective(800px) rotateX(-5.77deg) rotateY(6.25deg)
@@ -187,92 +185,107 @@ section h2 {
   -ms-transform: translateX(0px);
   -o-transform: translateX(0px);
 }
-html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-prev  ,
-:lang(ar) ::ng-deep .p-carousel .p-carousel-prev  {
+html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-prev,
+:lang(ar) ::ng-deep .p-carousel .p-carousel-prev {
   transform: rotate(180deg);
   left: auto;
   right: 0;
 }
-html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next   ,
-:lang(ar) ::ng-deep .p-carousel .p-carousel-next   {
+html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next,
+:lang(ar) ::ng-deep .p-carousel .p-carousel-next {
   transform: rotate(180deg);
   right: auto;
   left: 0;
 }
-@media (min-width: 320px) {
-  #pn_id_1 .p-carousel-container {
-    overflow-x: auto; /* Enables horizontal scrolling */
-    scroll-snap-type: x mandatory; /* Forces scroll to snap to each card */
-    scroll-behavior: smooth; /* Smooth scrolling behavior */
-    -webkit-overflow-scrolling: touch; /* Improves mobile scrolling */
-    display: block !important;
-    white-space: nowrap;
-    width: 100%;
-    padding: 0;
+@media (min-width: 320px) and (max-width: 426px) {
+
+  ::ng-deep #pn_id_1 .p-carousel-container {
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    direction: ltr; /* لضبط الاتجاه الافتراضي */
   }
 
-  #pn_id_1 .p-carousel-item {
-    flex: 0 0 100% !important;
-    margin: auto;
-    box-sizing: border-box;
-    scroll-snap-align: center; /* Snaps to center of viewport */
-    display: inline-block !important;
-    margin: 0 !important;
-    vertical-align: middle;
-    box-sizing: border-box;
+  html[dir="rtl"] ::ng-deep #pn_id_1 .p-carousel-container {
+    direction: rtl; /* عند التبديل للعربية */
+  }
+
+  ::ng-deep #pn_id_1 .p-carousel-item {
+
+    scroll-snap-align: center;
+
     text-align: center;
   }
 
   .team-card {
-    width: 80%;
-    max-width: 400px;
-    margin: 0 auto;
+    width: 100%;
+    
     box-sizing: border-box;
-    display: inline-block;
+    display: block;
   }
 
   .team-card img {
     width: 100%;
     height: auto;
-    object-fit: cover;
+
   }
-  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-prev  ,
-  :lang(ar) ::ng-deep .p-carousel .p-carousel-prev  {
+
+  /* ضبط الأسهم في الوضع RTL */
+  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-prev,
+  :lang(ar) ::ng-deep .p-carousel .p-carousel-prev {
     transform: rotate(180deg);
     left: auto;
     right: 0;
   }
-  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next   ,
-  :lang(ar) ::ng-deep .p-carousel .p-carousel-next   {
+
+  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next,
+  :lang(ar) ::ng-deep .p-carousel .p-carousel-next {
     transform: rotate(180deg);
     right: auto;
     left: 0;
   }
+
+  /* في الوضع LTR لا حاجة لتدوير الأسهم */
+  /* html[dir="ltr"] ::ng-deep .p-carousel .p-carousel-prev,
+  :lang(en) ::ng-deep .p-carousel .p-carousel-prev,
+  html[dir="ltr"] ::ng-deep .p-carousel .p-carousel-next,
+  :lang(en) ::ng-deep .p-carousel .p-carousel-next {
+    transform: none;
+  } */
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
   ::ng-deep #pn_id_1 .p-carousel-container {
     overflow: hidden;
   }
   ::ng-deep #pn_id_1 .p-carousel-item {
     flex: 0 0 50% !important;
     margin: auto;
+    row-gap: 2.5rem;
     box-sizing: border-box;
   }
   .team-card {
-    margin-left: 20px;
+    /* margin-left: -2px !important;
+    margin-right: 10px; */
     overflow: hidden;
-    overscroll-behavior: auto;
+    /* overscroll-behavior: auto; */
+  }
+  .team-card img {
+    max-width: 280px;
+    /* height: 320px; */
+    object-fit: cover;
+    display: block;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1024px) {
   ::ng-deep #pn_id_1 .p-carousel-container {
     overflow: hidden;
     padding-inline: 40px !important;
   }
 
   ::ng-deep #pn_id_1 .p-carousel-item {
-    flex: 0 0 33.3333% !important;
+    flex: 0 0 33.33% !important;
     max-width: 33.3333% !important;
     box-sizing: border-box;
     padding: 0;
@@ -280,20 +293,25 @@ html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next   ,
   }
 
   .team-card {
-    margin-inline: 40px !important;
+    margin-left: 10px !important;
     overflow: hidden;
   }
-  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-prev  ,
-  :lang(ar) ::ng-deep .p-carousel .p-carousel-prev  {
+  .team-card img {
+    /* max-width: 310px;
+    height: 310px; */
+    object-fit: cover;
+    display: block;
+  }
+  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-prev,
+  :lang(ar) ::ng-deep .p-carousel .p-carousel-prev {
     transform: rotate(180deg);
     left: auto;
     right: 0;
   }
-  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next   ,
-  :lang(ar) ::ng-deep .p-carousel .p-carousel-next   {
+  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next,
+  :lang(ar) ::ng-deep .p-carousel .p-carousel-next {
     transform: rotate(180deg);
     right: auto;
     left: 0;
   }
-
 }
