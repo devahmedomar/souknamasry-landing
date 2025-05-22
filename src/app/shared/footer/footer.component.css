@@ -54,7 +54,6 @@
 
 }
 
-
 /* ===== Columns Layout ===== */
 .footer .row {
   display: flex;
@@ -84,15 +83,15 @@
 }
 
 .footer .th-color:hover {
-  color: #fd7e35;
+  color: #be4c09;
 }
 
 .contact-icons {
-  color: #fd7e35;
+  color: #be4c09;
 }
 
 .t-color {
-  color: rgb(104, 41, 26);
+  color: #be4c09;
   font-size: 19px;
 }
 
@@ -103,7 +102,7 @@ footer .icons {
 }
 
 footer .icons:hover {
-  color: #fd7e35;
+  color: #be4c09;
 }
 
 .social-icon {

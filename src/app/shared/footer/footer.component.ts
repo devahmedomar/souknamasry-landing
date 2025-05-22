@@ -1,4 +1,4 @@
-import { Component,OnInit,signal,inject,DestroyRef} from '@angular/core';
+import { Component, OnInit, signal, inject, DestroyRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
@@ -18,13 +18,15 @@ import { FragmentActiveDirective } from '../directives/fragment-active.directive
   styleUrl: './footer.component.css'
 })
 export class FooterComponent implements OnInit {
+  // Inject translation service and destroyRef for cleanup
   private translate = inject(TranslateService);
   private destroyRef = inject(DestroyRef);
 
-  // Current language as signal
-  currentLang = signal(this.translate.currentLang || this.translate.getBrowserLang() || 'ar');
+  // === Signals ===
+  currentLang = signal('');
+  languageReady = signal(false); 
 
-  // Translated text signals
+  // Individual translated text signals
   des = signal('');
   linksTitle = signal('');
   contactTitle = signal('');
@@ -32,9 +34,9 @@ export class FooterComponent implements OnInit {
   copyright = signal('');
   location = signal('');
   brandName = signal('');
-  quickLinkLabels = signal<string[]>([]);
+  quickLinkLabels = signal<string[]>([]); // Quick links labels array
 
-  // Mapping of translation keys to signals
+  // Map translation keys to their respective signals
   private signalsMap: { [key: string]: ReturnType<typeof signal> } = {
     'footer.description': this.des,
     'footer.linksTitle': this.linksTitle,
@@ -45,7 +47,9 @@ export class FooterComponent implements OnInit {
     'footer.brandName': this.brandName
   };
 
-  // Quick Links Data
+  // === Static Data ===
+
+  // Footer quick links
   quickLinks = [
     { labelKey: 'footer.home', fragment: 'home', routerLink: '/' },
     { labelKey: 'footer.about', fragment: 'about', routerLink: '/' },
@@ -53,47 +57,57 @@ export class FooterComponent implements OnInit {
     { labelKey: 'footer.contact', fragment: null, routerLink: '/contact' }
   ];
 
-  // Contact Info
+  // Contact information (used for display only)
   contactInfo = {
     location: 'Cairo, Egypt',
     phone: '01208444481'
   };
 
-  // Social Media Links
+  // Social media icons and URLs
   socialLinks = [
     { icon: 'pi-facebook', url: 'https://www.facebook.com/souknamasry/' },
     { icon: 'pi-whatsapp', url: 'https://wa.me/201208444481' },
     { icon: 'pi-linkedin', url: 'https://www.linkedin.com/company/souknamasry/' }
   ];
 
+  // === Lifecycle hook ===
   ngOnInit() {
     const keys = Object.keys(this.signalsMap);
+    const quickLinkKeys = this.quickLinks.map(link => link.labelKey);
 
+    // Load translation values and update signals
     const updateTranslations = () => {
-      const quickLinkKeys = this.quickLinks.map(link => link.labelKey);
       this.translate.get([...keys, ...quickLinkKeys]).subscribe(trans => {
-        // Update text signals
+        // Update static signals
         for (const key of keys) {
           this.signalsMap[key].set(trans[key]);
         }
-
-        // Update quick links labels
-        this.quickLinkLabels.set(this.quickLinks.map(link => trans[link.labelKey]));
+        // Update quick link labels
+        this.quickLinkLabels.set(
+          this.quickLinks.map(link => trans[link.labelKey])
+        );
+        this.languageReady.set(true); // Ready to render
       });
     };
 
-    // On language change
+    // React to language changes
     this.translate.onLangChange
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(event => {
         this.currentLang.set(event.lang);
+        this.languageReady.set(false);
         updateTranslations();
       });
 
-    // Initial translation
-    updateTranslations();
+    // Initial language setup
+    const defaultLang = this.translate.currentLang || this.translate.getBrowserLang() || 'en';
+    this.translate.use(defaultLang).subscribe(() => {
+      this.currentLang.set(defaultLang);
+      updateTranslations();
+    });
   }
 
+  // TrackBy function for *ngFor optimization
   trackByIndex(index: number): number {
     return index;
   }
