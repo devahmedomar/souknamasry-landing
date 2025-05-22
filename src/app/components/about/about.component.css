@@ -128,11 +128,20 @@
    Features Section Title
 ============================= */
 .feature-title {
-  font-size: 2rem;
-  margin: 4rem 0 2rem;
   text-align: center;
+  font-size: 1.8rem;
+  margin: 0 auto;
+  max-width: 90%;
+}
+/* for en*/
+.feature-title.ltr {
+  direction: ltr;
 }
 
+/* for ar*/
+.feature-title.rtl {
+  direction: rtl;
+}
 /* =============================
    Features Grid Layout
 ============================= */
@@ -141,14 +150,22 @@
   flex-wrap: wrap;
   gap: 1.5rem;
 }
-.row.g-4  {
- margin-left: 40px;
-}
+
 .row.g-4 .col-md-4 {
   flex: 0 0 calc(33.333% - 1rem);
   max-width: calc(31% - 1rem);
 }
+/* === RTL === */
+.row.g-4.rtl {
+  margin-right: 80px;
+  margin-left: 0;
+}
 
+/* === LTR === */
+.row.g-4.ltr {
+  margin-left: 80px;
+  margin-right: 0;
+}
 /* =============================
    Feature Card Styling
 ============================= */
@@ -220,6 +237,26 @@
 }
 
 /* ========== Media Queries ========== */
+@media (max-width: 340px) {
+  .feature-title.rtl {
+    text-align: center;
+  }
+
+  .feature-title.ltr {
+    text-align: center;
+    padding-right: 20px;
+    font-size: 1.3rem;
+    width: 280px;
+  }
+}
+@media (max-width: 376px) {
+  .feature-title.rtl {
+    font-size: 1.8rem !important;
+    padding-left: 28px !important;
+    text-align: center !important;
+   }
+  
+}
 @media (max-width: 427px) { 
   .feature-title {
     width: 18.60rem; /* 300px */
@@ -229,9 +266,7 @@
     padding-right: 1.2rem;
     margin: 0 auto;
   }
-  .row.g-4  {
-    margin: 0;
-   }
+
 }
 
 @media (max-width: 50rem) { 
@@ -356,6 +391,9 @@
 @media (min-width:1302px) { 
   .custom-width {
     max-width: 90%;
+  }
+.row.g-4 {
+    margin-right: 70px;
   }
 
   .par1 {
