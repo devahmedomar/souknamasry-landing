@@ -6,60 +6,67 @@
         <div class="contact-cards d-flex flex-wrap gap-5 justify-content-center">
             @for( data of contact_data; track data.id){
                 <!-- Card component for each contact item -->
-                <p-card class="contact-card" [style]="{ width: '15rem',height: '16rem'}">
-                    <div class="card-content d-flex flex-column align-items-center">
-                        <!-- SVG icon for the contact item -->
-                        <svg class="mb-4"   
-                            [attr.width]="data.svg_width" 
-                            [attr.height]="data.svg_height" 
-                            [attr.viewBox]="data.svg_viewBox" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path [attr.d]="data.svg_path" 
-                                    stroke="#FD7E35" 
-                                    [attr.fill]="data.svg_fill"
-                                    [attr.stroke-width]="data.svg_stroke_width" 
-                                    [attr.stroke-linecap]="data.svg_stroke_linecap" 
-                                    [attr.stroke_linejoin]="data.svg_stroke_linejoin" 
-                                    stroke-miterlimit="10">
-                                    </path>
-                        </svg> 
-                        <!-- Contact title -->                   
-                        <h4>
-                            {{ data.title| translate}}
-                        </h4>
-                        <!-- Contact info -->
-                        <span> {{ data.info| translate}}</span>
-                    </div>
-                </p-card>
+                <div class="contact-card">
+                    <p-card>
+                        <div class="card-content d-flex flex-column align-items-center">
+                            <!-- SVG icon for the contact item -->
+                            <svg class="mb-4"   
+                                [attr.width]="data.svg_width" 
+                                [attr.height]="data.svg_height" 
+                                [attr.viewBox]="data.svg_viewBox" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path [attr.d]="data.svg_path" 
+                                        stroke="#FD7E35" 
+                                        [attr.fill]="data.svg_fill"
+                                        [attr.stroke-width]="data.svg_stroke_width" 
+                                        [attr.stroke-linecap]="data.svg_stroke_linecap" 
+                                        [attr.stroke_linejoin]="data.svg_stroke_linejoin" 
+                                        stroke-miterlimit="10">
+                                        </path>
+                            </svg> 
+                            <!-- Contact title -->                   
+                            <h4>
+                                {{ data.title| translate}}
+                            </h4>
+                            <!-- Contact info -->
+                            <span> {{ data.info| translate}}</span>
+                        </div>
+                    </p-card>
+                </div>
             }
         </div>
         <div class="row">
-            <div class="contact-content d-flex gap-2">
+            <div class="contact-content d-flex gap-3">
                 <!-- Left column: Contact image -->
-                <div class="col-6">
-                    <img
-                    [class.rtl]="translate.currentLang === 'ar'"
-                    [attr.data-aos]="this.translate.currentLang === 'ar' ? 'fade-left' : 'fade-right'" 
-                    data-aos-delay="100" data-aos-duration="900"
-                    [attr.title]="'CONTACT-US.CONTACT-IMAGE' | translate"
-                    [attr.alt]="'CONTACT-US.CONTACT-IMAGE' | translate"
-                    class="contact-image" src="assets/images/contact-image.jpeg" alt="">
+                <div class="col-sm-12 col-xl-6 col-lg-6">
+                    <div 
+                      class="contact-image-container"
+                      [class.rtl]="translate.currentLang === 'ar'">
+                        <img
+                        [attr.data-aos]="this.translate.currentLang === 'ar' ? 'fade-left' : 'fade-right'" 
+                        data-aos-delay="100" data-aos-duration="900"
+                        [attr.title]="'CONTACT-US.CONTACT-IMAGE' | translate"
+                        [attr.alt]="'CONTACT-US.CONTACT-IMAGE' | translate"
+                        class="contact-image" src="assets/images/contact-image.jpeg" alt="">
+                    </div>
                 </div>
                 <!-- Right column: Contact form -->
-                <div class="col-6">
+                <div class="col-sm-12 col-xl-6 col-lg-6">
                     <div class="contact-form" 
+                        [class.rtl]="translate.currentLang === 'ar'"
                         [attr.data-aos]="translate.currentLang === 'ar' ? 'fade-right' : 'fade-left'" 
                         data-aos-delay="100" data-aos-duration="900"
                         >
                         <!-- Card wrapper around the form -->
-                        <p-card [style]="{ width: '34rem',height: '35rem'}" >
+                        <p-card  class="contact-form-card" >
                             <div class="contact-form-content">
                                 <!-- Form title -->
                                 <h2>{{"CONTACT-US.CONTACT-FORM.title" |translate}} </h2>
                                 <!-- Template-driven form -->
                                 <form 
-                                    #form="ngForm" 
+                                    #form="ngForm"
+                                    (ngSubmit)="sendEmail(form)" 
                                     class="form-inputs d-flex flex-column gap-3 mt-4">
-                                    <div class="d-flex justify-content-between gap-5">
+                                    <div class="form-inputs-content d-flex justify-content-between gap-5">
                                         <!-- Name input field -->
                                         <div class="d-flex flex-column">
                                             <input 
@@ -147,6 +154,11 @@
                                     <button type="submit" class="sendbtn mt-4">
                                         {{'CONTACT-US.CONTACT-FORM.BUTTON-LABEL'| translate}}
                                     </button>
+                                    @if (successMessage) {
+                                        <div class="success-alert">
+                                            {{ 'CONTACT-US.SUCCESS-MESSAGE' | translate: { name: successName } }}
+                                        </div>
+                                    }
                                 </form>
                             </div>
                         </p-card>
