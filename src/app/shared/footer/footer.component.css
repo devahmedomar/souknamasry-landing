@@ -1,6 +1,8 @@
 /* ===== Footer Base ===== */
 .footer {
-  background-color: #d9c5bf;
+  /* background-color: #f6f1ef; */
+  background-color: #fcf3f0;
+
   color: rgb(104, 41, 26);
 }
 
@@ -99,6 +101,9 @@
 footer .icons {
   font-size: 30px;
   transition: all 0.3s ease;
+}
+footer .icons {
+  color:  rgb(104, 41, 26);
 }
 
 footer .icons:hover {
