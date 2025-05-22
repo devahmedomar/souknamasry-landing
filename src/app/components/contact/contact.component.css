@@ -1,9 +1,12 @@
 .container{
     min-height: 100vh;
-    margin-top: 5rem;
+    margin-top: 4rem;
+    padding: 0 1rem;
 }
 
 .contact-card {
+    width: 16rem;
+    height: 16rem;
     animation: fadeDown 1s ease-out forwards;
     transition: transform 0.5s ease-out;
 }
@@ -19,11 +22,6 @@ to {
 }
 }
 
-.contact-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
 .card-content{
     font-family: "Vazirmatn", sans-serif;
     color: #402c26;
@@ -32,16 +30,26 @@ to {
 .contact-content{
     padding-top: 2rem;
 }
+.contact-image-container{
+    padding-left: 5.3rem;
+    padding-right: 1rem;
+}
+.contact-image-container.rtl{
+    padding-left: 1rem;
+    padding-right: 5rem;
+}
 .contact-image{
     width: 100%;
-    padding-left: 80px;
-    padding-right: 0.5rem;
-    height:35rem;
+    height: 32.5rem;
 }
 
-.contact-image.rtl{
-    padding-left: 0px;
-    padding-right: 5rem;
+.contact-form {
+    width: 85.5%;
+    padding-left: 0;
+    padding-bottom: 2rem;
+}
+.contact-form.rtl{
+    padding-left: 0.5rem;
 }
 
 .contact-form .contact-form-content{
@@ -117,4 +125,316 @@ input::placeholder.ng-touched.ng-invalid.ng-dirty,textarea::placeholder.ng-touch
 }
 .error-star{
     font-size: 16px;
+}
+.success-alert {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #c3e6cb;
+  font-weight: 600;
+}
+
+@media (max-width: 320px){
+
+  .container {
+    margin-top: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .contact-card {
+    width: 15rem;
+  }
+
+  .contact-image-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 2rem;
+  }
+  .contact-image-container.rtl {
+    padding-left: 1.8rem;
+    padding-right: 1rem;
+  }
+
+  .contact-form {
+    margin: auto;
+  }
+
+  .contact-form .contact-form-content {
+    padding: 0.5rem;
+  }
+
+  .contact-form h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .contact-content {
+    flex-direction: column-reverse;
+  }
+
+  .form-inputs-content {
+    flex-direction: column;
+  }
+
+  .sendbtn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 376px) {
+  .container {
+    margin-top: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .contact-card {
+    width: 18rem;
+  }
+
+  .contact-image-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 2rem;
+  }
+  .contact-image-container.rtl {
+    padding-left: 2rem;
+    padding-right: 1.5rem;
+  }
+
+  .contact-form {
+    margin: auto;
+  }
+
+  .contact-form .contact-form-content {
+    padding: 0.5rem;
+  }
+
+  .contact-form h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .contact-content {
+    flex-direction: column-reverse;
+  }
+
+  .form-inputs-content {
+    flex-direction: column;
+  }
+
+  .sendbtn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 426px) {
+  .container {
+    margin-top: 1.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .contact-card {
+    width: 20rem;
+  }
+
+  .contact-image-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+  .contact-image-container.rtl {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .contact-form {
+    margin: auto;
+    width: 100%;
+    padding: 0 2rem;
+  }
+  .contact-form.rtl{
+    padding-left: 1.8rem;
+  }
+  .contact-form .contact-form-content {
+    padding: 0.75rem;
+  }
+
+  .contact-form h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .contact-content {
+    flex-direction: column-reverse;
+  }
+
+  .form-inputs-content {
+    flex-direction: column;
+  }
+
+  .sendbtn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 427px) and (max-width: 767.98px) {
+.container {
+    margin-top: 2rem;
+  }
+  .contact-card {
+    width: 28rem;
+  }
+  .contact-image-container{
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  .contact-image-container.rtl{
+    padding-left: 2rem;
+    padding-right: 1.5rem;
+  }
+  
+  .contact-form{
+    margin: auto;
+    margin-top: 1rem;
+  }
+  .contact-form .contact-form-content {
+    padding: 1rem;
+  }
+
+  .contact-form h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .contact-content{
+    flex-direction:column-reverse;
+  }
+  .form-inputs-content{
+    flex-direction: column;
+  }
+
+  .sendbtn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contact-cards{
+    padding-left: 1rem;
+  }
+  .contact-card {
+    width: 19rem;
+  }
+  .contact-image-container{
+    padding-left: 1.8rem;
+    padding-right: 1rem;
+    padding-bottom: 2rem;
+  }
+  .contact-image-container.rtl{
+    padding-left: 1.8rem;
+    padding-right: 1rem;
+  }
+  .contact-image{
+    width: 100%;
+  }
+  .contact-form{
+    margin: auto;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 1rem;
+  }
+  .contact-form.rtl{
+    padding-left: 2rem;
+    padding-right:1rem ;
+  }
+  .contact-form h2 {
+    font-size: 2.5rem;
+  } 
+  .contact-content{
+    flex-direction: column-reverse;
+  }
+  .form-inputs-content{
+    flex-direction: column;
+  }
+  .sendbtn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+    
+  .contact-image-container{
+    padding-right: 1rem;
+    padding-left: 4rem;
+  }
+  .contact-image-container.rtl{
+    padding-left: 1rem;
+    padding-right: 4rem;
+  }
+  .contact-image{
+    height: 35.9rem;
+  }
+  .contact-card {
+    width:24rem;
+    height: 16rem;
+  }
+.contact-form {
+    width: 85.5%;
+    padding-left: 0;
+    padding-bottom: 2rem;
+}
+.contact-form.rtl{
+    padding-left: 0.5rem;
+}
+  .contact-form h2 {
+    font-size: 2rem;
+  }
+  .form-inputs-content{
+    flex-direction: column;
+  }
+
+  .sendbtn {
+    width: 14rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    
+  .contact-image-container{
+    padding-right: 1rem;
+    padding-left: 4rem;
+  }
+  .contact-image-container.rtl{
+    padding-left: 1rem;
+    padding-right: 4rem;
+  }
+  .contact-image{
+    height: 35.9rem;
+  }
+  .contact-card {
+    width:30rem;
+  }
+  .contact-form {
+    width: 85.5%;
+    padding-left: 0;
+    padding-bottom: 2rem;
+  }
+  .contact-form.rtl{
+    padding-left: 0.5rem;
+  }
+  .contact-form h2 {
+    font-size: 2rem;
+  }
+  .form-inputs-content{
+    flex-direction: column;
+  }
+
+  .sendbtn {
+    width: 14rem;
+  }
 }
