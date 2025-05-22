@@ -5,7 +5,7 @@
 }
 
 .footer .container {
-  padding-inline-start: 3.5rem; /* بديل padding-left */
+  padding-inline-start: 3.5rem; 
 }
 
 /* ===== Logo Wrapper ===== */
@@ -29,6 +29,18 @@
 /* ===== Show/Hide Logos based on Language (RTL) ===== */
 .footer-rtl .logo-en {
   display: none !important;
+}
+
+.footer-rtl .rtl-contact {
+  margin-left: 40px !important;
+}
+
+.footer-rtl .rtl-links {
+  margin-right: 15px  !important; 
+}
+
+.footer-rtl .rtl-links p a {
+  font-weight: 600;
 }
 
 .footer-rtl .logo-ar {

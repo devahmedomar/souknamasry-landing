@@ -31,7 +31,9 @@
       </div>
 
       <!-- Quick Links Section -->
-      <div class="col-md-3 col-lg-2 col-xl-2 mb-4 fs-5 fw-bold text-center quick-links-col">
+      <div class="col-md-3 col-lg-2 col-xl-2 mb-4 fs-5 fw-bold text-center quick-links-col"
+      [ngClass]="{ 'rtl-links': currentLang() === 'ar' }"
+      >
         <h5 class="text-uppercase fw-bold mb-3 contact-icons">{{ linksTitle() }}</h5>
 
         <!-- Loop through quick links -->
@@ -62,7 +64,10 @@
       </div>
 
       <!-- Contact Information Section -->
-      <div class="col-md-3 col-lg-3 col-xl-3 mb-4 fs-5 fw-bold custom-margin-start contact-info-col">
+      <div 
+  class="col-md-3 col-lg-3 col-xl-3 mb-4 fs-5 fw-bold contact-info-col"
+  [ngClass]="{ 'rtl-contact': currentLang() === 'ar' }"
+>
         <h5 class="text-uppercase fw-bold mb-3 contact-icons">{{ contactTitle() }}</h5>
 
         <!-- Address -->
