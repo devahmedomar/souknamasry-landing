@@ -130,7 +130,7 @@
   .my-navbar img {
     margin-left: -8px;
 
-    max-width: 140px;
+    max-width: 150px;
   }
   .dropdown {
     position: absolute;
@@ -139,6 +139,11 @@
     transform: translateX(-50%);
   }
 
+  html[dir="rtl"] .navbar-brand,
+  :lang(ar) .navbar-brand {
+    margin-right: -3px;
+
+  }
   html[dir="rtl"] .dropdown-toggle::after,
   :lang(ar) .dropdown-toggle::after {
     margin-right: 0.255em;
@@ -160,6 +165,7 @@
 @media (min-width: 768px) {
   .my-navbar {
     padding: 10px 0;
+    /* max-height: 660px; */
   }
   .navbar-nav {
     display: flex;
@@ -198,8 +204,8 @@
   }
   .my-navbar img {
     margin-left: 13px;
-    width: 200px;
-    height: 100px;
+    width: 350px;
+    height: 120px;
   }
 
   .navbar-brand {
@@ -216,7 +222,7 @@
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   html[dir="rtl"] .my-navbar img,
   :lang(ar) .my-navbar img {
      width: 200px;
@@ -226,7 +232,7 @@
      -moz-transform: translateX(300px);
      -ms-transform: translateX(300px);
      -o-transform: translateX(300px);
-     
+
 }
 
   html[dir="rtl"] .dropdown,
@@ -312,21 +318,17 @@
     padding-block: 0px !important;
   }
 
-  :lang(ar) .my-navbar img,
-  html[dir="rtl"] .my-navbar img {
+
+  html[dir="rtl"] .my-navbar img,
+  :lang(ar) .my-navbar img {
     width: 200px;
     height: 200px;
-    margin-right: 0;
-    transform: translateX(21px);
-    -webkit-transform: translateX(21px);
-    -moz-transform: translateX(21px);
-    -ms-transform: translateX(21px);
-    -o-transform: translateX(21px);
-  }
+
+}
 
   :lang(ar) .navbar-brand,
   html[dir="rtl"] .navbar-brand {
-    margin-right: 100px;
+    margin-right: 160px;
     padding-right: 0;
   }
 
@@ -339,11 +341,11 @@
   :lang(ar) .dropdown {
     position: absolute;
     left: 50%;
-    transform: translateX(-555px);
-    -webkit-transform: translateX(-555px);
-    -moz-transform: translateX(-555px);
-    -ms-transform: translateX(-555px);
-    -o-transform: translateX(-555px);
+    transform: translateX(-535px);
+    -webkit-transform: translateX(-535px);
+    -moz-transform: translateX(-535px);
+    -ms-transform: translateX(-535px);
+    -o-transform: translateX(-535px);
     padding: 30px;
 }
 
