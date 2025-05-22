@@ -1,18 +1,24 @@
-<nav class="navbar navbar-expand-lg my-navbar">
+<nav *ngIf="!isLoading" class="navbar navbar-expand-lg my-navbar">
   <div class="container d-flex justify-content-between align-items-center">
-    <a class="navbar-brand" routerLink="/home">
-      <img src="/assets/images/souknamasry_logo.png" alt="souknamasry logo" />
+    <a class="navbar-brand" role="button" (click)="scrollToTop($event)">
+      @if (currentLanguage === 'ar') {
+      <img class="arab_logo" src="/assets/images/arabic_logo.png" alt="souknamasry logo">
+      }
+      @else if(currentLanguage === 'en') {
+      <img src="/assets/images/english_logo.png" alt="souknamasry logo" />
+      }
 
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar(navbarDefault)"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="!isNavbarCollapsed"
+      aria-label="Toggle navigation">
       <span class="menu-bar pi pi-bars"></span>
     </button>
 
-    <div class="collapse navbar-collapse my-section" id="navbarSupportedContent">
-      <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item">
+    <div class="d-none navbar-collapse my-section" id="navbarSupportedContent"#navbarDefault >
+      <ul  class="navbar-nav mb-2 mb-lg-0">
+        <li  class="nav-item">
           <a class="nav-link mx-1" [routerLink]="['/']" fragment="hero" appFragmentActive="hero" activeClass="actives"
             aria-current="page">{{'navbar.Home' | translate}}</a>
         </li>
@@ -38,25 +44,18 @@
         </li>
 
       </ul>
-      <ul class="list-unstyled">
+      <ul class="list-unstyled m-0">
         <li class="relative drop">
-          <div #dropdown class="dropdown language-dropdown">
-            <button #dropdownButton class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              <i class="pi pi-language"></i>
+          <div class="dropdown language-dropdown">
+            <button (click)="toggleLanguage()" type="button" class="btn btn-info d-flex align-items-center gap-2">
+              <i class="pi pi-globe"></i>
             </button>
-            <ul class="dropdown-menu">
-              @if (currentLanguage === 'en') {
-              <li><a (click)="changeLanguage('ar')" role="button" class="dropdown-item">Ar</a></li>
-              }
-              @if ( currentLanguage === 'ar') {
-              <li><a (click)="changeLanguage('en')" role="button" class="dropdown-item">En</a></li>
-              }
-
-            </ul>
           </div>
+
+
         </li>
       </ul>
+
     </div>
   </div>
 </nav>
