@@ -49,8 +49,6 @@ export class NavbarComponent implements OnInit {
   currentLanguage: string = 'ar';
   isLoading: boolean = true;
 
-  
-
   ngOnInit(): void {
     this.currentLanguage = this.translateService.currentLang || 'ar';
     this.updateHtmlDirection();
@@ -96,6 +94,7 @@ export class NavbarComponent implements OnInit {
 
   toggleNavbar(list: HTMLElement): void {
     list.classList.toggle('d-none');
+
   }
 
   scrollToTop(event: Event) {
@@ -112,26 +111,27 @@ export class NavbarComponent implements OnInit {
       });
     }
   }
-  @HostListener('window:scroll') onWindowScroll() {
+  isNavbarCollapsed = true;
+  @HostListener('window:scroll')
+  onWindowScroll() {
     if (isPlatformBrowser(this.platformId)) {
       const element = document.querySelector('.my-navbar') as HTMLElement;
       if (!element) return;
 
-      if (window.scrollY > 0) {
+      const isSmallScreen = window.innerWidth < 992;
+      const isScrolled = window.scrollY > 0;
+      const isMenuOpen = !this.isNavbarCollapsed;
+      if ((isSmallScreen && isMenuOpen) || (isSmallScreen && isScrolled)) {
         element.style.padding = '5px 0';
-        // element.style.position = 'fixed';
-        element.style.top = '0';
-        element.style.width = '100%';
-        element.style.zIndex = '1000';
+        element.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
       } else {
-        element.style.padding = '0'; // Default padding when at top
-        // element.style.position = 'sticky'; // Use static instead of fixed/absolute
+        element.style.backgroundColor = 'transparent';
+        element.style.padding = '10px 0';
         element.style.boxShadow = 'none';
-        element.style.backgroundColor = 'rgba(255, 255, 255, 0.1);'; // Optional: transparent background at top
-        element.style.height = '120px'; // Reset height
-        // Smooth transition for all properties
+        element.style.height = '100px';
       }
-      element.style.transition = 'all 0.3s ease'; // Smooth transition for all properties
+
+      element.style.transition = 'all 0.3s ease';
     }
   }
 }

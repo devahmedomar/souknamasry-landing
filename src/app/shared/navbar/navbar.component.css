@@ -88,6 +88,9 @@
 
 /* media query */
 @media (min-width: 320px) {
+  .my-navbar {
+    max-height: 660px;
+  }
   .navbar-nav {
     display: flex;
     justify-content: space-between;
@@ -165,7 +168,7 @@
 @media (min-width: 768px) {
   .my-navbar {
     padding: 10px 0;
-    /* max-height: 660px; */
+    max-height: 660px;
   }
   .navbar-nav {
     display: flex;
