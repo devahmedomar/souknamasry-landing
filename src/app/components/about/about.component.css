@@ -150,14 +150,22 @@
   flex-wrap: wrap;
   gap: 1.5rem;
 }
-.row.g-4  {
- margin-left: 40px;
-}
+
 .row.g-4 .col-md-4 {
   flex: 0 0 calc(33.333% - 1rem);
   max-width: calc(31% - 1rem);
 }
+/* === RTL === */
+.row.g-4.rtl {
+  margin-right: 80px;
+  margin-left: 0;
+}
 
+/* === LTR === */
+.row.g-4.ltr {
+  margin-left: 80px;
+  margin-right: 0;
+}
 /* =============================
    Feature Card Styling
 ============================= */

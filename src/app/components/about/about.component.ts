@@ -68,7 +68,11 @@ export class AboutComponent implements OnInit, AfterViewInit {
 
     updateTranslations();
     this.currentLang.set(this.translate.currentLang || 'en');
-    lang$.subscribe(updateTranslations);
+    lang$.subscribe(event => {
+      this.currentLang.set(event.lang); 
+      updateTranslations();
+    });
+    
   }
 
   ngAfterViewInit(): void {
