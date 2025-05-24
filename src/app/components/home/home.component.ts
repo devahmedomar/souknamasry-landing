@@ -7,7 +7,11 @@ import { TeamComponent } from '../team/team.component';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { isPlatformBrowser, NgIf, NgSwitchDefault } from '@angular/common';
 import { filter } from 'rxjs';
-import { NgxSpinnerComponent, NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
+import {
+  NgxSpinnerComponent,
+  NgxSpinnerModule,
+  NgxSpinnerService,
+} from 'ngx-spinner';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +22,6 @@ import { NgxSpinnerComponent, NgxSpinnerModule, NgxSpinnerService } from 'ngx-sp
     ServicesComponent,
     TeamComponent,
     BlogComponent,
-
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
@@ -49,7 +52,6 @@ export class HomeComponent implements OnInit {
         // لو مفيش fragment، نخفي الـ spinner ونظهر المحتوى بعد التأخير
         setTimeout(() => {
           this.ngxSpinnerService.hide();
-
         }, 1000);
       }
 
@@ -75,12 +77,9 @@ export class HomeComponent implements OnInit {
           element.scrollIntoView({ behavior: 'smooth' });
         }
         this.ngxSpinnerService.hide();
-        
       }, 800);
     } else {
       this.ngxSpinnerService.hide();
-
     }
   }
 }
-

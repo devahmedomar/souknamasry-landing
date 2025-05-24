@@ -1,14 +1,13 @@
-import { CommonModule, isPlatformBrowser, NgIf } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import {
   Component,
-  ElementRef,
-  inject,
-  OnInit,
-  ViewChild,
-  Renderer2,
-  HostListener,
+  EventEmitter,
   Inject,
+  OnInit,
+  Output,
   PLATFORM_ID,
+  Renderer2,
+  inject,
 } from '@angular/core';
 import {
   Router,
@@ -19,7 +18,6 @@ import {
 import { FragmentActiveDirective } from '../directives/fragment-active.directive';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { MyTranslateService } from '../../services/myTranslate/my-translate.service';
-import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-navbar',
@@ -31,7 +29,6 @@ import { NgxSpinnerService } from 'ngx-spinner';
     RouterModule,
     RouterLinkActive,
     TranslatePipe,
-    NgIf,
   ],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
@@ -42,27 +39,31 @@ export class NavbarComponent implements OnInit {
     private renderer: Renderer2,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
+
+  @Output() languageChange = new EventEmitter<string>();
   translateService = inject(TranslateService);
   myTranslateService = inject(MyTranslateService);
-  ngxSpinnerService = inject(NgxSpinnerService);
 
   currentLanguage: string = 'ar';
   isLoading: boolean = true;
+  isNavbarOpen: boolean = false; // إضافة متغير لتتبع حالة الـ navbar
 
   ngOnInit(): void {
-    this.ngxSpinnerService.show();
     this.currentLanguage = this.translateService.currentLang || 'ar';
+
+    // تعيين الاتجاه قبل عرض أي محتوى
     this.updateHtmlDirection();
+
+    // السماح بعرض الـ navbar بعد التأكد من تعيين الاتجاه
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 0);
+
+    // تحديث الاتجاه عند تغيير اللغة لاحقًا
     this.translateService.onLangChange.subscribe((event) => {
       this.currentLanguage = event.lang;
       this.updateHtmlDirection();
-      this.stopLoading();
     });
-
-    if (this.translateService.currentLang) {
-      this.currentLanguage = this.translateService.currentLang;
-      this.stopLoading();
-    }
   }
 
   updateHtmlDirection(): void {
@@ -85,17 +86,36 @@ export class NavbarComponent implements OnInit {
   changeLanguage(lang: string): void {
     this.myTranslateService.changeLanguage(lang);
     this.currentLanguage = lang;
+    this.languageChange.emit(lang);
   }
 
-  private stopLoading(): void {
-    setTimeout(() => {
-      this.ngxSpinnerService.hide();
-      this.isLoading = false;
-    }, 500);
+  // الحل الصحيح للـ navbar toggle
+  toggleNavbar(): void {
+    this.isNavbarOpen = !this.isNavbarOpen; // بيغير الحالة
+    const navbar = document.getElementById('navbarSupportedContent');
+
+    if (navbar) {
+      if (this.isNavbarOpen) {
+        // لو مقفولة هيفتحها
+        this.renderer.removeClass(navbar, 'd-none');
+        this.renderer.addClass(navbar, 'd-block');
+      } else {
+        // لو مفتوحة هيقفلها
+        this.renderer.addClass(navbar, 'd-none');
+        this.renderer.removeClass(navbar, 'd-block');
+      }
+    }
   }
 
-  toggleNavbar(list: HTMLElement): void {
-    list.classList.toggle('d-none');
+  // إغلاق الـ navbar عند الضغط على أي link
+  closeNavbar(): void {
+    this.isNavbarOpen = false;
+    const navbar = document.getElementById('navbarSupportedContent');
+
+    if (navbar) {
+      this.renderer.addClass(navbar, 'd-none');
+      this.renderer.removeClass(navbar, 'd-block');
+    }
   }
 
   scrollToTop(event: Event) {
@@ -110,29 +130,6 @@ export class NavbarComponent implements OnInit {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }, 100);
       });
-    }
-  }
-  isNavbarCollapsed = true;
-  @HostListener('window:scroll')
-  onWindowScroll() {
-    if (isPlatformBrowser(this.platformId)) {
-      const element = document.querySelector('.my-navbar') as HTMLElement;
-      if (!element) return;
-
-      const isSmallScreen = window.innerWidth < 992;
-      const isScrolled = window.scrollY > 0;
-      const isMenuOpen = !this.isNavbarCollapsed;
-      if ((isSmallScreen && isMenuOpen) || (isSmallScreen && isScrolled)) {
-        element.style.padding = '5px 0';
-        element.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
-      } else {
-        element.style.backgroundColor = 'transparent';
-        element.style.padding = '10px 0';
-        element.style.boxShadow = 'none';
-        element.style.height = '100px';
-      }
-
-      element.style.transition = 'all 0.3s ease';
     }
   }
 }
