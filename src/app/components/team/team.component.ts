@@ -11,9 +11,6 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { DataViewModule } from 'primeng/dataview';
-import { ButtonModule } from 'primeng/button';
-import { TagModule } from 'primeng/tag';
 import { CarouselModule, Carousel } from 'primeng/carousel';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
@@ -22,21 +19,13 @@ import { Subscription } from 'rxjs';
   selector: 'app-team',
   templateUrl: './team.component.html',
   styleUrls: ['./team.component.scss'],
-
   standalone: true,
-  imports: [
-    DataViewModule,
-    ButtonModule,
-    TagModule,
-    CarouselModule,
-    TranslatePipe,
-  ],
+  imports: [CarouselModule, TranslatePipe],
   host: { ngSkipHydration: 'true' },
 })
 export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
   isBrowser = false;
   direction: 'ltr' | 'rtl' = 'ltr';
-  showCarousel = true;
 
   private readonly translateService = inject(TranslateService);
   private readonly cdr = inject(ChangeDetectorRef);
@@ -61,12 +50,7 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
   ];
 
   responsiveOptions = [
-  
-    {
-      breakpoint: '1199px',
-      numVisible: 3,
-      numScroll: 3,
-    },
+    { breakpoint: '1199px', numVisible: 3, numScroll: 3 },
     { breakpoint: '992px', numVisible: 3, numScroll: 3 },
     { breakpoint: '768px', numVisible: 2, numScroll: 2 },
     { breakpoint: '425px', numVisible: 1, numScroll: 1 },
@@ -84,7 +68,6 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
     this.langChangeSubscription = this.translateService.onLangChange.subscribe(
       () => {
         this.updateDirection();
-        this.reloadCarousel();
       }
     );
 
@@ -111,24 +94,12 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
     this.cdr.detectChanges();
   }
 
-  private reloadCarousel(): void {
-    this.showCarousel = false;
-    this.cdr.detectChanges();
-
-    setTimeout(() => {
-      this.showCarousel = true;
-      this.cdr.detectChanges();
-      this.reinitializeAOSandTilt();
-    }, 200); // مدة أطول لضمان استقرار العرض
-  }
-
   private reinitializeAOSandTilt(): void {
     if (!this.isBrowser) return;
 
     setTimeout(() => {
       const cards = document.querySelectorAll('.team-card');
-
-      import('aos').then((AOS) => AOS.refreshHard());
+      import('aos').then((AOS) => AOS.refresh());
 
       import('vanilla-tilt').then((VanillaTilt) => {
         cards.forEach((card) => {
@@ -138,6 +109,6 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
         });
         VanillaTilt.default.init(cards as any);
       });
-    }, 500); // تأخير لتأكد من عرض الكروت بالكامل
+    }, 2000); // زيادة الوقت لـ 2000 مللي ثانية
   }
 }

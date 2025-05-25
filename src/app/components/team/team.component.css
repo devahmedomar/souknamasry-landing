@@ -28,12 +28,10 @@ section h2 {
   overflow: hidden;
   width: 30rem;
   height: fit-content;
-
 }
 .team-card img {
   width: 100%;
   display: block;
-
 }
 .team-card .overlay {
   position: absolute;
@@ -197,88 +195,107 @@ html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next,
   right: auto;
   left: 0;
 }
+
+
+
 @media (min-width: 320px) and (max-width: 426px) {
-
-  ::ng-deep #pn_id_1 .p-carousel-container {
+  /* ضبط الكاروسيل نفسه */
+  :host ::ng-deep #pn_id_1 .p-carousel-container {
+    direction: ltr; /* الاتجاه الافتراضي */
     overflow: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    direction: ltr; /* لضبط الاتجاه الافتراضي */
+    display: flex;
+    justify-content: center;
   }
 
-  html[dir="rtl"] ::ng-deep #pn_id_1 .p-carousel-container {
-    direction: rtl; /* عند التبديل للعربية */
+  /* ضبط الاتجاه في الـ RTL */
+  :host([dir="rtl"]) ::ng-deep #pn_id_1 .p-carousel-container {
+    direction: rtl;
   }
 
-  ::ng-deep #pn_id_1 .p-carousel-item {
-
-    scroll-snap-align: center;
-
+  /* ضبط الكارد ليكون متمركز */
+  :host ::ng-deep #pn_id_1 .p-carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    width: 100%;
   }
 
   .team-card {
-    width: 100%;
-    
+    width: 100%; /* تقليل العرض ليكون مناسب */
+    margin-inline: 30px; /* تمركز الكارد */
     box-sizing: border-box;
-    display: block;
   }
 
   .team-card img {
     width: 100%;
     height: auto;
-
   }
 
-  /* ضبط الأسهم في الوضع RTL */
-  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-prev,
+  /* ضبط الأسهم في الـ RTL */
+  :host([dir="rtl"]) ::ng-deep .p-carousel .p-carousel-prev,
   :lang(ar) ::ng-deep .p-carousel .p-carousel-prev {
     transform: rotate(180deg);
     left: auto;
     right: 0;
   }
 
-  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next,
+  :host([dir="rtl"]) ::ng-deep .p-carousel .p-carousel-next,
   :lang(ar) ::ng-deep .p-carousel .p-carousel-next {
     transform: rotate(180deg);
     right: auto;
     left: 0;
   }
-
-  /* في الوضع LTR لا حاجة لتدوير الأسهم */
-  /* html[dir="ltr"] ::ng-deep .p-carousel .p-carousel-prev,
-  :lang(en) ::ng-deep .p-carousel .p-carousel-prev,
-  html[dir="ltr"] ::ng-deep .p-carousel .p-carousel-next,
-  :lang(en) ::ng-deep .p-carousel .p-carousel-next {
-    transform: none;
-  } */
 }
-
 @media (min-width: 768px) and (max-width: 991px) {
-  ::ng-deep #pn_id_1 .p-carousel-container {
+  :host ::ng-deep #pn_id_1 .p-carousel-container {
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    direction: ltr; /* الاتجاه الافتراضي */
   }
-  ::ng-deep #pn_id_1 .p-carousel-item {
-    flex: 0 0 50% !important;
-    margin: auto;
-    row-gap: 2.5rem;
+
+  :host([dir="rtl"]) ::ng-deep #pn_id_1 .p-carousel-container {
+    direction: rtl; /* ضبط الاتجاه في الـ RTL */
+  }
+
+  :host ::ng-deep #pn_id_1 .p-carousel-item {
+    flex: 0 0 50%; /* تقليل العرض لضمان التمركز */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
     box-sizing: border-box;
   }
+
   .team-card {
-    /* margin-left: -2px !important;
-    margin-right: 10px; */
-    overflow: hidden;
-    /* overscroll-behavior: auto; */
+    max-width: 280px; /* ضبط الحد الأقصى للعرض */
+    margin: auto; /* تمركز الكارد */
   }
+
   .team-card img {
-    max-width: 280px;
-    /* height: 320px; */
-    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+
     display: block;
   }
+
+  /* ضبط الأسهم في الـ RTL */
+  :host([dir="rtl"]) ::ng-deep .p-carousel .p-carousel-prev,
+  :lang(ar) ::ng-deep .p-carousel .p-carousel-prev {
+    transform: rotate(180deg);
+    left: auto;
+    right: 0;
+  }
+
+  :host([dir="rtl"]) ::ng-deep .p-carousel .p-carousel-next,
+  :lang(ar) ::ng-deep .p-carousel .p-carousel-next {
+    transform: rotate(180deg);
+    right: auto;
+    left: 0;
+  }
 }
-@media (min-width: 992px) and (max-width: 1024px) {
+@media (min-width: 992px) and (max-width: 1025px) {
   ::ng-deep #pn_id_1 .p-carousel-container {
     overflow: hidden;
     padding-inline: 40px !important;
@@ -286,20 +303,48 @@ html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next,
 
   ::ng-deep #pn_id_1 .p-carousel-item {
     flex: 0 0 33.33% !important;
-    max-width: 33.3333% !important;
+
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
   }
 
   .team-card {
-    margin-left: 10px !important;
+    margin: auto;
     overflow: hidden;
   }
   .team-card img {
-    /* max-width: 310px;
-    height: 310px; */
-    object-fit: cover;
+    display: block;
+  }
+  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-prev,
+  :lang(ar) ::ng-deep .p-carousel .p-carousel-prev {
+    transform: rotate(180deg);
+    left: auto;
+    right: 0;
+  }
+  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next,
+  :lang(ar) ::ng-deep .p-carousel .p-carousel-next {
+    transform: rotate(180deg);
+    right: auto;
+    left: 0;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1500px) {
+  ::ng-deep #pn_id_1 .p-carousel-container {
+    overflow: hidden;
+    padding-inline: 40px !important;
+  }
+
+  ::ng-deep #pn_id_1 .p-carousel-item {
+    flex: 0 0 33.33% !important;
+
+    box-sizing: border-box;
+  }
+
+  .team-card {
+    margin: auto;
+    overflow: hidden;
+  }
+  .team-card img {
     display: block;
   }
   html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-prev,
