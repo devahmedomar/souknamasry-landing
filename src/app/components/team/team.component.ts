@@ -27,7 +27,7 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
   isBrowser = false;
   direction: 'ltr' | 'rtl' = 'ltr';
 
-  private readonly translateService = inject(TranslateService);
+   readonly translateService = inject(TranslateService);
   private readonly cdr = inject(ChangeDetectorRef);
   private langChangeSubscription: Subscription | null = null;
 
@@ -63,13 +63,7 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.updateDirection();
-
-    this.langChangeSubscription = this.translateService.onLangChange.subscribe(
-      () => {
-        this.updateDirection();
-      }
-    );
+  
 
     if (this.isBrowser) {
       import('aos').then((AOS) => {
@@ -86,13 +80,7 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
     this.langChangeSubscription?.unsubscribe();
   }
 
-  private updateDirection(): void {
-    const lang =
-      this.translateService.currentLang ||
-      this.translateService.getDefaultLang();
-    this.direction = lang === 'ar' ? 'rtl' : 'ltr';
-    this.cdr.detectChanges();
-  }
+
 
   private reinitializeAOSandTilt(): void {
     if (!this.isBrowser) return;

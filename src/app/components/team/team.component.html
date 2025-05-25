@@ -2,7 +2,7 @@
   <div class="container">
     <h2>{{ "team.Meet Our Team" | translate }}</h2>
     <div class="carousel">
-      <p-carousel #carousel [value]="teamMembers" [numVisible]="3" [numScroll]="1" [circular]="true"
+      <p-carousel #carousel [value]="teamMembers" [numVisible]="3" [numScroll]="1" [circular]="true" [class.rtl]="translateService.currentLang === 'ar'"
         [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions" [showIndicators]="true"
         [showNavigators]="true" [dir]="direction">
         <ng-template pTemplate="item" let-member>

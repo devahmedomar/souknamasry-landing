@@ -9,9 +9,7 @@ section h2 {
   font-size: 2.5rem;
   margin-block: 50px;
 }
-/* ::ng-deep .p-carousel {
-  padding-inline: 50px !important;
-} */
+
 ::ng-deep
   .p-carousel
   .p-carousel-indicators
@@ -183,19 +181,6 @@ section h2 {
   -ms-transform: translateX(0px);
   -o-transform: translateX(0px);
 }
-html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-prev,
-:lang(ar) ::ng-deep .p-carousel .p-carousel-prev {
-  transform: rotate(180deg);
-  left: auto;
-  right: 0;
-}
-html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next,
-:lang(ar) ::ng-deep .p-carousel .p-carousel-next {
-  transform: rotate(180deg);
-  right: auto;
-  left: 0;
-}
-
 
 
 @media (min-width: 320px) and (max-width: 426px) {
@@ -232,19 +217,16 @@ html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next,
     height: auto;
   }
 
-  /* ضبط الأسهم في الـ RTL */
-  :host([dir="rtl"]) ::ng-deep .p-carousel .p-carousel-prev,
-  :lang(ar) ::ng-deep .p-carousel .p-carousel-prev {
+  ::ng-deep .p-carousel[dir="rtl"] .p-carousel-prev {
     transform: rotate(180deg);
+    right: 10px;
     left: auto;
-    right: 0;
   }
 
-  :host([dir="rtl"]) ::ng-deep .p-carousel .p-carousel-next,
-  :lang(ar) ::ng-deep .p-carousel .p-carousel-next {
+  ::ng-deep .p-carousel[dir="rtl"] .p-carousel-next{
     transform: rotate(180deg);
+    left: 10px;
     right: auto;
-    left: 0;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -281,18 +263,16 @@ html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next,
   }
 
   /* ضبط الأسهم في الـ RTL */
-  :host([dir="rtl"]) ::ng-deep .p-carousel .p-carousel-prev,
-  :lang(ar) ::ng-deep .p-carousel .p-carousel-prev {
+  ::ng-deep .p-carousel[dir="rtl"] .p-carousel-prev {
     transform: rotate(180deg);
+    right: 10px;
     left: auto;
-    right: 0;
   }
 
-  :host([dir="rtl"]) ::ng-deep .p-carousel .p-carousel-next,
-  :lang(ar) ::ng-deep .p-carousel .p-carousel-next {
+  ::ng-deep .p-carousel[dir="rtl"] .p-carousel-next{
     transform: rotate(180deg);
+    left: 10px;
     right: auto;
-    left: 0;
   }
 }
 @media (min-width: 992px) and (max-width: 1025px) {
@@ -314,21 +294,20 @@ html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next,
   .team-card img {
     display: block;
   }
-  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-prev,
-  :lang(ar) ::ng-deep .p-carousel .p-carousel-prev {
+  ::ng-deep .p-carousel[dir="rtl"] .p-carousel-prev {
     transform: rotate(180deg);
+    right: 10px;
     left: auto;
-    right: 0;
   }
-  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next,
-  :lang(ar) ::ng-deep .p-carousel .p-carousel-next {
+
+  ::ng-deep .p-carousel[dir="rtl"] .p-carousel-next{
     transform: rotate(180deg);
+    left: 10px;
     right: auto;
-    left: 0;
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1500px) {
+@media (min-width: 1025px) and (max-width: 1500px) {
   ::ng-deep #pn_id_1 .p-carousel-container {
     overflow: hidden;
     padding-inline: 40px !important;
@@ -347,16 +326,18 @@ html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next,
   .team-card img {
     display: block;
   }
-  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-prev,
-  :lang(ar) ::ng-deep .p-carousel .p-carousel-prev {
-    transform: rotate(180deg);
-    left: auto;
-    right: 0;
-  }
-  html[dir="rtl"] ::ng-deep .p-carousel .p-carousel-next,
-  :lang(ar) ::ng-deep .p-carousel .p-carousel-next {
-    transform: rotate(180deg);
-    right: auto;
-    left: 0;
-  }
+
+  /* دعم RTL للسهمين */
+::ng-deep .p-carousel[dir="rtl"] .p-carousel-prev {
+  transform: rotate(180deg);
+  right: 10px;
+  left: auto;
+}
+
+::ng-deep .p-carousel[dir="rtl"] .p-carousel-next{
+  transform: rotate(180deg);
+  left: 10px;
+  right: auto;
+}
+
 }

@@ -150,11 +150,11 @@
     "hager": { "name": "Hager Barakat", "role": "UI/UX Designer" },
     "sherif": { "name": "Sherif Mohsen", "role": "Graphic Designer" }
   }
-}
+},
 
 
 
-    },
+
 
 
       "footer": {
@@ -169,12 +169,12 @@
         "about": "About",
         "services": "Services",
         "contact": "Contact"
-      }
+      },
 
 
 
 
-      ,
+
       "CONTACT-US": {
       "Contact-Us": "Contact Us",
       "PHONE":{
