@@ -129,18 +129,9 @@
 ============================= */
 .feature-title {
   text-align: center;
-  font-size: 1.8rem;
   margin: 0 auto;
-  max-width: 90%;
-}
-/* for en*/
-.feature-title.ltr {
-  direction: ltr;
-}
-
-/* for ar*/
-.feature-title.rtl {
-  direction: rtl;
+  font-size: 2rem;
+  padding: 0;
 }
 /* =============================
    Features Grid Layout
@@ -228,27 +219,6 @@
   font-weight: 500;
 }
 
-/* ========== Media Queries ========== */
-@media (max-width: 340px) {
-  .feature-title.rtl {
-    text-align: center;
-  }
-
-  .feature-title.ltr {
-    text-align: center;
-    padding-right: 20px;
-    font-size: 1.3rem;
-    width: 280px;
-  }
-}
-@media (max-width: 376px) {
-  .feature-title.rtl {
-    font-size: 1.8rem !important;
-    padding-left: 28px !important;
-    text-align: center !important;
-   }
-  
-}
 @media (max-width: 427px) { 
   .feature-title {
     width: 18.60rem; /* 300px */
@@ -259,7 +229,12 @@
     margin: 0 auto;
   }
 
+  .feature-title {
+    font-size: 1.5rem;
+    width: auto;
+  }
 }
+
 
 @media (max-width: 50rem) { 
   .about-section {
