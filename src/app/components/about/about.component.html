@@ -44,7 +44,9 @@
 
 
       <!-- Features Section -->
-      <div class="row g-4 mt-3">
+      <div  class="row g-4 mt-3"
+      [ngClass]="currentLang() === 'ar' ? 'rtl' : 'ltr'"
+      > 
         <div
           class="col-md-4 d-flex align-items-stretch"
           *ngFor="let feature of features(); let i = index; trackBy: trackByIndex"
