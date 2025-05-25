@@ -1,20 +1,17 @@
+import { isPlatformBrowser } from '@angular/common';
 import {
+  AfterViewInit,
   Component,
   Inject,
-  PLATFORM_ID,
-  OnInit,
-  AfterViewInit,
-  OnDestroy,
-  ChangeDetectorRef,
   inject,
-  ViewChild,
-  ViewEncapsulation,
+  OnDestroy,
+  OnInit,
+  PLATFORM_ID,
+  ViewChild
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import { CarouselModule, Carousel } from 'primeng/carousel';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { Carousel, CarouselModule } from 'primeng/carousel';
 import { Subscription } from 'rxjs';
-
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
@@ -28,7 +25,6 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
   direction: 'ltr' | 'rtl' = 'ltr';
 
    readonly translateService = inject(TranslateService);
-  private readonly cdr = inject(ChangeDetectorRef);
   private langChangeSubscription: Subscription | null = null;
 
   @ViewChild('carousel', { static: false }) carousel!: Carousel;
@@ -63,7 +59,7 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
-  
+
 
     if (this.isBrowser) {
       import('aos').then((AOS) => {
@@ -97,6 +93,6 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
         });
         VanillaTilt.default.init(cards as any);
       });
-    }, 2000); // زيادة الوقت لـ 2000 مللي ثانية
+    }, 2000);
   }
 }

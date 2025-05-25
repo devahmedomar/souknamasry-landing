@@ -6,7 +6,7 @@
         [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions" [showIndicators]="true"
         [showNavigators]="true" [dir]="direction">
         <ng-template pTemplate="item" let-member>
-          <div class="team-card tilt" data-tilt data-tilt-reverse="true" data-tilt-glare data-tilt-max-glare="0.8">
+          <div class="team-card tilt" data-tilt data-tilt-reverse="true" data-tilt-glare data-tilt-max-glare="0.8"[class.rtl]="translateService.currentLang === 'ar'">
             <div class="image-wrapper">
               <img [src]="member.image" alt="team member" />
               <div class="overlay" data-aos="fade-up" data-aos-duration="1000">
@@ -16,12 +16,15 @@
                 </div>
               </div>
             </div>
-            <h3 class="name">
-              {{ 'team.members.' + member.key + '.name' | translate }}
-            </h3>
-            <p class="role">
-              {{ 'team.members.' + member.key + '.role' | translate }}
-            </p>
+
+           <div class="card-content" [dir]="translateService.currentLang === 'ar' ? 'rtl' : 'ltr'">
+              <p class="role">
+                {{ 'team.members.' + member.key + '.role' | translate }}
+              </p>
+              <h3 class="name">
+                {{ 'team.members.' + member.key + '.name' | translate }}
+              </h3>
+           </div>
           </div>
         </ng-template>
       </p-carousel>
