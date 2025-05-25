@@ -241,8 +241,8 @@
     font-size: 1.5rem;
     width: auto;
   }
-}
 
+}
 
 @media (max-width: 50rem) { 
   .about-section {
@@ -272,7 +272,9 @@
   }
 
   .row.g-4 {
+    display: flex;
     flex-direction: column !important;
+    align-items: center;
     gap: 1.5rem;
     margin: 0;
 
@@ -295,6 +297,14 @@
     width: 100%;
     margin: auto;
   }
+  .row.g-4.ltr {
+  margin-left: 0 !important;
+  margin-right: 0;
+}
+ .row.g-4.rtl {
+  margin-left: 0 !important;
+  margin-right: 0;
+}
 }
 
 @media (min-width: 50.0625rem) and (max-width: 81.25rem) {
@@ -340,6 +350,15 @@
     width: 80%;
     margin: auto;
   }
+
+    .row.g-4.ltr {
+  margin-left: 0 !important;
+  margin-right: 0;
+}
+ .row.g-4.rtl {
+  margin-left: 0 !important;
+  margin-right: 0;
+}
 }
 
 /* for cards */
@@ -375,3 +394,5 @@
     text-align: start;
   }
 }
+
+
