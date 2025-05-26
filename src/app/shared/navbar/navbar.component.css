@@ -362,25 +362,26 @@
   }
   .navbar-brand {
     margin-top: 16px !important;
+    margin-left: -63px;
   }
   .dropdown {
     position: absolute;
-    transform: translateX(255px);
-    -webkit-transform: translateX(255px);
-    -moz-transform: translateX(255px);
-    -ms-transform: translateX(255px);
-    -o-transform: translateX(255px);
+    transform: translateX(285px);
+    -webkit-transform: translateX(285px);
+    -moz-transform: translateX(285px);
+    -ms-transform: translateX(285px);
+    -o-transform: translateX(285px);
     top: -103px;
     padding: 30px;
   }
   html[dir="rtl"] .dropdown,
   :lang(ar) .dropdown {
     position: absolute;
-    transform: translateX(-395px);
-    -webkit-transform: translateX(-395px);
-    -moz-transform: translateX(-395px);
-    -ms-transform: translateX(-395px);
-    -o-transform: translateX(-395px);
+    transform: translateX(-445px);
+    -webkit-transform: translateX(-445px);
+    -moz-transform: translateX(-445px);
+    -ms-transform: translateX(-445px);
+    -o-transform: translateX(-445px);
     top: -123px;
     padding: 30px;
   }
@@ -420,22 +421,22 @@
   }
   .dropdown {
     position: absolute;
-    transform: translateX(436px);
-    -webkit-transform: translateX(436px);
-    -moz-transform: translateX(436px);
-    -ms-transform: translateX(436px);
-    -o-transform: translateX(436px);
+    transform: translateX(456px);
+    -webkit-transform: translateX(456px);
+    -moz-transform: translateX(456px);
+    -ms-transform: translateX(456px);
+    -o-transform: translateX(456px);
     top: -85px;
     padding: 30px;
   }
   html[dir="rtl"] .dropdown,
   :lang(ar) .dropdown {
     position: absolute;
-    transform: translateX(-646px);
-    -webkit-transform: translateX(-646px);
-    -moz-transform: translateX(-646px);
-    -ms-transform: translateX(-646px);
-    -o-transform: translateX(-646px);
+    transform: translateX(-666px);
+    -webkit-transform: translateX(-666px);
+    -moz-transform: translateX(-666px);
+    -ms-transform: translateX(-666px);
+    -o-transform: translateX(-666px);
     top: -130px;
     padding: 30px;
   }
@@ -448,11 +449,12 @@
   }
   .navbar-brand {
     margin-top: 18px !important;
+    margin-left: -66px;
   }
 
   html[dir="rtl"] .navbar-brand,
   :lang(ar) .navbar-brand {
-    margin-right: 145px !important;
+    margin-right: 155px !important;
   }
 
   :lang(ar) .my-section ul,
