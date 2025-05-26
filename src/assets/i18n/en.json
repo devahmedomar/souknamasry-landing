@@ -8,6 +8,13 @@
     "Contact Us": "Contact Us",
     "Lang":"Lang"
   },
+  "HERO": {
+    "titleLine1": "From the heart",
+    "titleLine2": "of Egypt",
+    "subtitle": "Buy and sell with ease",
+    "watchPromo": "Watch promo"
+  },
+
   "services2": {
   "title1": "Featured Services",
   "cards": [
@@ -125,14 +132,100 @@
           "description": "Smart design that makes it easy for customers to find and purchase what they need."
         }
       ]
-    }
-  
-  
+    },
+ "team": {
+  "Meet Our Team": "Meet Our Team",
+  "members": {
+    "ahmedomar": { "name": "Ahmed Omar", "role": "Front End Developer" },
+    "ahmed": { "name": "Ahmed Muhammad", "role": "Front End Developer" },
+    "reham": { "name": "Reham Reda", "role": "Front End Developer" },
+    "shahd": { "name": "Shahd Salama", "role": "Front End Developer" },
+    "hassan": { "name": "Hassan Elsakka", "role": "Software Tester" },
+    "amina": { "name": "Amina Younis", "role": "Data Analyst" },
+    "mariam": { "name": "Mariam Bakr", "role": "UI/UX Designer" },
+    "noran": { "name": "Noran Morsy", "role": "UI/UX Designer" },
+    "mai": { "name": "Mai Elsaid", "role": "UI/UX Designer" },
+    "rehab": { "name": "Rehab Hassan", "role": "UI/UX Designer" },
+    "esraa": { "name": "Esraa Mohamed", "role": "UI/UX Designer" },
+    "hager": { "name": "Hager Barakat", "role": "UI/UX Designer" },
+    "sherif": { "name": "Sherif Mohsen", "role": "Graphic Designer" }
   }
-  
-  
+},
 
-    
-  
-  
+
+
+
+
+
+      "footer": {
+         "brandName": "Soukna Masry",
+        "description": "brings people closer and makes buying and selling easier through a simple and human experience.",
+        "linksTitle": "Quick Links",
+        "contactTitle": "Contact",
+         "location": "Cairo, Egypt",
+        "followUsTitle": "Follow Us ",
+        "copyright": "© 2025 All rights reserved - Soukna Masry",
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "contact": "Contact"
+      },
+
+
+
+
+
+      "CONTACT-US": {
+      "Contact-Us": "Contact Us",
+      "PHONE":{
+        "title":"Phone",
+        "mobile":"+201208444481"
+      },
+      "Mail":{
+        "title":"Mail Address",
+        "email-address":"souknamasry22@gmail.com "
+      },
+      "LOCATION":{
+        "title":"Our Location",
+        "address": "Beni-suef | Egypt"
+      },
+      "OFFICE-HOUR":{
+        "title":"Office Hours",
+        "slot1": "Sun - Thu 09 am - 06pm",
+        "slot2": "Fri - Sat 4 pm - 10pm"
+      },
+
+      "CONTACT-IMAGE":"Soukna Masry coverage map across governorates"
+
+      ,"CONTACT-FORM":{
+        "title": "Leave A Message",
+        "NAME-INPUT": "Full Name",
+        "EMAIL-INPUT":"Email Address",
+        "MESSAGE":"Message",
+        "BUTTON-LABEL":"Send Message"
+      },
+      "FORM-ERROR":{
+        "NAME-ERROR": {
+          "NAME-REQUIRED":"Name is required",
+          "NAME-MINLENGTH":"Name must be at least 3 characters",
+          "NAME-PATTERN": "The name must contain only letters and numbers without symbols"
+        },
+        "EMAIL-MESSAGE": {
+          "EMAIL-REQUIRED":"Email is required.",
+          "EMAIL-INVALID":"Please enter a valid email address."
+        },
+        "TEXTAREA-MESSAGE": {
+          "TEXTAREA-REQUIRED":"Message is required.",
+          "TEXTAREA-MINLENGTH":"Message must be at least 10 characters."
+        }
+      },
+      "SUCCESS-MESSAGE": "🎉 Thank you, {{name}}! Your message has been received successfully. We will get back to you as soon as possible."
+    }
+  }
+
+
+
+
+
+
 

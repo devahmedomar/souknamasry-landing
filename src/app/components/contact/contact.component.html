@@ -1,1 +1,171 @@
-<p>contact works!</p>
+<section id="contact">
+    <!-- Breadcrumb component showing the contact heading -->
+    <app-breadcrumb [breadcrumbHeading]="'CONTACT-US.Contact-Us'" />
+    <div class="container">
+        <!-- Contact cards container -->
+        <div class="contact-cards d-flex flex-wrap gap-5 justify-content-center">
+            @for( data of contact_data; track data.id){
+                <!-- Card component for each contact item -->
+                <div class="contact-card">
+                    <p-card>
+                        <div class="card-content d-flex flex-column align-items-center">
+                            <!-- SVG icon for the contact item -->
+                            <svg class="mb-4"   
+                                [attr.width]="data.svg_width" 
+                                [attr.height]="data.svg_height" 
+                                [attr.viewBox]="data.svg_viewBox" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path [attr.d]="data.svg_path" 
+                                        stroke="#FD7E35" 
+                                        [attr.fill]="data.svg_fill"
+                                        [attr.stroke-width]="data.svg_stroke_width" 
+                                        [attr.stroke-linecap]="data.svg_stroke_linecap" 
+                                        [attr.stroke_linejoin]="data.svg_stroke_linejoin" 
+                                        stroke-miterlimit="10">
+                                        </path>
+                            </svg> 
+                            <!-- Contact title -->                   
+                            <h4>
+                                {{ data.title| translate}}
+                            </h4>
+                            <!-- Contact info -->
+                            <span> {{ data.info| translate}}</span>
+                        </div>
+                    </p-card>
+                </div>
+            }
+        </div>
+        <div class="row">
+            <div class="contact-content d-flex gap-3">
+                <!-- Left column: Contact image -->
+                <div class="col-sm-12 col-xl-6 col-lg-6">
+                    <div 
+                      class="contact-image-container"
+                      [class.rtl]="translate.currentLang === 'ar'">
+                        <img
+                        [attr.data-aos]="this.translate.currentLang === 'ar' ? 'fade-left' : 'fade-right'" 
+                        data-aos-delay="100" data-aos-duration="900"
+                        [attr.title]="'CONTACT-US.CONTACT-IMAGE' | translate"
+                        [attr.alt]="'CONTACT-US.CONTACT-IMAGE' | translate"
+                        class="contact-image" src="assets/images/contact-image.jpeg" alt="">
+                    </div>
+                </div>
+                <!-- Right column: Contact form -->
+                <div class="col-sm-12 col-xl-6 col-lg-6">
+                    <div class="contact-form" 
+                        [class.rtl]="translate.currentLang === 'ar'"
+                        [attr.data-aos]="translate.currentLang === 'ar' ? 'fade-right' : 'fade-left'" 
+                        data-aos-delay="100" data-aos-duration="900"
+                        >
+                        <!-- Card wrapper around the form -->
+                        <p-card  class="contact-form-card" >
+                            <div class="contact-form-content">
+                                <!-- Form title -->
+                                <h2>{{"CONTACT-US.CONTACT-FORM.title" |translate}} </h2>
+                                <!-- Template-driven form -->
+                                <form 
+                                    #form="ngForm"
+                                    (ngSubmit)="sendEmail(form)" 
+                                    class="form-inputs d-flex flex-column gap-3 mt-4">
+                                    <div class="form-inputs-content d-flex justify-content-between gap-5">
+                                        <!-- Name input field -->
+                                        <div class="d-flex flex-column">
+                                            <input 
+                                                class="name-input" 
+                                                type="text" pInputText 
+                                                name="fullname"
+                                                ngModel 
+                                                minlength="3"
+                                                maxlength="30"
+                                                pattern="^[a-zA-Z\u0600-\u06FF ]+$"
+                                                required
+                                                #name= "ngModel"
+                                                [placeholder]="'CONTACT-US.CONTACT-FORM.NAME-INPUT' |translate"/>
+                                                
+                                                <!-- Name validation error messages -->
+                                                @if (name.invalid && (name.dirty || name.touched)) {
+                                                    @if (name.hasError('required')) {
+                                                    <small class="error-message">
+                                                        <span class="error-star">*</span> {{'CONTACT-US.FORM-ERROR.NAME-ERROR.NAME-REQUIRED' |translate}}
+                                                    </small>
+                                                    }
+                                                    @if (name.hasError('minlength')) {
+                                                        <small class="error-message">
+                                                            <span class="error-star">*</span> {{'CONTACT-US.FORM-ERROR.NAME-ERROR.NAME-MINLENGTH' |translate}}
+                                                        </small>
+                                                    }
+                                                    @if (name.hasError('pattern')) {
+                                                        <small class="error-message">
+                                                            <span class="error-star">*</span> {{'CONTACT-US.FORM-ERROR.NAME-ERROR.NAME-PATTERN' |translate}} 
+                                                        </small>
+                                                    }
+                                                }
+                                        </div>
+                                        <!-- Email input field -->
+                                        <div class="d-flex flex-column">
+                                                <input 
+                                                email
+                                                class="email-input"
+                                                type="email"  
+                                                name="email"
+                                                ngModel required
+                                                #email= "ngModel"
+                                                [placeholder]="'CONTACT-US.CONTACT-FORM.EMAIL-INPUT' |translate"/>
+                                                <!-- Email validation error messages -->
+                                                @if (email.invalid && (email.dirty || email.touched)) {
+                                                    @if (email.hasError('required')) {
+                                                        <small class="error-message">
+                                                            <span class="error-star">*</span> {{'CONTACT-US.FORM-ERROR.EMAIL-MESSAGE.EMAIL-REQUIRED' |translate}} 
+                                                        </small>
+                                                    }
+                                                    @else(){
+                                                        <small class="error-message">
+                                                            <span class="error-star">*</span> {{'CONTACT-US.FORM-ERROR.EMAIL-MESSAGE.EMAIL-INVALID' |translate}}
+                                                        </small>
+                                                    }
+                                                }
+                                        </div>
+                                    </div>
+                                    <!-- Message textarea -->
+                                    <div class="d-flex flex-column">
+                                        <textarea
+                                        id="exampleFormControlTextarea1" 
+                                        rows="5"
+                                        name="message"
+                                        ngModel required
+                                        #message="ngModel"
+                                        minlength="10"
+                                        [placeholder]="'CONTACT-US.CONTACT-FORM.MESSAGE'| translate"
+                                        ></textarea>
+                                        <!-- Message validation error messages -->
+                                        @if (message.invalid && (message.dirty || message.touched)) {
+                                                    @if (message.hasError('required')) {
+                                                        <small class="error-message">
+                                                            <span class="error-star">*</span> {{'CONTACT-US.FORM-ERROR.TEXTAREA-MESSAGE.TEXTAREA-REQUIRED' |translate}}
+                                                        </small>
+                                                    }
+                                                    @if(message.hasError('minlength')){
+                                                        <small class="error-message">
+                                                            <span class="error-star">*</span> {{'CONTACT-US.FORM-ERROR.TEXTAREA-MESSAGE.TEXTAREA-MINLENGTH' |translate}}
+                                                        </small>
+                                                    }
+                                        }
+                                    </div>    
+                                    <!-- Submit button -->     
+                                    <button type="submit" class="sendbtn mt-4">
+                                        {{'CONTACT-US.CONTACT-FORM.BUTTON-LABEL'| translate}}
+                                    </button>
+                                    @if (successMessage) {
+                                        <div class="success-alert">
+                                            {{ 'CONTACT-US.SUCCESS-MESSAGE' | translate: { name: successName } }}
+                                        </div>
+                                    }
+                                </form>
+                            </div>
+                        </p-card>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
