@@ -46,26 +46,32 @@ export class NavbarComponent implements OnInit {
 
   currentLanguage: string = 'ar';
   isLoading: boolean = true;
-  isNavbarOpen: boolean = false; // إضافة متغير لتتبع حالة الـ navbar
+  isNavbarOpen: boolean = false; // Tracks whether the navbar is open or closed
 
+  /**
+   * Initializes the component and sets the initial language direction.
+   */
   ngOnInit(): void {
     this.currentLanguage = this.translateService.currentLang || 'ar';
 
-    // تعيين الاتجاه قبل عرض أي محتوى
+    // Set the HTML direction and language attribute before rendering
     this.updateHtmlDirection();
 
-    // السماح بعرض الـ navbar بعد التأكد من تعيين الاتجاه
+    // Allow navbar to display after direction is set
     setTimeout(() => {
       this.isLoading = false;
     }, 0);
 
-    // تحديث الاتجاه عند تغيير اللغة لاحقًا
+    // Listen to language change and update direction accordingly
     this.translateService.onLangChange.subscribe((event) => {
       this.currentLanguage = event.lang;
       this.updateHtmlDirection();
     });
   }
 
+  /**
+   * Updates the <html> element's direction and language attributes based on the current language.
+   */
   updateHtmlDirection(): void {
     if (isPlatformBrowser(this.platformId)) {
       const dir = this.currentLanguage === 'ar' ? 'rtl' : 'ltr';
@@ -78,36 +84,47 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  /**
+   * Toggles between Arabic and English languages.
+   */
   toggleLanguage(): void {
     const newLang = this.currentLanguage === 'ar' ? 'en' : 'ar';
     this.changeLanguage(newLang);
   }
 
+  /**
+   * Changes the language and emits the change event to parent components.
+   * @param lang The new language to switch to
+   */
   changeLanguage(lang: string): void {
     this.myTranslateService.changeLanguage(lang);
     this.currentLanguage = lang;
     this.languageChange.emit(lang);
   }
 
-  // الحل الصحيح للـ navbar toggle
+  /**
+   * Toggles the visibility of the navbar (e.g., in mobile view).
+   */
   toggleNavbar(): void {
-    this.isNavbarOpen = !this.isNavbarOpen; // بيغير الحالة
+    this.isNavbarOpen = !this.isNavbarOpen;
     const navbar = document.getElementById('navbarSupportedContent');
 
     if (navbar) {
       if (this.isNavbarOpen) {
-        // لو مقفولة هيفتحها
+        // Open the navbar
         this.renderer.removeClass(navbar, 'd-none');
         this.renderer.addClass(navbar, 'd-block');
       } else {
-        // لو مفتوحة هيقفلها
+        // Close the navbar
         this.renderer.addClass(navbar, 'd-none');
         this.renderer.removeClass(navbar, 'd-block');
       }
     }
   }
 
-  // إغلاق الـ navbar عند الضغط على أي link
+  /**
+   * Closes the navbar. Called when a nav link is clicked.
+   */
   closeNavbar(): void {
     this.isNavbarOpen = false;
     const navbar = document.getElementById('navbarSupportedContent');
@@ -118,6 +135,10 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  /**
+   * Scrolls to the top of the page. If not on the home page, navigates there first.
+   * @param event The click event
+   */
   scrollToTop(event: Event) {
     event.preventDefault();
     event.stopPropagation();
