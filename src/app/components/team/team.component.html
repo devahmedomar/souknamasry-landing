@@ -11,8 +11,8 @@
               <img [src]="member.image" alt="team member" />
               <div class="overlay" data-aos="fade-up" data-aos-duration="1000">
                 <div class="social-icons">
-                  <i class="pi pi-linkedin"></i>
-                  <i class="pi pi-envelope"></i>
+                  <a [href]="member.linkedin" target="_blank"><i class="pi pi-linkedin"></i></a>
+                  <a  [href]="'https://mail.google.com/mail/?view=cm&to='+member.email" target="_blank"><i class="pi pi-envelope"></i></a>
                 </div>
               </div>
             </div>
