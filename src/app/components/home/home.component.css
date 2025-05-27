@@ -1,0 +1,9 @@
+section {
+  scroll-margin-top: 135px;
+}
+
+@media (max-width: 426px) {
+  section {
+    scroll-margin-top: 115px;
+  }
+}

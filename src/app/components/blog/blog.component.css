@@ -1,0 +1,141 @@
+:root {
+    --surface-color: #ffffff; 
+  }
+  :host {
+    font-family: "Vazirmatn", sans-serif;
+  }  
+  
+  .container {
+    max-width: 1170px;
+    background-color: rgba(255, 255, 255, 0.20);
+    /* padding: 2rem; */
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); 
+  }
+  
+  
+   
+  .heading-1 {
+    color: #fd6f1d;
+  }
+  .heading-1 i {
+    margin-right: 8px;
+    color: #fd6f1d;
+    font-size: 2rem;
+  } 
+  
+  .blog-item {
+    position: relative;
+    background: transparent;
+  }
+  
+   .blog-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+   
+     
+  .blog-content {
+    margin-top: -95px;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+    transition: background 0.4s ease;
+    backdrop-filter: blur(5px);
+  }
+  
+  .blog-icon {
+    width: 70px;
+    height: 70px;
+    background: #fd6f1d;
+    border-top: 4px solid #faf6f4;
+    color: white;
+    font-size: 24px;
+    transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+  }
+  
+  .blog-icon i {
+    font-size: 24px;
+    transition: color 0.4s ease;
+  }
+  
+  h5 {
+    transition: 0.4 ease;
+  }
+  
+  .blog-item:hover h5 {
+    color: #fd6f1d;
+  }
+  .blog-item:hover img {
+    transform: scale(1.1);
+  }
+  
+  .blog-item:hover .blog-icon {
+    background: white;
+    color: #fd6f1d;
+    border-top: 4px solid #fd6f1d;
+  }
+  .blog-item:hover .blog-icon i {
+    color: #fd6f1d;
+  }
+  
+  .btn1 {
+    cursor: pointer;
+    color: #fd6f1d;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+
+  @media (min-width: 576px) and (max-width: 767px) {
+    .container {
+      max-width: 500px;
+    }
+    
+  }
+  @media (max-width: 991px) and (min-width: 768px) {
+    .container {
+      max-width: 650px;
+    }
+    
+  }
+  @media (max-width: 1199px) and (min-width: 992px) {
+    .container {
+    max-width: 800px;
+    }
+    .cardscontainer {
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1005px;
+    }
+    .row {
+      justify-content: center; 
+    }
+    .cardscontainer {
+      width: 30%; 
+      align-items: center;
+    }
+  
+    .blog-item {
+      transform: scale(0.95); 
+    }
+  }
+  @media (min-width: 1400px) {
+    .container {
+      max-width: 1200px;
+    }
+
+  }
+  

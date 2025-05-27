@@ -1,0 +1,136 @@
+#breadcrumnd-banner{
+    background: url('/assets/images/breadcrumb.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh; 
+    font-family: "Vazirmatn", sans-serif;
+}
+.breadcrumnd-content{
+    margin: 0 ;
+}
+
+.breadcrumnd-content h1{
+    font-weight: 700;
+    font-size: 80px;
+    color: white;
+    animation: goBack 1.1s 1 ease-in;
+}
+
+@keyframes goBack {
+    0%{
+        translate:100px 0px;
+        opacity: 0;
+        scale:.5;
+    }  
+    100%{
+        translate: 0 0;
+        opacity: 1;
+        scale:1;
+    }  
+}
+
+::ng-deep .p-breadcrumb{
+    background-color: transparent;
+    width: auto;
+    max-width: 100%;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    padding: 20px 20px 10px 20px;
+    border: rgba(64, 44, 38, 0.8) 1px solid;
+    animation: goForward 1.1s 1 ease-in;
+}
+@keyframes goForward {
+    0%{
+        translate:-100px 0px;
+        scale:.5;
+        opacity: 0;
+    }  
+    100%{
+        translate: 0 0;
+        opacity: 1;
+        scale:1;
+    }  
+}
+::ng-deep .p-breadcrumb .p-breadcrumb-list{
+    padding-left: 0;
+    list-style: none;
+}
+/* both breadcrumnd-content */
+::ng-deep .p-breadcrumb .p-menuitem-link .p-menuitem-text{
+    color: white;
+    font-weight: 500;
+    font-family: "Vazirmatn", sans-serif;
+}
+::ng-deep .p-breadcrumb .p-menuitem-link{
+    text-decoration: none;
+}
+
+/* change the direction of separator according to the page direction   */
+::ng-deep .p-menuitem-separator {
+    color: white;
+}
+.rtl ::ng-deep .p-menuitem-separator {
+  transform: rotate(180deg);
+}
+.ltr ::ng-deep .p-menuitem-separator {
+  transform: rotate(0deg);
+}
+/* home text on hovering */
+::ng-deep .p-breadcrumb .p-breadcrumb-list li:first-child .p-menuitem-text:hover{
+    color: #FEDFCD;
+}
+/* breadcrumb heading color */
+::ng-deep .p-breadcrumb .p-breadcrumb-list li:last-child .p-menuitem-text{
+    color: #FEDFCD;
+}
+
+/* media queries */
+@media (max-width: 1400px) {
+    .container{
+        max-width: 1284px;
+    }
+}
+@media (max-width: 1024px) {
+    .container{
+        max-width: 868px;
+    }
+    .breadcrumnd-content h1{
+        font-size: 60px;
+    }
+    #breadcrumnd-banner{
+        height: 66vh; 
+    }
+}
+@media (max-width: 768px) {
+    .container{
+        max-width: 736px;
+    }
+    
+}
+
+@media (max-width:426px) {
+    .container{
+        max-width: 409px;
+    }
+    .breadcrumnd-content h1{
+        font-size: 50px;
+    }
+}
+
+@media (max-width:375px) {
+    .container{
+        max-width: 359px;
+    }
+}
+
+@media (max-width:320px) {
+    .container{
+        max-width: 304px;
+    }
+}

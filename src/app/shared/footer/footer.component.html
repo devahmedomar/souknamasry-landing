@@ -1,0 +1,144 @@
+<footer class="footer pt-5 pb-4">
+  <div class="container text-start text-md-start mt-4">
+
+    <!-- Main row with RTL or LTR direction depending on language -->
+    <div class="row" [ngClass]="{ 'footer-rtl': currentLang() === 'ar', 'footer-ltr': currentLang() !== 'ar' }">
+
+      <!-- === Logo and About Section === -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mb-4 footer-logo-col">
+        <a 
+          *ngIf="languageReady()" 
+          [routerLink]="['/']" 
+          fragment="home" 
+          appFragmentActive="home" 
+          class="footer-logo-wrapper d-flex align-items-center mb-3"
+        >
+          <!-- Display Arabic logo if language is Arabic -->
+          <img 
+            *ngIf="currentLang() === 'ar'; else englishLogo" 
+            src="assets/images/logo-al.png" 
+            alt="Soukna Masry Arabic Logo" 
+            class="footer-logo-ar logo-ar" 
+          />
+          <!-- English logo fallback -->
+          <ng-template #englishLogo>
+            <img 
+              src="assets/images/logo-al2.png" 
+              alt="Soukna Masry English Logo" 
+              class="footer-logo-en me-2 logo-en" 
+            />
+          </ng-template>
+        </a>
+
+        <!-- Brand name and description -->
+        <p class="fs-5 fw-semibold pl-3">
+          <a 
+            [routerLink]="['/']" 
+            fragment="home" 
+            appFragmentActive="home" 
+            class="t-color fw-bold text-decoration-none"
+          >
+            {{ brandName() }}
+          </a>
+          <span class="brand-desc-text">{{ des() }}</span>
+        </p>
+      </div>
+
+      <!-- === Quick Links Section === -->
+      <div 
+        class="col-md-3 col-lg-2 col-xl-2 mb-4 fs-5 fw-bold text-center quick-links-col"
+        [ngClass]="{ 'rtl-links': currentLang() === 'ar' }"
+      >
+        <h5 class="text-uppercase fw-bold mb-3 contact-icons">{{ linksTitle() }}</h5>
+
+        <!-- Loop through quick links -->
+        <ng-container *ngFor="let link of quickLinks; let i = index; trackBy: trackByIndex">
+          <p class="mb-2">
+            <!-- If the link has a fragment -->
+            <a 
+              *ngIf="link.fragment; else noFragment"
+              [routerLink]="[link.routerLink]"
+              [fragment]="link.fragment"
+              [appFragmentActive]="link.fragment"
+              class="th-color text-decoration-none"
+            >
+              {{ quickLinkLabels()[i] }}
+            </a>
+            <!-- If the link has no fragment -->
+            <ng-template #noFragment>
+              <a 
+                [routerLink]="[link.routerLink]" 
+                class="th-color text-decoration-none"
+              >
+                {{ quickLinkLabels()[i] }}
+              </a>
+            </ng-template>
+          </p>
+        </ng-container>
+      </div>
+
+      <!-- === Contact Information Section === -->
+      <div 
+        class="col-md-3 col-lg-3 col-xl-3 mb-4 fs-5 fw-bold contact-info-col"
+        [ngClass]="{ 'rtl-contact': currentLang() === 'ar' }"
+      >
+        <h5 class="text-uppercase fw-bold mb-3 contact-icons">{{ contactTitle() }}</h5>
+
+        <!-- Location -->
+        <p class="mb-2">
+          <i class="pi pi-map-marker me-2 contact-icons"></i>
+          {{ location() }}
+        </p>
+
+        <!-- Email -->
+        <p class="mb-2 d-flex align-items-center center-on-mobile">
+          <i class="pi pi-envelope me-2 contact-icons"></i>
+          <a 
+            href="https://mail.google.com/mail/?view=cm&to=Souknamasry22@gmail.com" 
+            target="_blank" 
+            class="th-color"
+          >
+            Souknamasry22&#64;gmail.com
+          </a>
+        </p>
+
+        <!-- Phone -->
+        <p class="mb-2">
+          <i class="pi pi-phone me-2 contact-icons"></i>
+          <a [href]="'tel:' + contactInfo.phone" class="th-color">
+            {{ contactInfo.phone }}
+          </a>
+        </p>
+      </div>
+
+      <!-- === Social Media Section === -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mb-4 fs-5 fw-semibold social-media-col">
+        <h5 class="text-uppercase fw-bold mb-3 contact-icons text-center">{{ followUsTitle() }}</h5>
+
+        <!-- Social media icons -->
+        <div 
+          class="mt-3 d-flex flex-wrap gap-2 icon-mobile" 
+          [ngClass]="{ 'social-ltr-center': currentLang() !== 'ar' }"
+        >
+          <ng-container *ngFor="let social of socialLinks">
+            <a 
+              [href]="social.url" 
+              target="_blank" 
+              class="btn d-inline-flex align-items-center justify-content-center social-icon"
+            >
+              <i class="pi icons" [ngClass]="social.icon"></i>
+            </a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+
+    <!-- === Copyright === -->
+    <div class="row">
+      <div class="col-12 text-center mt-4">
+        <p class="mb-0">{{ copyright() }}</p>
+      </div>
+    </div>
+
+  </div>
+</footer>
