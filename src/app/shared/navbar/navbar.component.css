@@ -239,7 +239,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px)  {
   .my-navbar {
     padding-block: 2px !important;
   }
@@ -483,6 +483,81 @@
   :lang(ar) .navbar-brand {
     margin-top: 30px !important;
     margin-right: 145px;
+  }
+  .my-navbar img {
+    width: 150px;
+    height: 120px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .my-section {
+    transform: translateY(10px);
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    -o-transform: translateY(10px);
+    position: relative;
+  }
+  .navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 50px;
+  }
+  .my-section ul {
+    margin-right: 310px !important;
+  }
+  .navbar-brand {
+    margin-top: 16px !important;
+    margin-left: 25px;
+  }
+  .dropdown {
+    position: absolute;
+    transform: translateX(380px);
+    -webkit-transform: translateX(380px);
+    -moz-transform: translateX(380px);
+    -ms-transform: translateX(380px);
+    -o-transform: translateX(380px);
+    top: -99px;
+    padding: 30px;
+}
+  html[dir="rtl"] .dropdown,
+  :lang(ar) .dropdown {
+    position: absolute;
+    transform: translateX(-395px);
+    -webkit-transform: translateX(-395px);
+    -moz-transform: translateX(-395px);
+    -ms-transform: translateX(-395px);
+    -o-transform: translateX(-395px);
+    top: -123px;
+    padding: 30px;
+}
+
+  html[dir="rtl"] .nav-item .nav-link,
+  :lang(ar) .nav-item .nav-link {
+    display: inline;
+    white-space: nowrap;
+    margin-inline: 0.5px !important;
+  }
+  html[dir="rtl"] .my-section ul,
+  :lang(ar) .my-section ul {
+    transform: translate(420px, 41px);
+    -webkit-transform: translate(420px, 41px);
+    -moz-transform: translate(420px, 41px);
+    -ms-transform: translate(420px, 41px);
+    -o-transform: translate(420px, 41px);
+}
+
+  html[dir="rtl"] .navbar-brand,
+  :lang(ar) .navbar-brand {
+    margin-top: 30px !important;
+    margin-right: 243px;
+  }
+  html[dir="rtl"] .my-navbar img,
+  :lang(ar) .my-navbar img {
+    width: 110px;
+    height: 110px;
   }
   .my-navbar img {
     width: 150px;

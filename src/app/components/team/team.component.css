@@ -590,7 +590,7 @@ section h2 {
   }
 }
 
-@media (min-width: 1025px) and (max-width: 1500px) {
+@media (min-width: 1025px) and (max-width: 1600px) {
   section h2 {
     color: #fff;
     text-align: center;
