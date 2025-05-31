@@ -213,20 +213,19 @@ section h2 {
     padding-bottom: 60px;
 
   }
-  /* ضبط الكاروسيل نفسه */
   :host ::ng-deep #pn_id_1 .p-carousel-container {
-    direction: ltr; /* الاتجاه الافتراضي */
+    direction: ltr;
     overflow: hidden;
     display: flex;
     justify-content: center;
+
+
   }
 
-  /* ضبط الاتجاه في الـ RTL */
   :host([dir="rtl"]) ::ng-deep #pn_id_1 .p-carousel-container {
     direction: rtl;
   }
 
-  /* ضبط الكارد ليكون متمركز */
   :host ::ng-deep #pn_id_1 .p-carousel-item {
     display: flex;
     justify-content: center;
@@ -236,13 +235,17 @@ section h2 {
   }
 
   .team-card {
-    width: 100%; /* تقليل العرض ليكون مناسب */
-    margin-inline: 40px; /* تمركز الكارد */
+    width: 100%;
+    margin-inline: 40px;
     box-sizing: border-box;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
   .team-card[dir="rtl"] {
-    width: 100%; /* تقليل العرض ليكون مناسب */
-    margin-inline: 40px; /* تمركز الكارد */
+    width: 100%;
+    margin-inline: 40px;
     box-sizing: border-box;
   }
   .team-card img {
@@ -311,20 +314,19 @@ section h2 {
     padding-bottom: 60px;
 
   }
-  /* ضبط الكاروسيل نفسه */
   :host ::ng-deep #pn_id_1 .p-carousel-container {
-    direction: ltr; /* الاتجاه الافتراضي */
+    direction: ltr;
     overflow: hidden;
     display: flex;
     justify-content: center;
   }
 
-  /* ضبط الاتجاه في الـ RTL */
+
   :host([dir="rtl"]) ::ng-deep #pn_id_1 .p-carousel-container {
     direction: rtl;
   }
 
-  /* ضبط الكارد ليكون متمركز */
+
   :host ::ng-deep #pn_id_1 .p-carousel-item {
     display: flex;
     justify-content: center;
@@ -334,13 +336,17 @@ section h2 {
   }
 
   .team-card {
-    width: 100%; /* تقليل العرض ليكون مناسب */
-    margin-inline: 50px; /* تمركز الكارد */
+    width: 100%;
+    margin-inline: 50px;
     box-sizing: border-box;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
   ::ng-deep .team-card[dir="rtl"] {
-    width: 100%; /* تقليل العرض ليكون مناسب */
-    margin-inline: 40px; /* تمركز الكارد */
+    width: 100%;
+    margin-inline: 40px;
     box-sizing: border-box;
   }
   .team-card img {
@@ -590,7 +596,7 @@ section h2 {
   }
 }
 
-@media (min-width: 1025px) and (max-width: 1500px) {
+@media (min-width: 1026px) and (max-width: 1500px) {
   section h2 {
     color: #fff;
     text-align: center;
@@ -599,6 +605,13 @@ section h2 {
     padding-bottom: 60px;
 
   }
+  ::ng-deep .carousel[dir='rtl'] {
+    padding-inline: 20px !important;
+  }
+  .carousel {
+    padding-inline: 20px !important;
+  }
+
   .team-card:hover .overlay {
     left: 0;
   opacity: 1;
@@ -648,7 +661,6 @@ section h2 {
     display: block;
   }
 
-  /* دعم RTL للسهمين */
   ::ng-deep .p-carousel[dir="rtl"] .p-carousel-prev {
     transform: rotate(180deg);
     right: 10px;
