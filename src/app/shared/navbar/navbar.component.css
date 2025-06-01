@@ -718,6 +718,7 @@
   }
 }
 @media (min-width: 1301px) and (max-width: 1399px) {
+ 
   .my-section {
     transform: translateY(10px);
     -webkit-transform: translateY(10px);
@@ -725,13 +726,13 @@
     -ms-transform: translateY(10px);
     -o-transform: translateY(10px);
     position: relative;
-  }
+}
   .navbar-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 40px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
   }
   .my-section ul {
     margin-right: 310px !important;
@@ -789,7 +790,7 @@
     height: 110px;
   }
   .my-navbar img {
-    width: 150px;
+    width: 140px;
     height: 120px;
   }
 }
