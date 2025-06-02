@@ -1,7 +1,7 @@
 <section>
   <div class="container">
     <h2>{{ "team.Meet Our Team" | translate }}</h2>
-    <div class="carousel">
+    <div class="carousel" [class.rtl]="translateService.currentLang === 'ar'">
       <p-carousel #carousel [value]="teamMembers" [numVisible]="3" [numScroll]="1" [circular]="true" [class.rtl]="translateService.currentLang === 'ar'"
         [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions" [showIndicators]="true"
         [showNavigators]="true" [dir]="direction">
