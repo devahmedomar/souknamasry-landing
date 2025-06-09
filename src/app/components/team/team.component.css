@@ -35,7 +35,6 @@ section h2 {
   -moz-border-radius: 50px;
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
-
 }
 /** team card**/
 .carousel .team-card {
@@ -45,7 +44,6 @@ section h2 {
   overflow: hidden;
   width: 30rem;
   height: fit-content;
-
 }
 /** team card image**/
 .team-card img {
@@ -211,15 +209,12 @@ section h2 {
     font-size: 1.5rem;
     margin: 10px auto;
     padding-bottom: 60px;
-
   }
   :host ::ng-deep #pn_id_1 .p-carousel-container {
     direction: ltr;
     overflow: hidden;
     display: flex;
     justify-content: center;
-
-
   }
 
   :host([dir="rtl"]) ::ng-deep #pn_id_1 .p-carousel-container {
@@ -254,33 +249,33 @@ section h2 {
   }
   .team-card:hover .overlay {
     left: 0;
-  opacity: 1;
-  bottom: 49px;
-  background: linear-gradient(
-    180deg,
-    rgba(239, 100, 76, 0) 64.05%,
-    #fd6f1d 115.68%
-  );
-  transform: translate(0px, 0px);
-  -webkit-transform: translate(0px, 0px);
-  -moz-transform: translate(0px, 0px);
-  -ms-transform: translate(0px, 0px);
-  -o-transform: translate(0px, 0px);
+    opacity: 1;
+    bottom: 49px;
+    background: linear-gradient(
+      180deg,
+      rgba(239, 100, 76, 0) 64.05%,
+      #fd6f1d 115.68%
+    );
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
   }
   .team-card[dir="rtl"]:hover .overlay {
     left: 0;
-  opacity: 1;
-  bottom: 49px;
-  background: linear-gradient(
-    180deg,
-    rgba(239, 100, 76, 0) 64.05%,
-    #fd6f1d 115.68%
-  );
-  transform: translate(0px, 0px);
-  -webkit-transform: translate(0px, 0px);
-  -moz-transform: translate(0px, 0px);
-  -ms-transform: translate(0px, 0px);
-  -o-transform: translate(0px, 0px);
+    opacity: 1;
+    bottom: 49px;
+    background: linear-gradient(
+      180deg,
+      rgba(239, 100, 76, 0) 64.05%,
+      #fd6f1d 115.68%
+    );
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
   }
 
   ::ng-deep .p-carousel[dir="rtl"] .p-carousel-prev {
@@ -298,12 +293,9 @@ section h2 {
   ::ng-deep .team-card[dir="rtl"] .card-content[dir="rtl"] {
     display: flex;
     text-align: right;
-  flex-direction: column;
-  align-items: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
   }
-
-
-
 }
 @media (min-width: 426px) and (max-width: 768px) {
   section h2 {
@@ -312,7 +304,6 @@ section h2 {
     font-size: 2rem;
     margin: 10px auto;
     padding-bottom: 60px;
-
   }
   :host ::ng-deep #pn_id_1 .p-carousel-container {
     direction: ltr;
@@ -321,11 +312,9 @@ section h2 {
     justify-content: center;
   }
 
-
   :host([dir="rtl"]) ::ng-deep #pn_id_1 .p-carousel-container {
     direction: rtl;
   }
-
 
   :host ::ng-deep #pn_id_1 .p-carousel-item {
     display: flex;
@@ -355,33 +344,33 @@ section h2 {
   }
   .team-card:hover .overlay {
     left: 0;
-  opacity: 1;
-  bottom: 49px;
-  background: linear-gradient(
-    180deg,
-    rgba(239, 100, 76, 0) 64.05%,
-    #fd6f1d 115.68%
-  );
-  transform: translate(0px, 0px);
-  -webkit-transform: translate(0px, 0px);
-  -moz-transform: translate(0px, 0px);
-  -ms-transform: translate(0px, 0px);
-  -o-transform: translate(0px, 0px);
+    opacity: 1;
+    bottom: 49px;
+    background: linear-gradient(
+      180deg,
+      rgba(239, 100, 76, 0) 64.05%,
+      #fd6f1d 115.68%
+    );
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
   }
   .team-card[dir="rtl"]:hover .overlay {
     left: 0;
-  opacity: 1;
-  bottom: 49px;
-  background: linear-gradient(
-    180deg,
-    rgba(239, 100, 76, 0) 64.05%,
-    #fd6f1d 115.68%
-  );
-  transform: translate(0px, 0px);
-  -webkit-transform: translate(0px, 0px);
-  -moz-transform: translate(0px, 0px);
-  -ms-transform: translate(0px, 0px);
-  -o-transform: translate(0px, 0px);
+    opacity: 1;
+    bottom: 49px;
+    background: linear-gradient(
+      180deg,
+      rgba(239, 100, 76, 0) 64.05%,
+      #fd6f1d 115.68%
+    );
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
   }
 
   ::ng-deep .p-carousel[dir="rtl"] .p-carousel-prev {
@@ -399,12 +388,9 @@ section h2 {
   ::ng-deep .team-card[dir="rtl"] .card-content[dir="rtl"] {
     display: flex;
     text-align: right;
-  flex-direction: column;
-  align-items: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
   }
-
-
-
 }
 @media (min-width: 768px) and (max-width: 991px) {
   section h2 {
@@ -413,7 +399,6 @@ section h2 {
     font-size: 2.5rem;
     margin: 10px auto;
     padding-bottom: 60px;
-
   }
 
   :host ::ng-deep #pn_id_1 .p-carousel-container {
@@ -449,33 +434,33 @@ section h2 {
   }
   .team-card:hover .overlay {
     left: 0;
-  opacity: 1;
-  bottom: 47px;
-  background: linear-gradient(
-    180deg,
-    rgba(239, 100, 76, 0) 64.05%,
-    #fd6f1d 115.68%
-  );
-  transform: translate(0px, 0px);
-  -webkit-transform: translate(0px, 0px);
-  -moz-transform: translate(0px, 0px);
-  -ms-transform: translate(0px, 0px);
-  -o-transform: translate(0px, 0px);
+    opacity: 1;
+    bottom: 47px;
+    background: linear-gradient(
+      180deg,
+      rgba(239, 100, 76, 0) 64.05%,
+      #fd6f1d 115.68%
+    );
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
   }
   .team-card[dir="rtl"]:hover .overlay {
     left: 0;
-  opacity: 1;
-  bottom: 47px;
-  background: linear-gradient(
-    180deg,
-    rgba(239, 100, 76, 0) 64.05%,
-    #fd6f1d 115.68%
-  );
-  transform: translate(0px, 0px);
-  -webkit-transform: translate(0px, 0px);
-  -moz-transform: translate(0px, 0px);
-  -ms-transform: translate(0px, 0px);
-  -o-transform: translate(0px, 0px);
+    opacity: 1;
+    bottom: 47px;
+    background: linear-gradient(
+      180deg,
+      rgba(239, 100, 76, 0) 64.05%,
+      #fd6f1d 115.68%
+    );
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
   }
   /* ضبط الأسهم في الـ RTL */
   ::ng-deep .p-carousel[dir="rtl"] .p-carousel-prev {
@@ -492,38 +477,38 @@ section h2 {
   ::ng-deep .team-card[dir="rtl"] .card-content[dir="rtl"] {
     display: flex;
     text-align: right;
-  flex-direction: column;
-  align-items: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
   }
   .team-card:hover .overlay {
     left: 0;
-  opacity: 1;
-  bottom: 47px;
-  background: linear-gradient(
-    180deg,
-    rgba(239, 100, 76, 0) 64.05%,
-    #fd6f1d 115.68%
-  );
-  transform: translate(0px, 0px);
-  -webkit-transform: translate(0px, 0px);
-  -moz-transform: translate(0px, 0px);
-  -ms-transform: translate(0px, 0px);
-  -o-transform: translate(0px, 0px);
+    opacity: 1;
+    bottom: 47px;
+    background: linear-gradient(
+      180deg,
+      rgba(239, 100, 76, 0) 64.05%,
+      #fd6f1d 115.68%
+    );
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
   }
   .team-card[dir="rtl"]:hover .overlay {
     left: 0;
-  opacity: 1;
-  bottom: 47px;
-  background: linear-gradient(
-    180deg,
-    rgba(239, 100, 76, 0) 64.05%,
-    #fd6f1d 115.68%
-  );
-  transform: translate(0px, 0px);
-  -webkit-transform: translate(0px, 0px);
-  -moz-transform: translate(0px, 0px);
-  -ms-transform: translate(0px, 0px);
-  -o-transform: translate(0px, 0px);
+    opacity: 1;
+    bottom: 47px;
+    background: linear-gradient(
+      180deg,
+      rgba(239, 100, 76, 0) 64.05%,
+      #fd6f1d 115.68%
+    );
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
   }
 }
 @media (min-width: 992px) and (max-width: 1025px) {
@@ -533,11 +518,6 @@ section h2 {
     font-size: 3rem;
     margin: 10px auto;
     padding-bottom: 60px;
-
-  }
-  ::ng-deep #pn_id_1 .p-carousel-container {
-    overflow: hidden;
-    padding-inline: 40px !important;
   }
 
   ::ng-deep #pn_id_1 .p-carousel-item {
@@ -566,33 +546,33 @@ section h2 {
   }
   .team-card:hover .overlay {
     left: 0;
-  opacity: 1;
-  bottom: 47px;
-  background: linear-gradient(
-    180deg,
-    rgba(239, 100, 76, 0) 64.05%,
-    #fd6f1d 115.68%
-  );
-  transform: translate(0px, 0px);
-  -webkit-transform: translate(0px, 0px);
-  -moz-transform: translate(0px, 0px);
-  -ms-transform: translate(0px, 0px);
-  -o-transform: translate(0px, 0px);
+    opacity: 1;
+    bottom: 47px;
+    background: linear-gradient(
+      180deg,
+      rgba(239, 100, 76, 0) 64.05%,
+      #fd6f1d 115.68%
+    );
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
   }
   .team-card[dir="rtl"]:hover .overlay {
     left: 0;
-  opacity: 1;
-  bottom: 47px;
-  background: linear-gradient(
-    180deg,
-    rgba(239, 100, 76, 0) 64.05%,
-    #fd6f1d 115.68%
-  );
-  transform: translate(0px, 0px);
-  -webkit-transform: translate(0px, 0px);
-  -moz-transform: translate(0px, 0px);
-  -ms-transform: translate(0px, 0px);
-  -o-transform: translate(0px, 0px);
+    opacity: 1;
+    bottom: 47px;
+    background: linear-gradient(
+      180deg,
+      rgba(239, 100, 76, 0) 64.05%,
+      #fd6f1d 115.68%
+    );
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
   }
 }
 
@@ -603,44 +583,44 @@ section h2 {
     font-size: 3rem;
     margin: 10px auto;
     padding-bottom: 60px;
-
   }
-  ::ng-deep .carousel[dir='rtl'] {
-    padding-inline: 20px !important;
+ 
+  ::ng-deep .carousel[dir="rtl"] {
+    padding-inline: 40px !important;
   }
-  .carousel {
-    padding-inline: 20px !important;
+  ::ng-deep .carousel {
+    padding-inline: 40px !important;
   }
 
   .team-card:hover .overlay {
     left: 0;
-  opacity: 1;
-  bottom: 47px;
-  background: linear-gradient(
-    180deg,
-    rgba(239, 100, 76, 0) 64.05%,
-    #fd6f1d 115.68%
-  );
-  transform: translate(0px, 0px);
-  -webkit-transform: translate(0px, 0px);
-  -moz-transform: translate(0px, 0px);
-  -ms-transform: translate(0px, 0px);
-  -o-transform: translate(0px, 0px);
+    opacity: 1;
+    bottom: 47px;
+    background: linear-gradient(
+      180deg,
+      rgba(239, 100, 76, 0) 64.05%,
+      #fd6f1d 115.68%
+    );
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
   }
   .team-card[dir="rtl"]:hover .overlay {
     left: 0;
-  opacity: 1;
-  bottom: 47px;
-  background: linear-gradient(
-    180deg,
-    rgba(239, 100, 76, 0) 64.05%,
-    #fd6f1d 115.68%
-  );
-  transform: translate(0px, 0px);
-  -webkit-transform: translate(0px, 0px);
-  -moz-transform: translate(0px, 0px);
-  -ms-transform: translate(0px, 0px);
-  -o-transform: translate(0px, 0px);
+    opacity: 1;
+    bottom: 47px;
+    background: linear-gradient(
+      180deg,
+      rgba(239, 100, 76, 0) 64.05%,
+      #fd6f1d 115.68%
+    );
+    transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
   }
   ::ng-deep #pn_id_1 .p-carousel-container {
     overflow: hidden;
@@ -675,7 +655,7 @@ section h2 {
   ::ng-deep .team-card[dir="rtl"] .card-content[dir="rtl"] {
     display: flex;
     text-align: right;
-  flex-direction: column;
-  align-items: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
   }
 }

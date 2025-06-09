@@ -482,11 +482,11 @@
   }
   html[dir="rtl"] .my-section ul,
   :lang(ar) .my-section ul {
-    transform: translate(100px, 24px);
-    -webkit-transform: translate(100px, 24px);
-    -moz-transform: translate(100px, 24px);
-    -ms-transform: translate(100px, 24px);
-    -o-transform: translate(100px, 24px);
+    transform: translate(100px, 33px);
+    -webkit-transform: translate(100px, 33px);
+    -moz-transform: translate(100px, 33px);
+    -ms-transform: translate(100px, 33px);
+    -o-transform: translate(100px, 33px);
 }
 
   html[dir="rtl"] .navbar-brand,
@@ -693,7 +693,7 @@
     -moz-transform: translateX(180px);
     -ms-transform: translateX(180px);
     -o-transform: translateX(180px);
-    top: -120px;
+    top: -123px;
     padding: 30px;
 }
   html[dir="rtl"] .dropdown,
@@ -740,16 +740,16 @@
 }
 @media (min-width: 1301px) and (max-width: 1399px) {
   .navbar-expand-lg .navbar-nav {
-    transform: translate(-30px ,25px);
-    -webkit-transform: translate(-30px ,25px);
-    -moz-transform: translate(-30px ,25px);
-    -ms-transform: translate(-30px ,25px);
-    -o-transform: translate(-30px ,25px);
+    transform: translate(-30px ,17px);
+    -webkit-transform: translate(-30px ,17px);
+    -moz-transform: translate(-30px ,17px);
+    -ms-transform: translate(-30px ,17px);
+    -o-transform: translate(-30px ,17px);
 }
 nav-item .nav-link {
   display: inline;
   white-space: nowrap;
-  margin-inline: 15px !important;
+  margin-inline: 25px !important;
 }
 
   .navbar-nav {
@@ -764,7 +764,7 @@ nav-item .nav-link {
   }
 
   .navbar-brand {
-    margin-top: 16px !important;
+    margin-top: -2px !important;
     margin-left: -60px;
   }
   .dropdown {
@@ -774,7 +774,7 @@ nav-item .nav-link {
     -moz-transform: translateX(510px);
     -ms-transform: translateX(510px);
     -o-transform: translateX(510px);
-    top: -82px;
+    top: -91px;
     padding: 30px;
   }
   html[dir="rtl"] .dropdown,
