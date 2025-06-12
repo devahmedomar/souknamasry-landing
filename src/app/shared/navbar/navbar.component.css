@@ -434,13 +434,13 @@
 }
 @media (min-width: 1024px) and (max-width: 1199px) {
   .my-section {
-    transform: translateY(10px);
-    -webkit-transform: translateY(10px);
-    -moz-transform: translateY(10px);
-    -ms-transform: translateY(10px);
-    -o-transform: translateY(10px);
+    transform: translateY(5px);
+    -webkit-transform: translateY(5px);
+    -moz-transform: translateY(5px);
+    -ms-transform: translateY(5px);
+    -o-transform: translateY(5px);
     position: relative;
-  }
+}
   .navbar-nav {
     display: flex;
     justify-content: space-between;
@@ -449,7 +449,7 @@
     padding-bottom: 50px;
   }
   .navbar-brand {
-    margin-top: 16px !important;
+    margin-top: 1px !important;
     margin-left: -63px;
   }
   .dropdown {
@@ -459,20 +459,20 @@
     -moz-transform: translateX(285px);
     -ms-transform: translateX(285px);
     -o-transform: translateX(285px);
-    top: -103px;
+    top: -100px;
     padding: 30px;
   }
   html[dir="rtl"] .dropdown,
   :lang(ar) .dropdown {
     position: absolute;
-    transform: translateX(-435px);
-    -webkit-transform: translateX(-435px);
-    -moz-transform: translateX(-435px);
-    -ms-transform: translateX(-435px);
-    -o-transform: translateX(-435px);
+    transform: translateX(-405px);
+    -webkit-transform: translateX(-405px);
+    -moz-transform: translateX(-405px);
+    -ms-transform: translateX(-405px);
+    -o-transform: translateX(-405px);
     top: -123px;
     padding: 30px;
-  }
+}
 
   html[dir="rtl"] .nav-item .nav-link,
   :lang(ar) .nav-item .nav-link {
@@ -482,16 +482,16 @@
   }
   html[dir="rtl"] .my-section ul,
   :lang(ar) .my-section ul {
-    transform: translate(45px, 41px);
-    -webkit-transform: translate(45px, 41px);
-    -moz-transform: translate(45px, 41px);
-    -ms-transform: translate(45px, 41px);
-    -o-transform: translate(45px, 41px);
-  }
+    transform: translate(100px, 33px);
+    -webkit-transform: translate(100px, 33px);
+    -moz-transform: translate(100px, 33px);
+    -ms-transform: translate(100px, 33px);
+    -o-transform: translate(100px, 33px);
+}
 
   html[dir="rtl"] .navbar-brand,
   :lang(ar) .navbar-brand {
-    margin-top: 30px !important;
+    margin-top: -3px !important;
     margin-right: 145px;
   }
   .my-navbar img {
@@ -668,53 +668,64 @@
     padding-bottom: 50px;
   }
   .my-section ul {
-    margin-right: 310px !important;
+    margin-right: 250px !important;
   }
-
+  .my-section ul {
+    transform: translate(300px, 35px);
+    -webkit-transform: translate(300px, 35px);
+    -moz-transform: translate(300px, 35px);
+    -ms-transform: translate(300px, 35px);
+    -o-transform: translate(300px, 35px);
+}
+  .nav-link {
+    display: inline;
+    white-space: nowrap;
+    margin-inline: 10px !important;
+  }
   .navbar-brand {
     margin-top: 16px !important;
     margin-left: -60px;
   }
   .dropdown {
     position: absolute;
-    transform: translateX(510px);
-    -webkit-transform: translateX(510px);
-    -moz-transform: translateX(510px);
-    -ms-transform: translateX(510px);
-    -o-transform: translateX(510px);
-    top: -99px;
+    transform: translateX(180px);
+    -webkit-transform: translateX(180px);
+    -moz-transform: translateX(180px);
+    -ms-transform: translateX(180px);
+    -o-transform: translateX(180px);
+    top: -123px;
     padding: 30px;
-  }
+}
   html[dir="rtl"] .dropdown,
   :lang(ar) .dropdown {
     position: absolute;
-    transform: translateX(-520px);
-    -webkit-transform: translateX(-520px);
-    -moz-transform: translateX(-520px);
-    -ms-transform: translateX(-520px);
-    -o-transform: translateX(-520px);
+    transform: translateX(-495px);
+    -webkit-transform: translateX(-495px);
+    -moz-transform: translateX(-495px);
+    -ms-transform: translateX(-495px);
+    -o-transform: translateX(-495px);
     top: -123px;
     padding: 30px;
-  }
+}
 
   html[dir="rtl"] .nav-item .nav-link,
   :lang(ar) .nav-item .nav-link {
     display: inline;
     white-space: nowrap;
-    margin-inline: 0.5px !important;
+    margin-inline: 5px !important;
   }
   html[dir="rtl"] .my-section ul,
   :lang(ar) .my-section ul {
-    transform: translate(300px, 41px);
-    -webkit-transform: translate(300px, 41px);
-    -moz-transform: translate(300px, 41px);
-    -ms-transform: translate(300px, 41px);
-    -o-transform: translate(300px, 41px);
-  }
+    transform: translate(250px, 28px);
+    -webkit-transform: translate(250px, 28px);
+    -moz-transform: translate(250px, 28px);
+    -ms-transform: translate(250px, 28px);
+    -o-transform: translate(250px, 28px);
+}
 
   html[dir="rtl"] .navbar-brand,
   :lang(ar) .navbar-brand {
-    margin-top: 30px !important;
+    margin-top: -4px !important;
     margin-right: 165px !important;
   }
   html[dir="rtl"] .my-navbar img,
@@ -729,16 +740,16 @@
 }
 @media (min-width: 1301px) and (max-width: 1399px) {
   .navbar-expand-lg .navbar-nav {
-    transform: translate(-30px ,25px);
-    -webkit-transform: translate(-30px ,25px);
-    -moz-transform: translate(-30px ,25px);
-    -ms-transform: translate(-30px ,25px);
-    -o-transform: translate(-30px ,25px);
+    transform: translate(-30px ,17px);
+    -webkit-transform: translate(-30px ,17px);
+    -moz-transform: translate(-30px ,17px);
+    -ms-transform: translate(-30px ,17px);
+    -o-transform: translate(-30px ,17px);
 }
 nav-item .nav-link {
   display: inline;
   white-space: nowrap;
-  margin-inline: 15px !important;
+  margin-inline: 25px !important;
 }
 
   .navbar-nav {
@@ -753,7 +764,7 @@ nav-item .nav-link {
   }
 
   .navbar-brand {
-    margin-top: 16px !important;
+    margin-top: -2px !important;
     margin-left: -60px;
   }
   .dropdown {
@@ -763,34 +774,34 @@ nav-item .nav-link {
     -moz-transform: translateX(510px);
     -ms-transform: translateX(510px);
     -o-transform: translateX(510px);
-    top: -82px;
+    top: -91px;
     padding: 30px;
   }
   html[dir="rtl"] .dropdown,
   :lang(ar) .dropdown {
     position: absolute;
-    transform: translateX(-490px);
-    -webkit-transform: translateX(-490px);
-    -moz-transform: translateX(-490px);
-    -ms-transform: translateX(-490px);
-    -o-transform: translateX(-490px);
+    transform: translateX(-480px);
+    -webkit-transform: translateX(-480px);
+    -moz-transform: translateX(-480px);
+    -ms-transform: translateX(-480px);
+    -o-transform: translateX(-480px);
     top: -90px;
     padding: 30px;
-  }
+}
 
   html[dir="rtl"] .nav-item .nav-link,
   :lang(ar) .nav-item .nav-link {
     display: inline;
     white-space: nowrap;
-    margin-inline: 5px !important;
+    margin-inline: 15px !important;
   }
   html[dir="rtl"] .my-section ul,
   :lang(ar) .my-section ul {
-    transform: translate(295px,15px);
-    -webkit-transform: translate(295px,15px);
-    -moz-transform: translate(295px,15px);
-    -ms-transform: translate(295px,15px);
-    -o-transform: translate(295px,15px);
+    transform: translate(305px,15px);
+    -webkit-transform: translate(305px,15px);
+    -moz-transform: translate(305px,15px);
+    -ms-transform: translate(305px,15px);
+    -o-transform: translate(305px,15px);
 }
 
   html[dir="rtl"] .navbar-brand,
@@ -912,26 +923,32 @@ nav-item .nav-link {
   html[dir="rtl"] .dropdown,
   :lang(ar) .dropdown {
     position: absolute;
-    transform: translateX(-585px);
-    -webkit-transform: translateX(-585px);
-    -moz-transform: translateX(-585px);
-    -ms-transform: translateX(-585px);
-    -o-transform: translateX(-585px);
-    top: -125px;
+    transform: translateX(-540px);
+    -webkit-transform: translateX(-540px);
+    -moz-transform: translateX(-540px);
+    -ms-transform: translateX(-540px);
+    -o-transform: translateX(-540px);
+    top: -120px;
     padding: 30px;
-  }
+}
   .my-section ul.navbar-nav {
-    transform: translate(-50px, 33px);
-    -webkit-transform: translate(-50px, 33px);
-    -moz-transform: translate(-50px, 33px);
-    -ms-transform: translate(-50px, 33px);
-    -o-transform: translate(-50px, 33px);
-  }
+    transform: translate(40px, 33px);
+    -webkit-transform: translate(0px, 33px);
+    -moz-transform: translate(0px, 33px);
+    -ms-transform: translate(0px, 33px);
+    -o-transform: translate(0px, 33px);
+}
   .navbar-brand {
-    margin-top: 18px !important;
+    margin-top: 10px !important;
     margin-left: -66px;
   }
-  .nav-item .nav-link {
+    .nav-item .nav-link {
+      display: inline;
+      white-space: nowrap;
+      margin-inline: 15px !important;
+    }
+  html[dir="rtl"] .nav-item .nav-link,
+  :lang(ar) .nav-item .nav-link {
     display: inline;
     white-space: nowrap;
     margin-inline: 10px !important;
@@ -939,15 +956,15 @@ nav-item .nav-link {
   html[dir="rtl"] .navbar-brand,
   :lang(ar) .navbar-brand {
     margin-right: 155px !important;
-    margin-top: 10px !important;
+    margin-top: -3px !important;
   }
 
   :lang(ar) .my-section ul,
   html[dir="rtl"] .my-section ul {
-    transform: translate(195px, 30px);
-    -webkit-transform: translate(195px, 30px);
-    -moz-transform: translate(195px, 30px);
-    -ms-transform: translate(195px, 30px);
-    -o-transform: translate(195px, 30px);
-  }
+    transform: translate(220px, 28px);
+    -webkit-transform: translate(220px, 28px);
+    -moz-transform: translate(220px, 28px);
+    -ms-transform: translate(220px, 28px);
+    -o-transform: translate(220px, 28px);
+}
 }
