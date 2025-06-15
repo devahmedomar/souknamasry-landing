@@ -179,7 +179,7 @@ span .filled-text {
 }
 [dir="rtl"] .responsive-svg{
     padding-right: 0px;
-    padding-left: 30px;
+    padding-left: 38px;
 }
 /* Hiding all elements with class 'animable' inside the SVG if the SVG is not animated */
 svg#freepik_stories-in-no-time:not(.animated) .animable {
@@ -270,19 +270,28 @@ svg#freepik_stories-in-no-time.animated
   }
 }
 @media (min-width: 1201px) and (max-width: 1400px){
+    .hero-section {
+      margin-top: 110px;
+    }
     .hero-text{
-      padding-left: 50px;
+      padding-left: 66px;
     }
     .hero-text.rtl {
       padding-left: 0px;
       padding-right: 4.2rem;
     }
     .responsive-svg {
-      padding-right: 0px;
+      padding-right: 44px;
     }
     [dir=rtl] .responsive-svg {
       padding-right: 0px;
-      padding-left: 3px;
+      padding-left: 14px;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1300px){
+    [dir=rtl] .responsive-svg {
+        padding-right: 0px;
+        padding-left: 47px;
     }
 }
 @media (min-width: 1025px) and (max-width: 1200px){
@@ -348,7 +357,7 @@ svg#freepik_stories-in-no-time.animated
   }
   [dir="rtl"] .responsive-svg{
     padding-right: 0px;
-    padding-left: 60px;
+    padding-left: 36px;  
   }
 }
 
@@ -370,7 +379,7 @@ svg#freepik_stories-in-no-time.animated
   }
   .hero-text.rtl {
     padding-left: 0px;
-    padding-right: 2rem;
+    padding-right: 1rem;  
   }
   .play-icon {
     padding-left: 0.2rem;
@@ -387,7 +396,7 @@ svg#freepik_stories-in-no-time.animated
     height: 100%;
     padding-top: 3rem;
     padding-left: 2rem;
-    padding-right: 0;
+    padding-right: 0.9rem;
     padding-bottom: 2rem;
     transform: scale(1.2);
   }
@@ -397,14 +406,21 @@ svg#freepik_stories-in-no-time.animated
   }
 }
 
-@media (min-width: 577px) and (max-width: 767px){
+@media (min-width: 576px) and (max-width: 767px){
+  .hero-section {
+    margin-top: 110px;
+  }
   .hero-text {
     padding-top: 0;
     padding-left: 0.625rem; /* 10px */
     display: block;
   }
+  .hero-text.rtl {
+    padding-left: 0px;
+    padding-right: 1rem;
+  }
   .hero-text span {
-    font-size: 1.46rem; 
+    font-size: 1.4rem; 
     line-height: 3.125rem !important; 
   }
   .hero-text h5 {
@@ -439,7 +455,7 @@ svg#freepik_stories-in-no-time.animated
   }
 }
 
-@media (min-width: 426px) and (max-width: 576px) {
+@media (min-width: 426px) and (max-width: 575.99px) {
   .hero-text {
     text-align: center;
     padding-left: 0;
