@@ -22,6 +22,7 @@
               {{ highlightedLine() }}
             </span>
           </p>
+          <p>dev test</p>
         </div>
 
         <!-- Image -->
@@ -31,12 +32,12 @@
       </div>
 
       <!-- Features Title -->
-      <h2 
-  [class.rtl]="currentLang() === 'ar'" 
-  [class.ltr]="currentLang() === 'en'" 
-  class="feature-title mb-5 mt-5" 
-  data-aos="zoom-in-up" 
-  data-aos-delay="900" 
+      <h2
+  [class.rtl]="currentLang() === 'ar'"
+  [class.ltr]="currentLang() === 'en'"
+  class="feature-title mb-5 mt-5"
+  data-aos="zoom-in-up"
+  data-aos-delay="900"
   data-aos-duration="1500"
 >
   {{ features_title() }}
@@ -46,7 +47,7 @@
       <!-- Features Section -->
       <div  class="row g-4 mt-3"
       [ngClass]="currentLang() === 'ar' ? 'rtl' : 'ltr'"
-      > 
+      >
         <div
           class="col-md-4 d-flex align-items-stretch"
           *ngFor="let feature of features(); let i = index; trackBy: trackByIndex"
